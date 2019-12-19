@@ -45,21 +45,15 @@
             // 
             // txt_email
             // 
-            this.txt_email.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_email.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Location = new System.Drawing.Point(423, 100);
             this.txt_email.Margin = new System.Windows.Forms.Padding(7);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(772, 52);
+            this.txt_email.Size = new System.Drawing.Size(784, 52);
             this.txt_email.TabIndex = 10;
             // 
             // register_btn
             // 
-            this.register_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.register_btn.BackColor = System.Drawing.Color.Transparent;
             this.register_btn.FlatAppearance.BorderColor = System.Drawing.Color.YellowGreen;
             this.register_btn.FlatAppearance.BorderSize = 2;
@@ -69,7 +63,7 @@
             this.register_btn.Location = new System.Drawing.Point(423, 622);
             this.register_btn.Margin = new System.Windows.Forms.Padding(7);
             this.register_btn.Name = "register_btn";
-            this.register_btn.Size = new System.Drawing.Size(772, 102);
+            this.register_btn.Size = new System.Drawing.Size(784, 94);
             this.register_btn.TabIndex = 9;
             this.register_btn.Text = "Register";
             this.register_btn.UseVisualStyleBackColor = false;
@@ -104,15 +98,12 @@
             // 
             // txt_password
             // 
-            this.txt_password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_password.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_password.Location = new System.Drawing.Point(423, 173);
             this.txt_password.Margin = new System.Windows.Forms.Padding(7);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
-            this.txt_password.Size = new System.Drawing.Size(772, 52);
+            this.txt_password.Size = new System.Drawing.Size(784, 52);
             this.txt_password.TabIndex = 11;
             // 
             // lbl_confirmPassword
@@ -131,15 +122,12 @@
             // 
             // txt_confirmPassword
             // 
-            this.txt_confirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_confirmPassword.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_confirmPassword.Location = new System.Drawing.Point(423, 255);
             this.txt_confirmPassword.Margin = new System.Windows.Forms.Padding(7);
             this.txt_confirmPassword.Name = "txt_confirmPassword";
             this.txt_confirmPassword.PasswordChar = '*';
-            this.txt_confirmPassword.Size = new System.Drawing.Size(772, 52);
+            this.txt_confirmPassword.Size = new System.Drawing.Size(784, 52);
             this.txt_confirmPassword.TabIndex = 15;
             // 
             // lbl_name
@@ -158,15 +146,11 @@
             // 
             // txt_name
             // 
-            this.txt_name.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_name.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(423, 334);
             this.txt_name.Margin = new System.Windows.Forms.Padding(7);
             this.txt_name.Name = "txt_name";
-            this.txt_name.PasswordChar = '*';
-            this.txt_name.Size = new System.Drawing.Size(772, 52);
+            this.txt_name.Size = new System.Drawing.Size(784, 52);
             this.txt_name.TabIndex = 17;
             // 
             // lbl_gender
@@ -185,6 +169,7 @@
             // 
             // cbo_gender
             // 
+            this.cbo_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_gender.Font = new System.Drawing.Font("Gadugi", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_gender.FormattingEnabled = true;
             this.cbo_gender.Items.AddRange(new object[] {
@@ -193,7 +178,7 @@
             "Non-Binary"});
             this.cbo_gender.Location = new System.Drawing.Point(423, 424);
             this.cbo_gender.Name = "cbo_gender";
-            this.cbo_gender.Size = new System.Drawing.Size(772, 49);
+            this.cbo_gender.Size = new System.Drawing.Size(784, 49);
             this.cbo_gender.TabIndex = 19;
             // 
             // lbl_dayOfBirth
@@ -215,7 +200,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Gadugi", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(423, 494);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(772, 51);
+            this.dateTimePicker1.Size = new System.Drawing.Size(784, 51);
             this.dateTimePicker1.TabIndex = 21;
             // 
             // RegisterControl
@@ -237,7 +222,7 @@
             this.Controls.Add(this.lbl_email);
             this.Controls.Add(this.txt_password);
             this.Name = "RegisterControl";
-            this.Size = new System.Drawing.Size(1195, 763);
+            this.Size = new System.Drawing.Size(1279, 763);
             this.ResumeLayout(false);
             this.PerformLayout();
 
