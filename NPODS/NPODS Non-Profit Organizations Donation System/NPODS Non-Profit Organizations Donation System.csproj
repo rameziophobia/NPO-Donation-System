@@ -49,11 +49,20 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
+    <Compile Include="CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganizationDashboard.Designer.cs">
+      <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="OrganizationUtil\DonationGoal.cs" />
     <Compile Include="OrganizationUtil\NonMoneyDonation.cs" />
@@ -74,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganizationDashboard.resx">
+      <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
