@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System {
-    public partial class OrganizationDashboard : UserControl {
+    public partial class OrganizationDashboard : Form {
         private bool isExpanded;
         private readonly int pnl_side_MAXWIDTH;
         private readonly int pnl_side_MINWIDTH;
@@ -21,8 +21,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             isExpanded = true;
             tmr_panelAnimation.Start();
             hiddenText = new Dictionary<Button, string>();
+            int index = 1;
             foreach (Button s in this.pnl_side.Controls.OfType<Button>()) {
                 hiddenText.Add(s, s.Text);
+                index++;
             }
             pnl_side.Width = pnl_side_MINWIDTH;
         }
@@ -70,10 +72,28 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             tmr_panelAnimation.Start();
         }
 
-        private void Button2_Click(object sender, EventArgs e) {
+        private void Btn_Info_Click(object sender, EventArgs e) {
+            this.fpl_Main.ScrollControlIntoView(dbr_Info);
         }
 
         private void Panel2_Paint(object sender, PaintEventArgs e) {
+
+        }
+
+        private void Btn_sideStatistics_Click(object sender, EventArgs e) {
+            this.fpl_Main.ScrollControlIntoView(dbr_Stats);
+        }
+
+        private void Btn_sideMoneyDonations_Click(object sender, EventArgs e) {
+            this.fpl_Main.ScrollControlIntoView(dbr_MoneyDonations);
+
+        }
+
+        private void Btn_sideMiscDonations_Click(object sender, EventArgs e) {
+            this.fpl_Main.ScrollControlIntoView(dbr_MiscDonations);
+        }
+
+        private void Fpl_Main_Paint(object sender, PaintEventArgs e) {
 
         }
     }

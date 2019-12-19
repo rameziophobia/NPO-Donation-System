@@ -39,6 +39,12 @@
             this.pic_Banner = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_Main = new System.Windows.Forms.Panel();
+            this.fpl_Main = new System.Windows.Forms.FlowLayoutPanel();
+            this.dashboardRegion1 = new NPODS_Non_Profit_Organizations_Donation_System.DashboardRegion();
+            this.dbr_Info = new NPODS_Non_Profit_Organizations_Donation_System.DashboardRegion();
+            this.dbr_Stats = new NPODS_Non_Profit_Organizations_Donation_System.DashboardRegion();
+            this.dbr_MoneyDonations = new NPODS_Non_Profit_Organizations_Donation_System.DashboardRegion();
+            this.dbr_MiscDonations = new NPODS_Non_Profit_Organizations_Donation_System.DashboardRegion();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cpb_logo)).BeginInit();
@@ -46,6 +52,8 @@
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Banner)).BeginInit();
             this.panel3.SuspendLayout();
+            this.pnl_Main.SuspendLayout();
+            this.fpl_Main.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,7 +63,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 60);
+            this.panel1.Size = new System.Drawing.Size(1184, 60);
             this.panel1.TabIndex = 0;
             // 
             // btn_sideExpand
@@ -91,7 +99,7 @@
             this.pnl_side.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_side.Location = new System.Drawing.Point(0, 60);
             this.pnl_side.Name = "pnl_side";
-            this.pnl_side.Size = new System.Drawing.Size(190, 560);
+            this.pnl_side.Size = new System.Drawing.Size(190, 505);
             this.pnl_side.TabIndex = 1;
             this.pnl_side.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
             this.pnl_side.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
@@ -118,6 +126,7 @@
             this.btn_sideMoneyDonations.Text = "Money Donations";
             this.btn_sideMoneyDonations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_sideMoneyDonations.UseVisualStyleBackColor = true;
+            this.btn_sideMoneyDonations.Click += new System.EventHandler(this.Btn_sideMoneyDonations_Click);
             this.btn_sideMoneyDonations.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
             this.btn_sideMoneyDonations.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             // 
@@ -136,6 +145,7 @@
             this.btn_sideMiscDonations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_sideMiscDonations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_sideMiscDonations.UseVisualStyleBackColor = true;
+            this.btn_sideMiscDonations.Click += new System.EventHandler(this.Btn_sideMiscDonations_Click);
             this.btn_sideMiscDonations.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
             this.btn_sideMiscDonations.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             // 
@@ -153,6 +163,7 @@
             this.btn_sideStatistics.Text = "Statistics";
             this.btn_sideStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_sideStatistics.UseVisualStyleBackColor = true;
+            this.btn_sideStatistics.Click += new System.EventHandler(this.Btn_sideStatistics_Click);
             this.btn_sideStatistics.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
             this.btn_sideStatistics.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             // 
@@ -170,7 +181,7 @@
             this.btn_sideInformation.Text = "Information";
             this.btn_sideInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_sideInformation.UseVisualStyleBackColor = true;
-            this.btn_sideInformation.Click += new System.EventHandler(this.Button2_Click);
+            this.btn_sideInformation.Click += new System.EventHandler(this.Btn_Info_Click);
             this.btn_sideInformation.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
             this.btn_sideInformation.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             // 
@@ -186,16 +197,17 @@
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(190, 60);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(825, 560);
+            this.MainPanel.Size = new System.Drawing.Size(994, 505);
             this.MainPanel.TabIndex = 3;
             // 
             // pic_Banner
             // 
-            this.pic_Banner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_Banner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_Banner.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.Banner;
-            this.pic_Banner.Location = new System.Drawing.Point(-97, 0);
+            this.pic_Banner.Location = new System.Drawing.Point(-187, 0);
             this.pic_Banner.Name = "pic_Banner";
-            this.pic_Banner.Size = new System.Drawing.Size(922, 124);
+            this.pic_Banner.Size = new System.Drawing.Size(1181, 124);
             this.pic_Banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_Banner.TabIndex = 0;
             this.pic_Banner.TabStop = false;
@@ -207,40 +219,99 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(825, 560);
+            this.panel3.Size = new System.Drawing.Size(994, 505);
             this.panel3.TabIndex = 1;
             // 
             // pnl_Main
             // 
+            this.pnl_Main.Controls.Add(this.fpl_Main);
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Main.Location = new System.Drawing.Point(0, 124);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(825, 436);
+            this.pnl_Main.Size = new System.Drawing.Size(994, 381);
             this.pnl_Main.TabIndex = 1;
+            // 
+            // fpl_Main
+            // 
+            this.fpl_Main.AutoScroll = true;
+            this.fpl_Main.Controls.Add(this.dashboardRegion1);
+            this.fpl_Main.Controls.Add(this.dbr_Info);
+            this.fpl_Main.Controls.Add(this.dbr_Stats);
+            this.fpl_Main.Controls.Add(this.dbr_MoneyDonations);
+            this.fpl_Main.Controls.Add(this.dbr_MiscDonations);
+            this.fpl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpl_Main.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.fpl_Main.Location = new System.Drawing.Point(0, 0);
+            this.fpl_Main.Name = "fpl_Main";
+            this.fpl_Main.Size = new System.Drawing.Size(994, 381);
+            this.fpl_Main.TabIndex = 0;
+            this.fpl_Main.WrapContents = false;
+            this.fpl_Main.Paint += new System.Windows.Forms.PaintEventHandler(this.Fpl_Main_Paint);
+            // 
+            // dashboardRegion1
+            // 
+            this.dashboardRegion1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dashboardRegion1.AutoSize = true;
+            this.dashboardRegion1.Location = new System.Drawing.Point(3, 3);
+            this.dashboardRegion1.Name = "dashboardRegion1";
+            this.dashboardRegion1.Size = new System.Drawing.Size(1232, 0);
+            this.dashboardRegion1.TabIndex = 0;
+            // 
+            // dbr_Info
+            // 
+            this.dbr_Info.Location = new System.Drawing.Point(3, 9);
+            this.dbr_Info.Name = "dbr_Info";
+            this.dbr_Info.Size = new System.Drawing.Size(1232, 545);
+            this.dbr_Info.TabIndex = 1;
+            // 
+            // dbr_Stats
+            // 
+            this.dbr_Stats.Location = new System.Drawing.Point(3, 560);
+            this.dbr_Stats.Name = "dbr_Stats";
+            this.dbr_Stats.Size = new System.Drawing.Size(1232, 545);
+            this.dbr_Stats.TabIndex = 2;
+            // 
+            // dbr_MoneyDonations
+            // 
+            this.dbr_MoneyDonations.Location = new System.Drawing.Point(3, 1111);
+            this.dbr_MoneyDonations.Name = "dbr_MoneyDonations";
+            this.dbr_MoneyDonations.Size = new System.Drawing.Size(1232, 545);
+            this.dbr_MoneyDonations.TabIndex = 3;
+            // 
+            // dbr_MiscDonations
+            // 
+            this.dbr_MiscDonations.Location = new System.Drawing.Point(3, 1662);
+            this.dbr_MiscDonations.Name = "dbr_MiscDonations";
+            this.dbr_MiscDonations.Size = new System.Drawing.Size(1232, 545);
+            this.dbr_MiscDonations.TabIndex = 4;
             // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(825, 124);
+            this.panel5.Size = new System.Drawing.Size(994, 124);
             this.panel5.TabIndex = 0;
             // 
             // OrganizationDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1184, 565);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.pnl_side);
             this.Controls.Add(this.panel1);
             this.Name = "OrganizationDashboard";
-            this.Size = new System.Drawing.Size(1015, 620);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cpb_logo)).EndInit();
             this.pnl_side.ResumeLayout(false);
             this.MainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Banner)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.pnl_Main.ResumeLayout(false);
+            this.fpl_Main.ResumeLayout(false);
+            this.fpl_Main.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,5 +333,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnl_Main;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.FlowLayoutPanel fpl_Main;
+        private DashboardRegion dashboardRegion1;
+        private DashboardRegion dbr_Info;
+        private DashboardRegion dbr_Stats;
+        private DashboardRegion dbr_MoneyDonations;
+        private DashboardRegion dbr_MiscDonations;
     }
 }
