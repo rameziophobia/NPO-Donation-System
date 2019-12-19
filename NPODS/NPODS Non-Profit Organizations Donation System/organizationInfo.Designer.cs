@@ -2,12 +2,12 @@
 {
     partial class organizationInfo
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -44,16 +44,15 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.lbl_donated);
             this.panel2.Controls.Add(this.lbl_goal);
             this.panel2.Controls.Add(this.lbl_description);
             this.panel2.Controls.Add(this.pbr_goal);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(854, 586);
-            this.panel2.TabIndex = 2;
+            this.panel2.Size = new System.Drawing.Size(854, 584);
+            this.panel2.TabIndex = 3;
             // 
             // lbl_donated
             // 
@@ -88,7 +87,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_description.AutoSize = true;
             this.lbl_description.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_description.Location = new System.Drawing.Point(100, 203);
+            this.lbl_description.Location = new System.Drawing.Point(100, 201);
             this.lbl_description.MaximumSize = new System.Drawing.Size(650, 0);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(636, 240);
@@ -107,7 +106,7 @@
             this.pbr_goal.MarqueeAnimationSpeed = 0;
             this.pbr_goal.Maximum = 20000;
             this.pbr_goal.Name = "pbr_goal";
-            this.pbr_goal.Size = new System.Drawing.Size(539, 51);
+            this.pbr_goal.Size = new System.Drawing.Size(539, 49);
             this.pbr_goal.Step = 1;
             this.pbr_goal.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbr_goal.TabIndex = 1;
@@ -118,10 +117,10 @@
             this.panel3.Controls.Add(this.btn_donate);
             this.panel3.Controls.Add(this.pic_orgLogo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(860, 0);
+            this.panel3.Location = new System.Drawing.Point(855, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(313, 586);
-            this.panel3.TabIndex = 3;
+            this.panel3.Size = new System.Drawing.Size(311, 584);
+            this.panel3.TabIndex = 4;
             // 
             // btn_donate
             // 
@@ -153,7 +152,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "organizationInfo";
-            this.Size = new System.Drawing.Size(1173, 586);
+            this.Size = new System.Drawing.Size(1166, 584);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -164,13 +163,14 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pic_orgLogo;
-        private System.Windows.Forms.Button btn_donate;
         private System.Windows.Forms.Label lbl_donated;
         private System.Windows.Forms.Label lbl_goal;
         private System.Windows.Forms.Label lbl_description;
         private System.Windows.Forms.ProgressBar pbr_goal;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_donate;
+        private System.Windows.Forms.PictureBox pic_orgLogo;
     }
 }
