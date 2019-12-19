@@ -122,6 +122,7 @@
             // 
             // descriptionLbl
             // 
+            this.descriptionLbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.descriptionLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionLbl.AutoSize = true;
