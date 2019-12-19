@@ -50,11 +50,20 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
+    <Compile Include="CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganizationDashboard.Designer.cs">
+      <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -88,6 +97,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrganizationDashboard.resx">
+      <DependentUpon>OrganizationDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +131,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\Banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\hamburger_button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\misc_donation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\money_donation_resized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\misc_donation_resized_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\data_resized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\Stats_resized.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images.jpg" />
