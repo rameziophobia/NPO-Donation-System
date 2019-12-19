@@ -16,7 +16,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new OrganizationDashboard());
         }
     }
 }

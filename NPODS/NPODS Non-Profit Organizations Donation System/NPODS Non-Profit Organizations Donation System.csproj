@@ -95,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="loginScreen.resx">
       <DependentUpon>loginScreen.cs</DependentUpon>
@@ -111,6 +112,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\Banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\hamburger_button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\misc_donation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\money_donation_resized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\misc_donation_resized_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\data_resized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\Stats_resized.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
