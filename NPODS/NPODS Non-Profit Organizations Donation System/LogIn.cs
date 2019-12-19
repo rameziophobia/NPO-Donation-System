@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
-    public partial class Form1 : Form
+    public partial class LogIn : Form
     {
-        public Form1()
+        public LogIn()
         {
             InitializeComponent();
         }

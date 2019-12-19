@@ -10,14 +10,24 @@ using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
-    public partial class loginScreen : UserControl
+    public partial class LoginControl : UserControl
     {
-        public loginScreen()
+        public LoginControl()
         {
             InitializeComponent();
         }
 
         private void loginScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void password_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
