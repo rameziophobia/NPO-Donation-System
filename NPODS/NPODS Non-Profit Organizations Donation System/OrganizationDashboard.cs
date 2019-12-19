@@ -9,33 +9,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System {
-    public partial class OrganizationDashboard : Form {
-        private int panel2MaxWidth;
-        private int panel2MinWidth;
+    public partial class OrganizationDashboard : UserControl {
         private bool isExpanded;
-        private Dictionary<Button, String> hiddenText;
+        private readonly int pnl_side_MAXWIDTH;
+        private readonly int pnl_side_MINWIDTH;
+        private readonly Dictionary<Button, String> hiddenText;
         public OrganizationDashboard() {
             InitializeComponent();
-            panel2MaxWidth = 190;
-            panel2MinWidth = 70;
+            pnl_side_MAXWIDTH = 190;
+            pnl_side_MINWIDTH = 70;
             isExpanded = true;
-            timer1.Start();
+            tmr_panelAnimation.Start();
             hiddenText = new Dictionary<Button, string>();
-            foreach (Button s in this.panel2.Controls.OfType<Button>()) {
+            foreach (Button s in this.pnl_side.Controls.OfType<Button>()) {
                 hiddenText.Add(s, s.Text);
             }
-            panel2.Width = panel2MinWidth;
-            vScrollBar1.Scroll += (sender, e) => { MainFlowPanel.VerticalScroll.Value = vScrollBar1.Value; };
+            pnl_side.Width = pnl_side_MINWIDTH;
         }
 
         private void Panel2_MouseEnter(object sender, EventArgs e) {
             isExpanded = false;
-            timer1.Start();
+            tmr_panelAnimation.Start();
         }
 
         private void Panel2_MouseLeave(object sender, EventArgs e) {
             isExpanded = true;
-            timer1.Start();
+            tmr_panelAnimation.Start();
         }
 
         private void Timer1_Tick_1(object sender, EventArgs e) {
@@ -44,18 +43,18 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                     s.Text = "";
                     s.ImageAlign = ContentAlignment.MiddleRight;
                 }
-                if (panel2.Width > panel2MinWidth)
-                    panel2.Width -= 10;
-                if (panel2.Width < panel2MinWidth) {
-                    timer1.Stop();
+                if (pnl_side.Width > pnl_side_MINWIDTH)
+                    pnl_side.Width -= 10;
+                if (pnl_side.Width < pnl_side_MINWIDTH) {
+                    tmr_panelAnimation.Stop();
                     this.Refresh();
                     isExpanded = false;
                 }
             } else {
-                if(panel2.Width < panel2MaxWidth)
-                    panel2.Width += 10;
-                if (panel2.Width > panel2MaxWidth) {
-                    timer1.Stop();
+                if(pnl_side.Width < pnl_side_MAXWIDTH)
+                    pnl_side.Width += 10;
+                if (pnl_side.Width > pnl_side_MAXWIDTH) {
+                    tmr_panelAnimation.Stop();
                     this.Refresh();
                     isExpanded = true;
                 }
@@ -68,12 +67,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
 
         private void Button1_Click(object sender, EventArgs e) {
             isExpanded = !isExpanded;
-            timer1.Start();
+            tmr_panelAnimation.Start();
         }
 
         private void Button2_Click(object sender, EventArgs e) {
-            vScrollBar1.Value = 0;
-            MainFlowPanel.VerticalScroll.Value = vScrollBar1.Value;
         }
 
         private void Panel2_Paint(object sender, PaintEventArgs e) {
