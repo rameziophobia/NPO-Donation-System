@@ -50,6 +50,9 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
+    <Compile Include="circularPicBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -58,6 +61,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="org card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="org card.Designer.cs">
+      <DependentUpon>org card.cs</DependentUpon>
     </Compile>
     <Compile Include="OrganizationDashboard.cs">
       <SubType>Form</SubType>
@@ -96,6 +105,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="org card.resx">
+      <DependentUpon>org card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrganizationDashboard.resx">
       <DependentUpon>OrganizationDashboard.cs</DependentUpon>
@@ -164,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\212.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,5 +41,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
 
         }
+
+        private void CircularPicBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
