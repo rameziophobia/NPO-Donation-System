@@ -1,6 +1,6 @@
 ﻿namespace NPODS_Non_Profit_Organizations_Donation_System
 {
-    partial class LogIn
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -73,7 +73,7 @@
             this.loginScreen1.Size = new System.Drawing.Size(1040, 519);
             this.loginScreen1.TabIndex = 0;
             // 
-            // LogIn
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,7 +83,7 @@
             this.Controls.Add(this.header1);
             this.Controls.Add(this.loginScreen1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "LogIn";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NPODS";
             this.ResumeLayout(false);

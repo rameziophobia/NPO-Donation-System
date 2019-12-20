@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil
+﻿namespace NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil
 {
     //todo implements onMonthly Interface
     class DonationGoal
@@ -21,7 +15,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil
 
         public void onMonthly()
         {
-            if(monthly)
+            if (monthly)
                 this.CurentProgress = 0;
         }
     }
