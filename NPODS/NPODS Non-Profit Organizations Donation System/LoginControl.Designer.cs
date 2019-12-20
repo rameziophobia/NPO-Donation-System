@@ -152,6 +152,7 @@
             this.btn_recoverPassword.TabIndex = 5;
             this.btn_recoverPassword.Text = "Forgot your password?";
             this.btn_recoverPassword.UseVisualStyleBackColor = false;
+            this.btn_recoverPassword.Click += new System.EventHandler(this.btn_recoverPassword_Click);
             // 
             // LoginControl
             // 

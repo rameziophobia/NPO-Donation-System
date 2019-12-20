@@ -23,5 +23,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 Console.WriteLine(loginVerification.VerifyUser(email, password));
             }
         }
+
+        private void btn_recoverPassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
