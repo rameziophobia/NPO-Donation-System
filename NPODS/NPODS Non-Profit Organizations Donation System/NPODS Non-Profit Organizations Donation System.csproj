@@ -49,6 +49,12 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
+    <Compile Include="editDonationOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editDonationOptions.Designer.cs">
+      <DependentUpon>editDonationOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="editOrganizationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="loginScreen.Designer.cs">
       <DependentUpon>loginScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="editDonationOptions.resx">
+      <DependentUpon>editDonationOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editOrganizationInfo.resx">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
     </EmbeddedResource>
