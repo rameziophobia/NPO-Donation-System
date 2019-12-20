@@ -55,7 +55,22 @@
     <Compile Include="chooseDonationOption.Designer.cs">
       <DependentUpon>chooseDonationOption.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DonationGroupBox.cs">
+    <Compile Include="displayDonationOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="displayDonationOption.Designer.cs">
+      <DependentUpon>displayDonationOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="optionFlowPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="optionFlowPanel.Designer.cs">
+      <DependentUpon>optionFlowPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RemoveLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\DonationFlowPanelx.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\DonationTextBox.cs">
@@ -108,11 +123,17 @@
     <EmbeddedResource Include="chooseDonationOption.resx">
       <DependentUpon>chooseDonationOption.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="displayDonationOption.resx">
+      <DependentUpon>displayDonationOption.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editDonationOptions.resx">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editOrganizationInfo.resx">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="optionFlowPanel.resx">
+      <DependentUpon>optionFlowPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="organizationInfo.resx">
       <DependentUpon>organizationInfo.cs</DependentUpon>

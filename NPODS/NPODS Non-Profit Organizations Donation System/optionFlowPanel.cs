@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
-    public partial class chooseDonationOption : UserControl
+    public partial class optionFlowPanel : UserControl
     {
-        public chooseDonationOption()
+        public optionFlowPanel()
         {
             InitializeComponent();
-        }
-
-        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

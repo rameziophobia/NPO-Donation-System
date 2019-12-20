@@ -19,10 +19,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             "Subscription",
             "Single Payment",
             "Miscellaneous"});
-            base.Location = new System.Drawing.Point(20, 16);
-            base.Margin = new System.Windows.Forms.Padding(15);
-            base.Name = "cbo_donationOption" + i.ToString();
-            base.Size = new System.Drawing.Size(228, 32);
+            base.Location = new System.Drawing.Point(33, 9);
+            base.Margin = new System.Windows.Forms.Padding(5);
+            base.Name = "cbo_donationOption0";
+            base.Size = new System.Drawing.Size(210, 32);
             base.TabIndex = 0;
         }
     }

@@ -39,14 +39,14 @@
             this.editDonationOptions1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.editDonationOptions1.Name = "editDonationOptions1";
             this.editDonationOptions1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.editDonationOptions1.Size = new System.Drawing.Size(1295, 625);
+            this.editDonationOptions1.Size = new System.Drawing.Size(1168, 616);
             this.editDonationOptions1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1295, 625);
+            this.ClientSize = new System.Drawing.Size(1168, 616);
             this.Controls.Add(this.editDonationOptions1);
             this.Name = "Form1";
             this.Text = "Form1";
