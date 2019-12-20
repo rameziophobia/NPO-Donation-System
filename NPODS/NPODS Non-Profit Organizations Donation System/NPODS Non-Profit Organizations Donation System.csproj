@@ -151,5 +151,8 @@
   <ItemGroup>
     <None Include="Resources\Images\OrganizationDashboard\coming-soon-placeholder-image-blackboard-background.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\hamburger_button_resized.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

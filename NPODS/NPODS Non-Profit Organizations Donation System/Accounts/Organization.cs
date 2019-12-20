@@ -1,6 +1,7 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 
         // ! goal
         private DonationGoal donationGoal = new DonationGoal(0);
+        public Image banner { get; private set; }
         private bool certified;
         public OrganizationStatistics Stats { get; private set; }
         public string Description { get; set; }
@@ -29,6 +31,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         {
             Stats = new OrganizationStatistics();
             this.certified = false;
+            banner = Properties.Resources.Banner;
         }
 
         private void setCertified()

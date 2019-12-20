@@ -17,12 +17,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         private readonly int pnl_side_MINWIDTH;
         private readonly Dictionary<Button, String> hiddenText;
         private readonly List<DateTime> dates;
+        private readonly Color accent = ColorTranslator.FromHtml("#7ed6df");
         private DateTime dt;
         private Organization org;
         private Chart chart;
 
         public OrganizationDashboard() {
             InitializeComponent();
+            panel1.BackColor = accent;
             pnl_side_MAXWIDTH = 190;
             pnl_side_MINWIDTH = 70;
             this.DoubleBuffered = true;
@@ -41,10 +43,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             dates = new List<DateTime>();
 
             dt = DateTime.Now;                          //todo set graphing year
-            for (int i = 1; i < 12; i++)
+            for (int i = 1; i <= 12; i++)
                 dates.Add(new DateTime(dt.Year, i, 1));
 
             setOrganization(new Organization("example@email.com", "NOTAPASS123")); //todo set organization
+            this.pic_Banner.Image = org.banner;
+            this.pic_Banner.BringToFront();
         }
         public void setOrganization(Organization organization) {
             this.org = organization;
@@ -124,6 +128,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             this.fpl_Main.ScrollControlIntoView(dbr_MiscDonations);
         }
         private void setRegions() {
+            this.pic_Banner.BringToFront();
             setVisibility("Money", org.Stats.hasMoneyDonations);
             setVisibility("Misc", org.Stats.hasMiscDonations);
             this.Invalidate();
@@ -159,8 +164,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             XA.Interval = 1;
 
             chart.Update();
-            chart.Show();
             chart.BringToFront();
+            pic_Banner.BringToFront();
+            chart.Show();
         }
     }
 }
