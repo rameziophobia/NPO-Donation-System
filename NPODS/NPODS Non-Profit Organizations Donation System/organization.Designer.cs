@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Organization));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.circularPictureBox1 = new NPODS_Non_Profit_Organizations_Donation_System.CircularPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.circularPictureBox1 = new NPODS_Non_Profit_Organizations_Donation_System.CircularPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,16 @@
             this.label1.Text = "org name";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.BackgroundImage = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.images2;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1277, 164);
+            this.panel1.TabIndex = 0;
+            // 
             // circularPictureBox1
             // 
             this.circularPictureBox1.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -68,16 +78,6 @@
             this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.circularPictureBox1.TabIndex = 3;
             this.circularPictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.BackgroundImage = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.images2;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 164);
-            this.panel1.TabIndex = 0;
             // 
             // Organization
             // 
@@ -90,7 +90,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "Organization";
-            this.Size = new System.Drawing.Size(745, 349);
+            this.Size = new System.Drawing.Size(1276, 349);
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
