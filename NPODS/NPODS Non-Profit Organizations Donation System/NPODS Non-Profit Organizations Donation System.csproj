@@ -55,8 +55,10 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
-    <Compile Include="controller\DatabaseAccess.cs" />
-    <Compile Include="controller\LoginVerification.cs" />
+    <Compile Include="controller\DatabaseAccess\DatabaseAccess.cs" />
+    <Compile Include="controller\DatabaseAccess\FileDatabaseAccess.cs" />
+    <Compile Include="controller\Login\LoginVerification.cs" />
+    <Compile Include="controller\Login\UserNotRegisteredException.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +107,7 @@
     <EmbeddedResource Include="HeaderControl.resx">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="data\logins.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,8 +125,6 @@
   <ItemGroup>
     <None Include="Resources\placeholder.com-logo4.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

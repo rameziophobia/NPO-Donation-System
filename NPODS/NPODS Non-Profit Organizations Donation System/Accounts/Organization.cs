@@ -1,9 +1,4 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
@@ -13,7 +8,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         public string Description { get; set; }
         // ! goal
         private DonationGoal donationGoal = new DonationGoal(0);
-        public DonationGoal DonationGoal 
+        public DonationGoal DonationGoal
         {
             get => donationGoal;
             set => donationGoal = value;
@@ -33,7 +28,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             certified = true;
         }
 
-        public void applyForCertification() 
+        public void applyForCertification()
         {
             //todo applyForCertification
         }
