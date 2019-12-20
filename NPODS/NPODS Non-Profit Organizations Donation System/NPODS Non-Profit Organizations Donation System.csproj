@@ -80,11 +80,11 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="organization.cs">
+    <Compile Include="organizationCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="organization.Designer.cs">
-      <DependentUpon>organization.cs</DependentUpon>
+    <Compile Include="organizationCard.Designer.cs">
+      <DependentUpon>organizationCard.cs</DependentUpon>
     </Compile>
     <Compile Include="OrganizationUtil\DonationGoal.cs" />
     <Compile Include="OrganizationUtil\NonMoneyDonation.cs" />
@@ -115,8 +115,8 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="organization.resx">
-      <DependentUpon>organization.cs</DependentUpon>
+    <EmbeddedResource Include="organizationCard.resx">
+      <DependentUpon>organizationCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

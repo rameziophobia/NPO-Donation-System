@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.org_card1 = new NPODS_Non_Profit_Organizations_Donation_System.org_card();
             this.SuspendLayout();
+            // 
+            // org_card1
+            // 
+            this.org_card1.AutoScroll = true;
+            this.org_card1.Location = new System.Drawing.Point(62, 39);
+            this.org_card1.Name = "org_card1";
+            this.org_card1.Size = new System.Drawing.Size(1627, 626);
+            this.org_card1.TabIndex = 0;
             // 
             // Form2
             // 
@@ -38,6 +47,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1761, 724);
+            this.Controls.Add(this.org_card1);
             this.ForeColor = System.Drawing.Color.DarkBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
@@ -50,5 +60,7 @@
         }
 
         #endregion
+
+        private org_card org_card1;
     }
 }

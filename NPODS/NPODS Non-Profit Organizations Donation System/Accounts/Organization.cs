@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
-    class Organization : Account
+   public class Organization : Account
     {
         private bool certified;
+
         public string Description { get; set; }
+        public string Name { get; set; }
+        public string LogoFileName { get; set; }
+        public string picFileName { get; set; }
+
+
         // ! goal
         private DonationGoal donationGoal = new DonationGoal(0);
         public DonationGoal DonationGoal 
