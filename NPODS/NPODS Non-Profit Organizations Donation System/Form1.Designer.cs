@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.organizationInfo1 = new NPODS_Non_Profit_Organizations_Donation_System.organizationInfo();
+            this.editOrganizationInfo1 = new NPODS_Non_Profit_Organizations_Donation_System.editOrganizationInfo();
             this.SuspendLayout();
             // 
-            // organizationInfo1
+            // editOrganizationInfo1
             // 
-            this.organizationInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.organizationInfo1.Location = new System.Drawing.Point(0, 0);
-            this.organizationInfo1.Name = "organizationInfo1";
-            this.organizationInfo1.Size = new System.Drawing.Size(1170, 551);
-            this.organizationInfo1.TabIndex = 0;
+            this.editOrganizationInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editOrganizationInfo1.Location = new System.Drawing.Point(0, 0);
+            this.editOrganizationInfo1.Name = "editOrganizationInfo1";
+            this.editOrganizationInfo1.Size = new System.Drawing.Size(1170, 584);
+            this.editOrganizationInfo1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 551);
-            this.Controls.Add(this.organizationInfo1);
+            this.ClientSize = new System.Drawing.Size(1170, 584);
+            this.Controls.Add(this.editOrganizationInfo1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -53,7 +53,7 @@
 
         #endregion
 
-        private organizationInfo organizationInfo1;
+        private editOrganizationInfo editOrganizationInfo1;
     }
 }
 
