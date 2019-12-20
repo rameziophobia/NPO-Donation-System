@@ -101,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="loginScreen.resx">
       <DependentUpon>loginScreen.cs</DependentUpon>
@@ -117,6 +118,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationInfo\Banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationInfo\defaultImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationInfo\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
