@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
-    public partial class Form1 : Form
+    public partial class RegisterControl : UserControl
     {
-        public Form1()
+        public RegisterControl ()
         {
             InitializeComponent();
         }
