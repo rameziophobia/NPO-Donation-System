@@ -17,7 +17,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             InitializeComponent();
         }
 
-        private void button1_MouseClick(object sender, MouseEventArgs e)
+        private void btn_edit_MouseClick(object sender, MouseEventArgs e)
         {
             if (pnl_changePhoto.Visible)
             {
@@ -29,9 +29,17 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             }
             
         }
-        private void button3_MouseClick(object sender, MouseEventArgs e)
+        private void btn_uploadPhoto_Click(object sender, EventArgs e)
         {
-            pic_orgLogo.Image = null;
+            if(file_chooseImage.ShowDialog() == DialogResult.OK)
+            {
+                pic_orgLogo.Image = new Bitmap(file_chooseImage.FileName);
+            }
+        }
+
+        private void btn_rmvPhoto_Click(object sender, EventArgs e)
+        {
+            pic_orgLogo.Image = new Bitmap(Properties.Resources.defaultImage);
         }
     }
 }

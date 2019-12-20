@@ -30,24 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editOrganizationInfo));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_goalAmount = new System.Windows.Forms.TextBox();
+            this.lbl_goalTxt2 = new System.Windows.Forms.Label();
+            this.rtb_orgDescription = new System.Windows.Forms.RichTextBox();
             this.lbl_donated = new System.Windows.Forms.Label();
             this.lbl_goalTxt = new System.Windows.Forms.Label();
             this.pbr_goal = new System.Windows.Forms.ProgressBar();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.pnl_changePhoto = new System.Windows.Forms.Panel();
+            this.btn_rmvPhoto = new System.Windows.Forms.Button();
+            this.btn_uploadPhoto = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
             this.btn_changeDonateOpt = new System.Windows.Forms.Button();
             this.pic_orgLogo = new System.Windows.Forms.PictureBox();
-            this.btn_edit = new System.Windows.Forms.Button();
-            this.rtb_orgDescription = new System.Windows.Forms.RichTextBox();
-            this.pnl_changePhoto = new System.Windows.Forms.Panel();
-            this.btn_uploadPhoto = new System.Windows.Forms.Button();
-            this.btn_rmvPhoto = new System.Windows.Forms.Button();
-            this.lbl_goalTxt2 = new System.Windows.Forms.Label();
-            this.txt_goalAmount = new System.Windows.Forms.TextBox();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.file_chooseImage = new System.Windows.Forms.OpenFileDialog();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_orgLogo)).BeginInit();
             this.pnl_changePhoto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_orgLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -63,6 +64,36 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(854, 565);
             this.panel2.TabIndex = 4;
+            // 
+            // txt_goalAmount
+            // 
+            this.txt_goalAmount.Location = new System.Drawing.Point(219, 160);
+            this.txt_goalAmount.Name = "txt_goalAmount";
+            this.txt_goalAmount.Size = new System.Drawing.Size(56, 20);
+            this.txt_goalAmount.TabIndex = 8;
+            // 
+            // lbl_goalTxt2
+            // 
+            this.lbl_goalTxt2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_goalTxt2.AutoSize = true;
+            this.lbl_goalTxt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_goalTxt2.Location = new System.Drawing.Point(275, 158);
+            this.lbl_goalTxt2.Name = "lbl_goalTxt2";
+            this.lbl_goalTxt2.Size = new System.Drawing.Size(47, 20);
+            this.lbl_goalTxt2.TabIndex = 7;
+            this.lbl_goalTxt2.Text = " goal.";
+            // 
+            // rtb_orgDescription
+            // 
+            this.rtb_orgDescription.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_orgDescription.Location = new System.Drawing.Point(103, 199);
+            this.rtb_orgDescription.MaximumSize = new System.Drawing.Size(650, 240);
+            this.rtb_orgDescription.Name = "rtb_orgDescription";
+            this.rtb_orgDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtb_orgDescription.Size = new System.Drawing.Size(650, 240);
+            this.rtb_orgDescription.TabIndex = 6;
+            this.rtb_orgDescription.Text = resources.GetString("rtb_orgDescription.Text");
             // 
             // lbl_donated
             // 
@@ -122,6 +153,74 @@
             this.panel3.Size = new System.Drawing.Size(311, 565);
             this.panel3.TabIndex = 5;
             // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Location = new System.Drawing.Point(94, 478);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(139, 52);
+            this.btn_save.TabIndex = 5;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = false;
+            // 
+            // pnl_changePhoto
+            // 
+            this.pnl_changePhoto.BackColor = System.Drawing.Color.White;
+            this.pnl_changePhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_changePhoto.Controls.Add(this.btn_rmvPhoto);
+            this.pnl_changePhoto.Controls.Add(this.btn_uploadPhoto);
+            this.pnl_changePhoto.Location = new System.Drawing.Point(52, 249);
+            this.pnl_changePhoto.Name = "pnl_changePhoto";
+            this.pnl_changePhoto.Size = new System.Drawing.Size(200, 51);
+            this.pnl_changePhoto.TabIndex = 4;
+            this.pnl_changePhoto.Visible = false;
+            // 
+            // btn_rmvPhoto
+            // 
+            this.btn_rmvPhoto.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_rmvPhoto.FlatAppearance.BorderSize = 0;
+            this.btn_rmvPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rmvPhoto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rmvPhoto.Location = new System.Drawing.Point(0, 26);
+            this.btn_rmvPhoto.Name = "btn_rmvPhoto";
+            this.btn_rmvPhoto.Size = new System.Drawing.Size(198, 23);
+            this.btn_rmvPhoto.TabIndex = 1;
+            this.btn_rmvPhoto.Text = "Remove photo";
+            this.btn_rmvPhoto.UseVisualStyleBackColor = true;
+            this.btn_rmvPhoto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_rmvPhoto_Click);
+            // 
+            // btn_uploadPhoto
+            // 
+            this.btn_uploadPhoto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_uploadPhoto.FlatAppearance.BorderSize = 0;
+            this.btn_uploadPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_uploadPhoto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_uploadPhoto.Location = new System.Drawing.Point(0, 0);
+            this.btn_uploadPhoto.Name = "btn_uploadPhoto";
+            this.btn_uploadPhoto.Size = new System.Drawing.Size(198, 23);
+            this.btn_uploadPhoto.TabIndex = 0;
+            this.btn_uploadPhoto.Text = "Upload a photo...";
+            this.btn_uploadPhoto.UseVisualStyleBackColor = true;
+            this.btn_uploadPhoto.Click += new System.EventHandler(this.btn_uploadPhoto_Click);
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
+            this.btn_edit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_edit.ForeColor = System.Drawing.Color.White;
+            this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_edit.Location = new System.Drawing.Point(61, 220);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(75, 23);
+            this.btn_edit.TabIndex = 3;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_edit_MouseClick);
+            // 
             // btn_changeDonateOpt
             // 
             this.btn_changeDonateOpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
@@ -139,108 +238,18 @@
             // 
             this.pic_orgLogo.Image = ((System.Drawing.Image)(resources.GetObject("pic_orgLogo.Image")));
             this.pic_orgLogo.Location = new System.Drawing.Point(52, 22);
+            this.pic_orgLogo.MaximumSize = new System.Drawing.Size(225, 230);
+            this.pic_orgLogo.MinimumSize = new System.Drawing.Size(225, 230);
             this.pic_orgLogo.Name = "pic_orgLogo";
             this.pic_orgLogo.Size = new System.Drawing.Size(225, 230);
-            this.pic_orgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pic_orgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_orgLogo.TabIndex = 1;
             this.pic_orgLogo.TabStop = false;
             // 
-            // btn_edit
+            // file_chooseImage
             // 
-            this.btn_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.btn_edit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_edit.ForeColor = System.Drawing.Color.White;
-            this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_edit.Location = new System.Drawing.Point(61, 220);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(75, 23);
-            this.btn_edit.TabIndex = 3;
-            this.btn_edit.Text = "Edit";
-            this.btn_edit.UseVisualStyleBackColor = false;
-            this.btn_edit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
-            // 
-            // rtb_orgDescription
-            // 
-            this.rtb_orgDescription.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_orgDescription.Location = new System.Drawing.Point(103, 199);
-            this.rtb_orgDescription.MaximumSize = new System.Drawing.Size(650, 240);
-            this.rtb_orgDescription.Name = "rtb_orgDescription";
-            this.rtb_orgDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtb_orgDescription.Size = new System.Drawing.Size(650, 240);
-            this.rtb_orgDescription.TabIndex = 6;
-            this.rtb_orgDescription.Text = resources.GetString("rtb_orgDescription.Text");
-            // 
-            // pnl_changePhoto
-            // 
-            this.pnl_changePhoto.BackColor = System.Drawing.Color.White;
-            this.pnl_changePhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_changePhoto.Controls.Add(this.btn_rmvPhoto);
-            this.pnl_changePhoto.Controls.Add(this.btn_uploadPhoto);
-            this.pnl_changePhoto.Location = new System.Drawing.Point(52, 249);
-            this.pnl_changePhoto.Name = "pnl_changePhoto";
-            this.pnl_changePhoto.Size = new System.Drawing.Size(200, 51);
-            this.pnl_changePhoto.TabIndex = 4;
-            this.pnl_changePhoto.Visible = false;
-            // 
-            // btn_uploadPhoto
-            // 
-            this.btn_uploadPhoto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_uploadPhoto.FlatAppearance.BorderSize = 0;
-            this.btn_uploadPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_uploadPhoto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_uploadPhoto.Location = new System.Drawing.Point(0, 0);
-            this.btn_uploadPhoto.Name = "btn_uploadPhoto";
-            this.btn_uploadPhoto.Size = new System.Drawing.Size(198, 23);
-            this.btn_uploadPhoto.TabIndex = 0;
-            this.btn_uploadPhoto.Text = "Upload a photo...";
-            this.btn_uploadPhoto.UseVisualStyleBackColor = true;
-            // 
-            // btn_rmvPhoto
-            // 
-            this.btn_rmvPhoto.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_rmvPhoto.FlatAppearance.BorderSize = 0;
-            this.btn_rmvPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rmvPhoto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_rmvPhoto.Location = new System.Drawing.Point(0, 26);
-            this.btn_rmvPhoto.Name = "btn_rmvPhoto";
-            this.btn_rmvPhoto.Size = new System.Drawing.Size(198, 23);
-            this.btn_rmvPhoto.TabIndex = 1;
-            this.btn_rmvPhoto.Text = "Remove photo";
-            this.btn_rmvPhoto.UseVisualStyleBackColor = true;
-            this.btn_rmvPhoto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button3_MouseClick);
-            // 
-            // lbl_goalTxt2
-            // 
-            this.lbl_goalTxt2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_goalTxt2.AutoSize = true;
-            this.lbl_goalTxt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_goalTxt2.Location = new System.Drawing.Point(275, 158);
-            this.lbl_goalTxt2.Name = "lbl_goalTxt2";
-            this.lbl_goalTxt2.Size = new System.Drawing.Size(47, 20);
-            this.lbl_goalTxt2.TabIndex = 7;
-            this.lbl_goalTxt2.Text = " goal.";
-            // 
-            // txt_goalAmount
-            // 
-            this.txt_goalAmount.Location = new System.Drawing.Point(219, 160);
-            this.txt_goalAmount.Name = "txt_goalAmount";
-            this.txt_goalAmount.Size = new System.Drawing.Size(56, 20);
-            this.txt_goalAmount.TabIndex = 8;
-            // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.btn_save.FlatAppearance.BorderSize = 0;
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(94, 478);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(139, 52);
-            this.btn_save.TabIndex = 5;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = false;
+            this.file_chooseImage.RestoreDirectory = true;
+            this.file_chooseImage.Title = "Choose Image";
             // 
             // editOrganizationInfo
             // 
@@ -253,9 +262,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_orgLogo)).EndInit();
             this.pnl_changePhoto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_orgLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,8 +282,9 @@
         private System.Windows.Forms.Panel pnl_changePhoto;
         private System.Windows.Forms.TextBox txt_goalAmount;
         private System.Windows.Forms.Label lbl_goalTxt2;
-        private System.Windows.Forms.Button btn_rmvPhoto;
         private System.Windows.Forms.Button btn_uploadPhoto;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.OpenFileDialog file_chooseImage;
+        private System.Windows.Forms.Button btn_rmvPhoto;
     }
 }
