@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6D15F6A2-0695-41EF-8063-55C9BE4B3F07}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>NPODS_Non_Profit_Organizations_Donation_System</RootNamespace>
     <AssemblyName>NPODS Non-Profit Organizations Donation System</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,7 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +55,8 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
+    <Compile Include="controller\DatabaseAccess.cs" />
+    <Compile Include="controller\LoginVerification.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +105,7 @@
     <EmbeddedResource Include="HeaderControl.resx">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\placeholder.com-logo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

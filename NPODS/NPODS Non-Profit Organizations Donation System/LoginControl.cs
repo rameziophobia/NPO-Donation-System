@@ -7,29 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NPODS_Non_Profit_Organizations_Donation_System.controller;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     public partial class LoginControl : UserControl
     {
+        private readonly LoginVerification loginVerification;
+
         public LoginControl()
         {
+            loginVerification = new LoginVerification();
             InitializeComponent();
         }
 
-        private void loginScreen_Load(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void password_lbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
+            Console.WriteLine(loginVerification.verifyUser(txt_email.Text, txt_password.Text));
         }
     }
 }
