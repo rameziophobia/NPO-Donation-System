@@ -72,6 +72,12 @@
     <Compile Include="Payment\Paypal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Controls\RegisterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\RegisterControl.Designer.cs">
+      <DependentUpon>RegisterControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\Subscription.cs" />
     <Compile Include="Transactions\Transaction.cs" />
     <Compile Include="Transactions\SubscriptionDonation.cs" />
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\HeaderControl.resx">
       <DependentUpon>HeaderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\RegisterControl.resx">
+      <DependentUpon>RegisterControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="data\logins.json" />
     <None Include="packages.config" />
