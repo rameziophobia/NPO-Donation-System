@@ -34,6 +34,7 @@
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_loginStatus = new System.Windows.Forms.Label();
             this.chk_rememberMe = new System.Windows.Forms.CheckBox();
             this.btn_recoverPassword = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -110,6 +111,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.lbl_loginStatus);
             this.panel1.Controls.Add(this.chk_rememberMe);
             this.panel1.Controls.Add(this.btn_recoverPassword);
             this.panel1.Controls.Add(this.txt_email);
@@ -119,8 +121,24 @@
             this.panel1.Controls.Add(this.txt_password);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(367, 198);
+            this.panel1.Size = new System.Drawing.Size(367, 231);
             this.panel1.TabIndex = 5;
+            // 
+            // lbl_loginStatus
+            // 
+            this.lbl_loginStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_loginStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_loginStatus.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_loginStatus.ForeColor = System.Drawing.Color.Maroon;
+            this.lbl_loginStatus.Location = new System.Drawing.Point(111, 194);
+            this.lbl_loginStatus.Name = "lbl_loginStatus";
+            this.lbl_loginStatus.Size = new System.Drawing.Size(253, 26);
+            this.lbl_loginStatus.TabIndex = 7;
+            this.lbl_loginStatus.Text = "User Not Registered";
+            this.lbl_loginStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_loginStatus.Visible = false;
             // 
             // chk_rememberMe
             // 
@@ -148,7 +166,7 @@
             this.btn_recoverPassword.ForeColor = System.Drawing.Color.YellowGreen;
             this.btn_recoverPassword.Location = new System.Drawing.Point(111, 160);
             this.btn_recoverPassword.Name = "btn_recoverPassword";
-            this.btn_recoverPassword.Size = new System.Drawing.Size(253, 35);
+            this.btn_recoverPassword.Size = new System.Drawing.Size(253, 31);
             this.btn_recoverPassword.TabIndex = 5;
             this.btn_recoverPassword.Text = "Forgot your password?";
             this.btn_recoverPassword.UseVisualStyleBackColor = false;
@@ -161,7 +179,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel1);
             this.Name = "LoginControl";
-            this.Size = new System.Drawing.Size(367, 201);
+            this.Size = new System.Drawing.Size(367, 231);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -178,5 +196,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_recoverPassword;
         private System.Windows.Forms.CheckBox chk_rememberMe;
+        private System.Windows.Forms.Label lbl_loginStatus;
     }
 }

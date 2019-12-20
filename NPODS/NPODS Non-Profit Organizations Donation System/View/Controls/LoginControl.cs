@@ -6,6 +6,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     public partial class LoginControl : UserControl
     {
+        private const string LOGIN_STATUS_MSG_INVALID_PASSWORD = "Invalid Password";
+        private const string LOGIN_STATUS_MSG_NOT_REGISTERED = "User Not Registered";
+
         private readonly LoginVerification loginVerification;
 
         public LoginControl()
@@ -20,7 +23,22 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             string password = txt_password.Text;
             if (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password))
             {
-                Console.WriteLine(loginVerification.VerifyUser(email, password));
+                try
+                {
+                    if (loginVerification.VerifyUser(email, password))
+                    {
+                        lbl_loginStatus.Text = "(WIP) Succes";
+                    }
+                    else
+                    {
+                        lbl_loginStatus.Text = LOGIN_STATUS_MSG_INVALID_PASSWORD;
+                    }
+                }
+                catch (UserNotRegisteredException)
+                {
+                    lbl_loginStatus.Text = LOGIN_STATUS_MSG_NOT_REGISTERED;
+                }
+                lbl_loginStatus.Visible = true;
             }
         }
 
