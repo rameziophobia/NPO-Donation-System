@@ -34,13 +34,13 @@
             this.btn_miscellaneous = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_custom = new System.Windows.Forms.Label();
-            this.donationTextBox1 = new NPODS_Non_Profit_Organizations_Donation_System.DonationTextBox();
-            this.btn_save = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.lbl_custom = new System.Windows.Forms.Label();
+            this.donationTextBox1 = new NPODS_Non_Profit_Organizations_Donation_System.DonationTextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -48,7 +48,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gold;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.flowLayoutPanel1.Controls.Add(this.btn_singlePayment);
             this.flowLayoutPanel1.Controls.Add(this.btn_subscription);
             this.flowLayoutPanel1.Controls.Add(this.btn_miscellaneous);
@@ -61,7 +61,7 @@
             // 
             // btn_singlePayment
             // 
-            this.btn_singlePayment.BackColor = System.Drawing.Color.Khaki;
+            this.btn_singlePayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.btn_singlePayment.FlatAppearance.BorderSize = 0;
             this.btn_singlePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_singlePayment.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,7 +75,7 @@
             // 
             // btn_subscription
             // 
-            this.btn_subscription.BackColor = System.Drawing.Color.Khaki;
+            this.btn_subscription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.btn_subscription.FlatAppearance.BorderSize = 0;
             this.btn_subscription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_subscription.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,7 +89,7 @@
             // 
             // btn_miscellaneous
             // 
-            this.btn_miscellaneous.BackColor = System.Drawing.Color.Khaki;
+            this.btn_miscellaneous.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.btn_miscellaneous.FlatAppearance.BorderSize = 0;
             this.btn_miscellaneous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_miscellaneous.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,7 +116,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,6 +128,48 @@
             this.button1.Text = "Single Payment";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(229, 15);
+            this.button2.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(166, 142);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Single Payment";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(428, 15);
+            this.button3.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(166, 142);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Single Payment";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(627, 15);
+            this.button4.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(166, 142);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Single Payment";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_save);
@@ -138,6 +180,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1021, 113);
             this.panel1.TabIndex = 8;
+            // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Location = new System.Drawing.Point(834, 11);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(158, 59);
+            this.btn_save.TabIndex = 6;
+            this.btn_save.Text = "Confirm Donation";
+            this.btn_save.UseVisualStyleBackColor = false;
             // 
             // lbl_custom
             // 
@@ -158,61 +213,7 @@
             this.donationTextBox1.Name = "donationTextBox1";
             this.donationTextBox1.Size = new System.Drawing.Size(184, 47);
             this.donationTextBox1.TabIndex = 1;
-            // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.btn_save.FlatAppearance.BorderSize = 0;
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(834, 11);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(158, 59);
-            this.btn_save.TabIndex = 6;
-            this.btn_save.Text = "Confirm Donation";
-            this.btn_save.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Gold;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(229, 15);
-            this.button2.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 142);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Single Payment";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Gold;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(428, 15);
-            this.button3.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(166, 142);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Single Payment";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Gold;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(627, 15);
-            this.button4.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(166, 142);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Single Payment";
-            this.button4.UseVisualStyleBackColor = false;
+            this.donationTextBox1.Text = "Value";
             // 
             // chooseDonationOption
             // 

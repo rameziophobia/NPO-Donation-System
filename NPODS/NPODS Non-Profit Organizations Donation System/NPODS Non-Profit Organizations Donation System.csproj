@@ -60,52 +60,52 @@
     <Compile Include="Accounts\Donation\SingleDonation.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
-    <Compile Include="chooseDonationOption.cs">
+    <Compile Include="View\Controls\DonationOption\chooseDonationOption.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="chooseDonationOption.Designer.cs">
+    <Compile Include="View\Controls\DonationOption\chooseDonationOption.Designer.cs">
       <DependentUpon>chooseDonationOption.cs</DependentUpon>
     </Compile>
-    <Compile Include="displayDonationOption.cs">
+    <Compile Include="View\Controls\DonationOption\displayDonationOption.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="displayDonationOption.Designer.cs">
+    <Compile Include="View\Controls\DonationOption\displayDonationOption.Designer.cs">
       <DependentUpon>displayDonationOption.cs</DependentUpon>
     </Compile>
-    <Compile Include="optionFlowPanel.cs">
+    <Compile Include="View\Controls\DonationOption\optionFlowPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="optionFlowPanel.Designer.cs">
+    <Compile Include="View\Controls\DonationOption\optionFlowPanel.Designer.cs">
       <DependentUpon>optionFlowPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RemoveLabel.cs">
+    <Compile Include="View\Controls\DonationOption\RemoveLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\DonationFlowPanelx.cs">
+    <Compile Include="View\Controls\DonationOption\DonationFlowPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\DonationTextBox.cs">
+    <Compile Include="View\Controls\DonationOption\DonationTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\DonationComboBox.cs">
+    <Compile Include="View\Controls\DonationOption\DonationComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="editDonationOptions.cs">
+    <Compile Include="View\Controls\DonationOption\editDonationOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="editDonationOptions.Designer.cs">
+    <Compile Include="View\Controls\DonationOption\editDonationOptions.Designer.cs">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="editOrganizationInfo.cs">
+    <Compile Include="View\Controls\OrganizationInfo\editOrganizationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="editOrganizationInfo.Designer.cs">
+    <Compile Include="View\Controls\OrganizationInfo\editOrganizationInfo.Designer.cs">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="organizationInfo.cs">
+    <Compile Include="View\Controls\OrganizationInfo\organizationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="organizationInfo.Designer.cs">
+    <Compile Include="View\Controls\OrganizationInfo\organizationInfo.Designer.cs">
       <DependentUpon>organizationInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Accounts\Donation\SubDonation.cs" />
@@ -148,22 +148,22 @@
     <Compile Include="View\Controls\HeaderControl.Designer.cs">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="chooseDonationOption.resx">
+    <EmbeddedResource Include="View\Controls\DonationOption\chooseDonationOption.resx">
       <DependentUpon>chooseDonationOption.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="displayDonationOption.resx">
+    <EmbeddedResource Include="View\Controls\DonationOption\displayDonationOption.resx">
       <DependentUpon>displayDonationOption.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editDonationOptions.resx">
+    <EmbeddedResource Include="View\Controls\DonationOption\editDonationOptions.resx">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editOrganizationInfo.resx">
+    <EmbeddedResource Include="View\Controls\OrganizationInfo\editOrganizationInfo.resx">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="optionFlowPanel.resx">
+    <EmbeddedResource Include="View\Controls\DonationOption\optionFlowPanel.resx">
       <DependentUpon>optionFlowPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="organizationInfo.resx">
+    <EmbeddedResource Include="View\Controls\OrganizationInfo\organizationInfo.resx">
       <DependentUpon>organizationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\MainForm.resx">
@@ -217,6 +217,5 @@
     <None Include="Resources\placeholder.com-logo4.png" />
   </ItemGroup>
   <ItemGroup />
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

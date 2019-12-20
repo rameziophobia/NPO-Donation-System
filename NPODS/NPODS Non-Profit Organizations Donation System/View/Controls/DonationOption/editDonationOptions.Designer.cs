@@ -55,7 +55,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             // btn_confirm
             // 
             this.btn_confirm.AllowDrop = true;
-            this.btn_confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+            this.btn_confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btn_confirm.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_confirm.FlatAppearance.BorderSize = 0;
             this.btn_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -94,7 +94,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             // 
             // btn_addOption
             // 
-            this.btn_addOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+            this.btn_addOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btn_addOption.FlatAppearance.BorderSize = 0;
             this.btn_addOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addOption.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

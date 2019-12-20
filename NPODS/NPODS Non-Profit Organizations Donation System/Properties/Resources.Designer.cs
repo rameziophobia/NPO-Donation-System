@@ -79,6 +79,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] logins {
@@ -94,8 +96,13 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Properties {
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap placeholder_com_logo4 {
             get {
                 object obj = ResourceManager.GetObject("placeholder_com_logo4", resourceCulture);

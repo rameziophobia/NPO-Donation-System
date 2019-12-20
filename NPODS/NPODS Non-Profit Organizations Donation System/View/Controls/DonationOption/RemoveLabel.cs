@@ -24,7 +24,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View
         private void removeLabel_Click(object sender, EventArgs e)
         {
             Label delete = (Label)sender;
-            Console.WriteLine(sender.GetType());
             FlowLayoutPanel groupBox = (FlowLayoutPanel)delete.Parent;
             FlowLayoutPanel flowPanel = (FlowLayoutPanel)groupBox.Parent;
             flowPanel.Controls.Remove(groupBox);
