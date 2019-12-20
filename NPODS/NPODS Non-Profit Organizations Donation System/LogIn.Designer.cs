@@ -52,9 +52,9 @@
             // 
             this.registerControl1.BackColor = System.Drawing.Color.Transparent;
             this.registerControl1.Location = new System.Drawing.Point(258, 163);
-            this.registerControl1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.registerControl1.Margin = new System.Windows.Forms.Padding(1);
             this.registerControl1.Name = "registerControl1";
-            this.registerControl1.Size = new System.Drawing.Size(548, 342);
+            this.registerControl1.Size = new System.Drawing.Size(548, 374);
             this.registerControl1.TabIndex = 3;
             // 
             // header1
