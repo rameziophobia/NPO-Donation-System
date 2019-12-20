@@ -53,16 +53,15 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
             if (cbo_accountType.SelectedItem.ToString().Trim() == "Donor")
             {
-                string gender = cbo_gender.SelectedItem.ToString().Trim();
-                //Donor donor = new Donor()
+                Donor donor = new Donor(email, name);
+                donor.Gender = cbo_gender.SelectedItem.ToString().Trim();
+                donor.Birthday = dtp_birthday.Value;
             }
             else
             {
-                string organizationUrl = txt_organizationUrl.Text;
-                //public string OrganizationUrl { get; set; }
-                //var date = dtp_birthday.Value;
-                //Donor donor = new Donor()
-
+                Organization organization = new Organization(email, name);
+                organization.OrganizationUrl = txt_organizationUrl.Text;
+                
             }
         }
     }

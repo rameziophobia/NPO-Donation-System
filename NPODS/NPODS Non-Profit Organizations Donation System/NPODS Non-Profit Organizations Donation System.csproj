@@ -53,14 +53,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounts\Account.cs" />
-    <Compile Include="Accounts\Donation\Donation.cs" />
-    <Compile Include="Accounts\Donation\DonationGoal.cs" />
-    <Compile Include="Accounts\Donation\DonationTier.cs" />
-    <Compile Include="Accounts\Donation\MiscDonation.cs" />
-    <Compile Include="Accounts\Donation\SingleDonation.cs" />
+    <Compile Include="Accounts\Donations\Donation.cs" />
+    <Compile Include="Accounts\Donations\DonationGoal.cs" />
+    <Compile Include="Accounts\Donations\DonationTier.cs" />
+    <Compile Include="Accounts\Donations\MiscDonation.cs" />
+    <Compile Include="Accounts\Donations\NullDonation.cs" />
+    <Compile Include="Accounts\Donations\NullDonationGoal.cs" />
+    <Compile Include="Accounts\Donations\SingleDonation.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
-    <Compile Include="Accounts\Donation\SubDonation.cs" />
+    <Compile Include="Accounts\Donations\SubscriptionDonation.cs" />
     <Compile Include="Controller\DatabaseAccess\DatabaseAccess.cs" />
     <Compile Include="Controller\DatabaseAccess\FileDatabaseAccess.cs" />
     <Compile Include="Controller\Login\LoginVerification.cs" />
@@ -86,8 +88,8 @@
     </Compile>
     <Compile Include="Transactions\Subscription.cs" />
     <Compile Include="Transactions\Transaction.cs" />
-    <Compile Include="Transactions\SubscriptionDonation.cs" />
-    <Compile Include="Transactions\Donation.cs" />
+    <Compile Include="Transactions\SubscriptionTransaction.cs" />
+    <Compile Include="Transactions\SingleTransaction.cs" />
     <Compile Include="View\Controls\LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
