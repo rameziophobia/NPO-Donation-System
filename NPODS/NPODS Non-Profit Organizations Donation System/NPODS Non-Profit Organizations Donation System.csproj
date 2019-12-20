@@ -49,6 +49,21 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
+    <Compile Include="chooseDonationOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="chooseDonationOption.Designer.cs">
+      <DependentUpon>chooseDonationOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DonationGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DonationTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DonationComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="editDonationOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +105,9 @@
     <Compile Include="loginScreen.Designer.cs">
       <DependentUpon>loginScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="chooseDonationOption.resx">
+      <DependentUpon>chooseDonationOption.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editDonationOptions.resx">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </EmbeddedResource>
