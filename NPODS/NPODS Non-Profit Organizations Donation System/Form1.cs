@@ -17,19 +17,5 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             InitializeComponent();
         }
 
-        private void register_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void login_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
     }
 }

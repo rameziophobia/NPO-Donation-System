@@ -55,13 +55,13 @@
     <Compile Include="chooseDonationOption.Designer.cs">
       <DependentUpon>chooseDonationOption.cs</DependentUpon>
     </Compile>
-    <Compile Include="DonationGroupBox.cs">
+    <Compile Include="View\DonationGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DonationTextBox.cs">
+    <Compile Include="View\DonationTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DonationComboBox.cs">
+    <Compile Include="View\DonationComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="editDonationOptions.cs">
