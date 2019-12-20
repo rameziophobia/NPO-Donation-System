@@ -55,14 +55,14 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
-    <Compile Include="controller\DatabaseAccess\DatabaseAccess.cs" />
-    <Compile Include="controller\DatabaseAccess\FileDatabaseAccess.cs" />
-    <Compile Include="controller\Login\LoginVerification.cs" />
-    <Compile Include="controller\Login\UserNotRegisteredException.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Controller\DatabaseAccess\DatabaseAccess.cs" />
+    <Compile Include="Controller\DatabaseAccess\FileDatabaseAccess.cs" />
+    <Compile Include="Controller\Login\LoginVerification.cs" />
+    <Compile Include="Controller\Login\UserNotRegisteredException.cs" />
+    <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="View\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrganizationUtil\DonationGoal.cs" />
@@ -76,19 +76,19 @@
     <Compile Include="Transactions\Transaction.cs" />
     <Compile Include="Transactions\SubscriptionDonation.cs" />
     <Compile Include="Transactions\Donation.cs" />
-    <Compile Include="LoginControl.cs">
+    <Compile Include="View\Controls\LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LoginControl.Designer.cs">
+    <Compile Include="View\Controls\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeaderControl.cs">
+    <Compile Include="View\Controls\HeaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HeaderControl.Designer.cs">
+    <Compile Include="View\Controls\HeaderControl.Designer.cs">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -101,10 +101,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="LoginControl.resx">
+    <EmbeddedResource Include="View\Controls\LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HeaderControl.resx">
+    <EmbeddedResource Include="View\Controls\HeaderControl.resx">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="data\logins.json" />
