@@ -28,7 +28,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.Login
             {
                 throw new UserNotRegisteredException(email);
             }
-            return false;
         }
     }
 }

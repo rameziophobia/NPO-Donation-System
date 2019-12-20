@@ -16,7 +16,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(loginVerification.VerifyUser(txt_email.Text, txt_password.Text));
+            string email = txt_email.Text.Trim();
+            string password = txt_password.Text;
+            if (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password))
+            {
+                Console.WriteLine(loginVerification.VerifyUser(email, password));
+            }
         }
     }
 }
