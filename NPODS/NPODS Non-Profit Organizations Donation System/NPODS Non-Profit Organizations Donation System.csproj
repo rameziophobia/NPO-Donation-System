@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6D15F6A2-0695-41EF-8063-55C9BE4B3F07}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>NPODS_Non_Profit_Organizations_Donation_System</RootNamespace>
     <AssemblyName>NPODS Non-Profit Organizations Donation System</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,7 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,45 +53,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounts\Account.cs" />
+    <Compile Include="Accounts\Donation\Donation.cs" />
+    <Compile Include="Accounts\Donation\DonationGoal.cs" />
+    <Compile Include="Accounts\Donation\DonationTier.cs" />
+    <Compile Include="Accounts\Donation\MiscDonation.cs" />
+    <Compile Include="Accounts\Donation\SingleDonation.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
-    <Compile Include="LogIn.cs">
+    <Compile Include="Accounts\Donation\SubDonation.cs" />
+    <Compile Include="Controller\DatabaseAccess\DatabaseAccess.cs" />
+    <Compile Include="Controller\DatabaseAccess\FileDatabaseAccess.cs" />
+    <Compile Include="Controller\Login\LoginVerification.cs" />
+    <Compile Include="Controller\Login\UserNotRegisteredException.cs" />
+    <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />
+    <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
-      <DependentUpon>LogIn.cs</DependentUpon>
+    <Compile Include="View\Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrganizationUtil\DonationGoal.cs" />
     <Compile Include="OrganizationUtil\NonMoneyDonation.cs" />
     <Compile Include="Payment\Fawry.cs" />
     <Compile Include="Payment\IPaymentMethod.cs" />
     <Compile Include="Payment\Paypal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterControl.cs">
+    <Compile Include="View\Controls\RegisterControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RegisterControl.Designer.cs">
+    <Compile Include="View\Controls\RegisterControl.Designer.cs">
       <DependentUpon>RegisterControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactions\Subscription.cs" />
     <Compile Include="Transactions\Transaction.cs" />
     <Compile Include="Transactions\SubscriptionDonation.cs" />
     <Compile Include="Transactions\Donation.cs" />
-    <Compile Include="LoginControl.cs">
+    <Compile Include="View\Controls\LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LoginControl.Designer.cs">
+    <Compile Include="View\Controls\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeaderControl.cs">
+    <Compile Include="View\Controls\HeaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HeaderControl.Designer.cs">
+    <Compile Include="View\Controls\HeaderControl.Designer.cs">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LogIn.resx">
-      <DependentUpon>LogIn.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,15 +113,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="LoginControl.resx">
+    <EmbeddedResource Include="View\Controls\LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HeaderControl.resx">
+    <EmbeddedResource Include="View\Controls\HeaderControl.resx">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterControl.resx">
+    <EmbeddedResource Include="View\Controls\RegisterControl.resx">
       <DependentUpon>RegisterControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="data\logins.json" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -122,5 +140,6 @@
   <ItemGroup>
     <None Include="Resources\placeholder.com-logo4.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
