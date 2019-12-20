@@ -9,5 +9,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             InitializeComponent();
         }
+
+        private void btn_aboutUs_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

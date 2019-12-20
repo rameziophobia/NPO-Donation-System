@@ -117,6 +117,7 @@
             this.btn_aboutUs.TabIndex = 7;
             this.btn_aboutUs.Text = "About Us";
             this.btn_aboutUs.UseVisualStyleBackColor = true;
+            this.btn_aboutUs.Click += new System.EventHandler(this.btn_aboutUs_Click);
             // 
             // HeaderControl
             // 
