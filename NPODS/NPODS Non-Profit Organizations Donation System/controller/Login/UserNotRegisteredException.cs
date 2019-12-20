@@ -2,7 +2,8 @@
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.controller.Login
 {
-    class UserNotRegisteredException : Exception
+    [Serializable]
+    public class UserNotRegisteredException : Exception
     {
         public UserNotRegisteredException(string email)
         {
