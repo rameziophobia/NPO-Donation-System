@@ -33,14 +33,5 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             pnl_options.Controls.Add(grpBox);
         }
 
-        private void txt_value_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
