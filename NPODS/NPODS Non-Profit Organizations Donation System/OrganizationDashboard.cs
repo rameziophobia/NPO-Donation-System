@@ -17,14 +17,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         private readonly int pnl_side_MINWIDTH;
         private readonly Dictionary<Button, String> hiddenText;
         private readonly List<DateTime> dates;
-        private readonly Color accent = ColorTranslator.FromHtml("#7ed6df");
+        private readonly Color accentMain = ColorTranslator.FromHtml("#7ed6df");
+        private readonly Color accentSub = ColorTranslator.FromHtml("#c7ecee");
         private DateTime dt;
         private Organization org;
         private Chart chart;
 
         public OrganizationDashboard() {
             InitializeComponent();
-            panel1.BackColor = accent;
+            panel1.BackColor = accentMain;
+            pnl_side.BackColor = accentSub;
             pnl_side_MAXWIDTH = 190;
             pnl_side_MINWIDTH = 70;
             this.DoubleBuffered = true;
@@ -49,6 +51,17 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             setOrganization(new Organization("example@email.com", "NOTAPASS123")); //todo set organization
             this.pic_Banner.Image = org.banner;
             this.pic_Banner.BringToFront();
+            updateLabels();
+        }
+        private void updateLabels() {
+            lbl_noSubs_value.Text = org.Stats.NumberOfSubs.ToString();
+            lbl_TotalSubs_value.Text = org.Stats.TotalNumberOfSubs.ToString();
+            lbl_noUnique_value.Text = org.Stats.NumberOfSubs.ToString();
+            dtp_lastModified.Value = org.Stats.lastUpdate;
+
+            foreach(Control c in dbr_Info.Controls) {
+                c.BringToFront();
+            }
         }
         public void setOrganization(Organization organization) {
             this.org = organization;
@@ -168,6 +181,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             pic_Banner.BringToFront();
             chart.Show();
         }
+
     }
 }
 

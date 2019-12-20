@@ -8,6 +8,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil {
     public class OrganizationStatistics {
         public int NumberOfSubs { get; private set; }
         public int TotalNumberOfSubs { get; private set; }
+        public int UniqueDonators { get; private set; }
         public DateTime lastUpdate { get; private set; }
         public bool hasMoneyDonations;
         public bool hasMiscDonations;
@@ -16,6 +17,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil {
 
         public OrganizationStatistics() {
             NumberOfSubs = 0;
+            UniqueDonators = 0;
             monthlySubs = new int[12];
             resetMonthlySubs();
             lastUpdate = DateTime.Now;
@@ -39,11 +41,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil {
             }
             lastUpdate = DateTime.Now;
         }
-
+        public void incrementUniqueDonators(int number) {
+            UniqueDonators += number;
+        }
         public int[] getMonthlySubs() {
            increaseMonthlySubs(0);
            return monthlySubs;
         }
-
     }
 }
