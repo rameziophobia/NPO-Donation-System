@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
-    class Organization : Account
+    public class Organization : Account
     {
         public string Description { get; set; }
         public string LogoFilePath { get; set; }

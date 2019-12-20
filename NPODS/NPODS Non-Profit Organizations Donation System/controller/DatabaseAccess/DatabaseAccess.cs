@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using System.Collections.Generic;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAccess
 {
@@ -14,5 +15,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
         }
 
         public abstract Dictionary<string, string> GetLoginInfos();
+        public abstract Organization[] loadOrganizations();
+        public abstract void SaveOrganizations(Organization[] organizations);
     }
 }
