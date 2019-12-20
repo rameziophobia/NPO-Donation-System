@@ -18,6 +18,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             InitializeComponent();
             pnl_side_MAXWIDTH = 190;
             pnl_side_MINWIDTH = 70;
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.SupportsTransparentBackColor, true);
+
             isExpanded = true;
             tmr_panelAnimation.Start();
             hiddenText = new Dictionary<Button, string>();
@@ -28,7 +31,13 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             }
             pnl_side.Width = pnl_side_MINWIDTH;
         }
-
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;
+                return handleParam;
+            }
+        }
         private void Panel2_MouseEnter(object sender, EventArgs e) {
             isExpanded = false;
             tmr_panelAnimation.Start();
@@ -57,7 +66,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                     pnl_side.Width += 10;
                 if (pnl_side.Width > pnl_side_MAXWIDTH) {
                     tmr_panelAnimation.Stop();
-                    this.Refresh();
+                    this.Invalidate();
                     isExpanded = true;
                 }
                 foreach (Button s in hiddenText.Keys) {
@@ -65,6 +74,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                     s.ImageAlign = ContentAlignment.MiddleLeft;
                 }
             }
+            this.Invalidate();
         }
 
         private void Button1_Click(object sender, EventArgs e) {
@@ -94,6 +104,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         }
 
         private void Fpl_Main_Paint(object sender, PaintEventArgs e) {
+
+        }
+
+        private void Dbr_Stats_Load(object sender, EventArgs e) {
 
         }
     }
