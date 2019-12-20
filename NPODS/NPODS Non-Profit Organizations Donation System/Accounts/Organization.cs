@@ -1,38 +1,33 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donation;
+using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
     class Organization : Account
     {
-        private bool certified;
+        public string Name { get; set; }
         public string Description { get; set; }
-        // ! goal
-        private DonationGoal donationGoal = new DonationGoal(0);
-        public DonationGoal DonationGoal
-        {
-            get => donationGoal;
-            set => donationGoal = value;
-        }
-        //todo NonMoneyDonation
-        //todo acceptedPaymentMethods list<EPaymentMethod> .. msh 3agbani remove, add interface lihom we option el donor ye set his Pmethod
-        //todo logo image ?
-        //todo addEvent ? event yb2a special donation goal for purpose X in time T example: 3ayzin ngm3 x le yoom  el yateem (before day d)
-        //todo donationStatistics
-        public Organization(string email, string password) : base(email, password)
-        {
-            this.certified = false;
-        }
+        public string LogoFilePath { get; set; }
+        public string Email { get; set; }
+        public bool Certified { get; private set; }
+        public MiscDonation[] MiscDonations { get; set; }
+        public SubDonation SubDonation { get; set; }
+        public SingleDonation SingleDonation { get; set; }
+        public DonationGoal DonationGoal { get; set; }
+        public OrganizationStatistics OrganizationStatistics { get; set; }
 
-        private void setCertified()
+        public Organization(string email, string pasword, string name, string description, string logoFilePath, bool certified, MiscDonation[] miscDonations, SubDonation subDonation, SingleDonation singleDonation, Donation.DonationGoal donationGoal, OrganizationStatistics organizationStatistics): base(email, pasword)
         {
-            certified = true;
+            Name = name;
+            Description = description;
+            Email = email;
+            LogoFilePath = logoFilePath;
+            Certified = certified;
+            MiscDonations = miscDonations;
+            SubDonation = subDonation;
+            SingleDonation = singleDonation;
+            DonationGoal = donationGoal;
+            OrganizationStatistics = organizationStatistics;
         }
-
-        public void applyForCertification()
-        {
-            //todo applyForCertification
-        }
-
-
     }
 }

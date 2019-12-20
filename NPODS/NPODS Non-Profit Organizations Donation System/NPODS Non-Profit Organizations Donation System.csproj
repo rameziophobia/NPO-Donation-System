@@ -53,19 +53,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounts\Account.cs" />
+    <Compile Include="Accounts\Donation\Donation.cs" />
+    <Compile Include="Accounts\Donation\DonationGoal.cs" />
+    <Compile Include="Accounts\Donation\DonationTier.cs" />
+    <Compile Include="Accounts\Donation\MiscDonation.cs" />
+    <Compile Include="Accounts\Donation\SingleDonation.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
+    <Compile Include="Accounts\Donation\SubDonation.cs" />
     <Compile Include="Controller\DatabaseAccess\DatabaseAccess.cs" />
     <Compile Include="Controller\DatabaseAccess\FileDatabaseAccess.cs" />
     <Compile Include="Controller\Login\LoginVerification.cs" />
     <Compile Include="Controller\Login\UserNotRegisteredException.cs" />
+    <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />
     <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrganizationUtil\DonationGoal.cs" />
     <Compile Include="OrganizationUtil\NonMoneyDonation.cs" />
     <Compile Include="Payment\Fawry.cs" />
     <Compile Include="Payment\IPaymentMethod.cs" />
