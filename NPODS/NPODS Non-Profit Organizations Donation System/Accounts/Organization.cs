@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
-    class Organization : Account
+    public class Organization : Account
     {
-        private bool certified;
-        public string Description { get; set; }
+
         // ! goal
         private DonationGoal donationGoal = new DonationGoal(0);
+        private bool certified;
+        public OrganizationStatistics Stats { get; private set; }
+        public string Description { get; set; }
         public DonationGoal DonationGoal 
         {
             get => donationGoal;
@@ -25,6 +27,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         //todo donationStatistics
         public Organization(string email, string password) : base(email, password)
         {
+            Stats = new OrganizationStatistics();
             this.certified = false;
         }
 

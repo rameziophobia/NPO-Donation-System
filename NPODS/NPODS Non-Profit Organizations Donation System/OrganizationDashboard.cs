@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System {
     public partial class OrganizationDashboard : Form {
@@ -14,6 +16,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         private readonly int pnl_side_MAXWIDTH;
         private readonly int pnl_side_MINWIDTH;
         private readonly Dictionary<Button, String> hiddenText;
+        private readonly List<DateTime> dates;
+        private DateTime dt;
+        private Organization org;
+        private Chart chart;
+
         public OrganizationDashboard() {
             InitializeComponent();
             pnl_side_MAXWIDTH = 190;
@@ -30,7 +37,21 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                 index++;
             }
             pnl_side.Width = pnl_side_MINWIDTH;
+
+            dates = new List<DateTime>();
+
+            dt = DateTime.Now;                          //todo set graphing year
+            for (int i = 1; i < 12; i++)
+                dates.Add(new DateTime(dt.Year, i, 1));
+
+            setOrganization(new Organization("example@email.com", "NOTAPASS123")); //todo set organization
         }
+        public void setOrganization(Organization organization) {
+            this.org = organization;
+            setRegions();
+            updateChart();
+        }
+
         protected override CreateParams CreateParams {
             get {
                 CreateParams handleParam = base.CreateParams;
@@ -62,7 +83,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                     isExpanded = false;
                 }
             } else {
-                if(pnl_side.Width < pnl_side_MAXWIDTH)
+                if (pnl_side.Width < pnl_side_MAXWIDTH)
                     pnl_side.Width += 10;
                 if (pnl_side.Width > pnl_side_MAXWIDTH) {
                     tmr_panelAnimation.Stop();
@@ -102,13 +123,47 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         private void Btn_sideMiscDonations_Click(object sender, EventArgs e) {
             this.fpl_Main.ScrollControlIntoView(dbr_MiscDonations);
         }
-
-        private void Fpl_Main_Paint(object sender, PaintEventArgs e) {
-
+        private void setRegions() {
+            setVisibility("Money", org.Stats.hasMoneyDonations);
+            setVisibility("Misc", org.Stats.hasMiscDonations);
+            this.Invalidate();
         }
+        private void setVisibility(string name, bool isEnabled) {
+            switch (name){
+                case "Money":
+                    dbr_MoneyDonations.Visible = isEnabled;
+                    btn_sideMoneyDonations.Visible = isEnabled;
+                    break;
+                case "Misc":
+                    dbr_MiscDonations.Visible = isEnabled;
+                    btn_sideMiscDonations.Visible = isEnabled;
+                    break;
+            }
+        }
+        private void updateChart() {
+            chart = this.cht_Main;
+            Axis XA = chart.ChartAreas[0].AxisX;
+            Axis YA = chart.ChartAreas[0].AxisY;
+            Series S = chart.Series[0];
 
-        private void Dbr_Stats_Load(object sender, EventArgs e) {
+            foreach (DateTime d in dates)
+                S.Points.AddXY(d,org.Stats.getMonthlySubs()[d.Month - 1]);
 
+            S.LegendText = "Year " + dt.Year;
+
+            S.XValueType = ChartValueType.Date;
+            XA.MajorGrid.Enabled = false;
+            XA.LabelStyle.Format = "MMM";
+
+            XA.IntervalType = DateTimeIntervalType.Months;
+            XA.Interval = 1;
+
+            chart.Update();
+            chart.Show();
+            chart.BringToFront();
         }
     }
 }
+
+
+

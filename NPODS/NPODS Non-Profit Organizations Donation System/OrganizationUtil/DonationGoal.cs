@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil
 {
     //todo implements onMonthly Interface
-    class DonationGoal
+    public class DonationGoal
     {
         private bool monthly;
         public int CurentProgress { get; private set; }

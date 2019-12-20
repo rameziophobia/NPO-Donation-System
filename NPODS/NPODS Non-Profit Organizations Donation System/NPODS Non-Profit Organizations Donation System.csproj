@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="OrganizationUtil\DonationGoal.cs" />
     <Compile Include="OrganizationUtil\NonMoneyDonation.cs" />
+    <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />
     <Compile Include="Payment\Fawry.cs" />
     <Compile Include="Payment\IPaymentMethod.cs" />
     <Compile Include="Payment\Paypal.cs" />
