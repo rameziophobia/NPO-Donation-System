@@ -3,7 +3,7 @@ using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
-    class Organization : Account
+    public class Organization : Account
     {
         public string Name { get; set; }
         public string Description { get; set; }

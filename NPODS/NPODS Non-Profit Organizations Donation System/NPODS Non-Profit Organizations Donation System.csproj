@@ -123,6 +123,7 @@
       <DependentUpon>RegisterControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="data\logins.json" />
+    <None Include="data\Organizations.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
