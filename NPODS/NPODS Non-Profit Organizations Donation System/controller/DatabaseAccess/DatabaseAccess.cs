@@ -15,7 +15,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
         }
 
         public abstract Dictionary<string, string> GetLoginInfos();
-        public abstract Organization[] loadOrganizations();
-        public abstract void SaveOrganizations(Organization[] organizations);
+        public abstract List<Organization>  loadOrganizations();
+        public abstract void SaveOrganizations(List<Organization> organizations);
+        internal abstract List<Donor> loadDonors();
+        internal abstract void SaveDonors(List<Donor> donors);
     }
 }
