@@ -39,9 +39,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_miscellaneous = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_save = new System.Windows.Forms.Button();
+            this.donationTextBox1 = new NPODS_Non_Profit_Organizations_Donation_System.DonationTextBox();
             this.lbl_custom = new System.Windows.Forms.Label();
             this.pnl_displayOptions = new System.Windows.Forms.FlowLayoutPanel();
-            this.donationTextBox1 = new NPODS_Non_Profit_Organizations_Donation_System.DonationTextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -127,6 +127,18 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_save.TabIndex = 6;
             this.btn_save.Text = "Confirm Donation";
             this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // donationTextBox1
+            // 
+            this.donationTextBox1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.donationTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.donationTextBox1.Location = new System.Drawing.Point(323, 14);
+            this.donationTextBox1.Margin = new System.Windows.Forms.Padding(15);
+            this.donationTextBox1.Name = "donationTextBox1";
+            this.donationTextBox1.Size = new System.Drawing.Size(184, 47);
+            this.donationTextBox1.TabIndex = 1;
+            this.donationTextBox1.Text = "Value";
             // 
             // lbl_custom
             // 
@@ -145,18 +157,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.pnl_displayOptions.Name = "pnl_displayOptions";
             this.pnl_displayOptions.Size = new System.Drawing.Size(1021, 383);
             this.pnl_displayOptions.TabIndex = 9;
-            
-            // 
-            // donationTextBox1
-            // 
-            this.donationTextBox1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.donationTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.donationTextBox1.Location = new System.Drawing.Point(323, 14);
-            this.donationTextBox1.Margin = new System.Windows.Forms.Padding(15);
-            this.donationTextBox1.Name = "donationTextBox1";
-            this.donationTextBox1.Size = new System.Drawing.Size(184, 47);
-            this.donationTextBox1.TabIndex = 1;
-            this.donationTextBox1.Text = "Value";
             // 
             // chooseDonationOption
             // 
