@@ -11,6 +11,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
 
         private const string PATH_ORG = "../../data/Organizations.json";
         private const string PATH_DON = "../../data/Donors.json";
+        private const string PATH_LOGINS = "../../data/logins.json";
 
         public override Dictionary<string, string> GetLoginInfos()
         {
@@ -101,6 +102,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             }
         }
 
-
+        internal override void addLogin(string email, string password)
+        {
+            var logins = GetLoginInfos();
+            logins[email] = password;
+            using (StreamWriter streamWriter = new StreamWriter(PATH_LOGINS))
+            {
+                streamWriter.Write(JsonConvert.SerializeObject(logins));
+            }
+        }
     }
 }

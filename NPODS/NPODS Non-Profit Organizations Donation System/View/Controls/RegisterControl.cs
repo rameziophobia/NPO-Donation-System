@@ -55,7 +55,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 return;
             }
 
-            string email = txt_email.Text;;
+            string email = txt_email.Text.ToLower();
             string name = txt_name.Text;
 
             RegistrationUtil registrationUtil = RegistrationUtil.getInstance();

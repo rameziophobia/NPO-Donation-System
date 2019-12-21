@@ -15,12 +15,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration
         private DatabaseAccess databaseAccess;
         private List<Organization> organizations;
         private List<Donor> donors;
+        private SHA256 sha;
 
         private RegistrationUtil() 
         {
             databaseAccess = DatabaseAccess.getInstance();
             organizations = databaseAccess.loadOrganizations();
             donors = databaseAccess.loadDonors();
+            sha = sha = SHA256.Create(); //todo hena sa7 ?
         }
 
         public static RegistrationUtil getInstance()
@@ -42,15 +44,13 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration
             {
                 organizations.Add(organization);
                 databaseAccess.SaveOrganizations(organizations);
+                databaseAccess.addLogin(organization.Email, password);
             }
         }
 
         internal void registerDonor(Donor donor, string password)
         {
-            // using ?
-            SHA256 sha = SHA256.Create();
             password = Convert.ToBase64String(sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
-            // todo save password to logins json
             if (donors.Any(org => org.Email.Equals(donor.Email)))
             {
                 throw new EmailAlreadyExistsException();
@@ -59,6 +59,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration
             {
                 donors.Add(donor);
                 databaseAccess.SaveDonors(donors);
+                databaseAccess.addLogin(donor.Email, password);
             }
         }
     }

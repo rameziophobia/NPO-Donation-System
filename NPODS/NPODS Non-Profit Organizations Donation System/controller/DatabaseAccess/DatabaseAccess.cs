@@ -19,5 +19,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
         public abstract void SaveOrganizations(List<Organization> organizations);
         internal abstract List<Donor> loadDonors();
         internal abstract void SaveDonors(List<Donor> donors);
+        internal abstract void addLogin(string email, string password);
     }
 }
