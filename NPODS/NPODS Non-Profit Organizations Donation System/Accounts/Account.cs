@@ -2,25 +2,18 @@
 {
     public class Account
     {
-        private string email;
+        public string Email { get; set; }
+        public string Name { get; set; }
         // todo https://stackoverflow.com/questions/12657792/how-to-securely-save-username-password-local
-        private string password;
         //todo transactionHistory
         //todo currentSubscriptions
         //todo account dataBase ? a3mellaha interface IAccountDB
-        public Account(string email, string password)
+        public Account(string email, string name)
         {
-            this.email = email;
-            this.password = password;
+            this.Email = email;
+            this.Name = name;
         }
 
-        public void changePassword(string oldPassword, string newPassword)
-        {
-            if (oldPassword.Equals(password))
-            {
-                password = newPassword;
-            }
-        }
     }
 
 }
