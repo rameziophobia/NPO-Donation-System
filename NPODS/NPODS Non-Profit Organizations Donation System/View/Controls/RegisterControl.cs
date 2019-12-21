@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration;
+using System;
 using System.Windows.Forms;
-using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     public partial class RegisterControl : UserControl
     {
-        public RegisterControl ()
+        public RegisterControl()
         {
             InitializeComponent();
         }
@@ -28,7 +22,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 cbo_gender.Show();
                 lbl_dayOfBirth.Show();
                 dtp_birthday.Show();
-            } else
+            }
+            else
             {
                 txt_organizationUrl.Show();
                 lbl_organizationUrl.Show();
@@ -41,28 +36,91 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private void register_btn_Click(object sender, EventArgs e)
         {
+            if (requiredInfoMissing())
+            {
+                return;
+            }
             if (!(txt_password.Text.Equals(txt_confirmPassword.Text)))
             {
                 lbl_errorMessage.Text = "error: the two passwords do not match";
                 return;
             }
 
-            string email = txt_email.Text;
-            string password = txt_password.Text;
+            string email = txt_email.Text.ToLower();
             string name = txt_name.Text;
+
+            RegistrationUtil registrationUtil = RegistrationUtil.getInstance();
+
 
             if (cbo_accountType.SelectedItem.ToString().Trim() == "Donor")
             {
-                Donor donor = new Donor(email, name);
-                donor.Gender = cbo_gender.SelectedItem.ToString().Trim();
-                donor.Birthday = dtp_birthday.Value;
+                Donor donor = getDonorAccount(email, name);
+                try
+                {
+                    registrationUtil.registerDonor(donor, txt_password.Text);
+                }
+                catch (EmailAlreadyExistsException)
+                {
+                    lbl_errorMessage.Text = "error: this donor email already exists";
+                    return;
+                }
             }
             else
             {
-                Organization organization = new Organization(email, name);
-                organization.OrganizationUrl = txt_organizationUrl.Text;
-                
+                Organization organization = getOrganizationAccount(email, name);
+                try
+                {
+                    registrationUtil.registerOrganization(organization, txt_password.Text);
+                }
+                catch (EmailAlreadyExistsException)
+                {
+                    lbl_errorMessage.Text = "error: this organization email already exists";
+                    return;
+                }
             }
+            lbl_errorMessage.Text = "Success";
+        }
+
+        private Organization getOrganizationAccount(string email, string name)
+        {
+            Organization organization = new Organization(email, name);
+            organization.OrganizationUrl = txt_organizationUrl.Text;
+            return organization;
+        }
+
+        private Donor getDonorAccount(string email, string name)
+        {
+            Donor donor = new Donor(email, name);
+            donor.Gender = cbo_gender.SelectedItem.ToString().Trim();
+            donor.Birthday = dtp_birthday.Value;
+            return donor;
+        }
+
+        private bool requiredInfoMissing()
+        {
+            if (cbo_accountType.SelectedItem is null)
+            {
+                lbl_errorMessage.Text = "error: account type is required";
+                return true;
+            }
+            else if (cbo_gender.SelectedItem is null && cbo_gender.Visible)
+            {
+                lbl_errorMessage.Text = "error: gender field is required";
+                return true;
+            }
+            else if (txt_name.Text.Equals("") ||
+               txt_password.Text.Equals("") ||
+               txt_confirmPassword.Text.Equals(""))
+            {
+                lbl_errorMessage.Text = "error: please fill the required fields";
+                return true;
+            }
+            return false;
+        }
+
+        private void RegisterControl_Load(object sender, EventArgs e)
+        {
+            cbo_accountType.SelectedIndex = 0;
         }
     }
 }

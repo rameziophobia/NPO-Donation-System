@@ -116,6 +116,8 @@
     <Compile Include="Controller\DatabaseAccess\FileDatabaseAccess.cs" />
     <Compile Include="Controller\Login\LoginVerification.cs" />
     <Compile Include="Controller\Login\UserNotRegisteredException.cs" />
+    <Compile Include="Controller\Registration\EmailAlreadyExistsException.cs" />
+    <Compile Include="Controller\Registration\RegistrationUtil.cs" />
     <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />
     <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
