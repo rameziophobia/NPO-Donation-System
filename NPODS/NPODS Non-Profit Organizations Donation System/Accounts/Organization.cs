@@ -1,5 +1,7 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donation;
 using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
+using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
+using System.Collections.Generic;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
@@ -28,6 +30,21 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             SingleDonation = singleDonation;
             DonationGoal = donationGoal;
             OrganizationStatistics = organizationStatistics;
+        }
+
+        public List<DonationButton> getMiscOptions()
+        {
+            List<DonationButton> btns = new List<DonationButton>();
+            for(int i = 0; i < MiscDonations.Length; i++)
+            {
+                DonationButton btn = new DonationButton();
+                btn.Lbl_donationValue.Visible = false;
+                btn.Lbl_monthly.Visible = false;
+                btn.Lbl_tierName.Visible = false;
+                btn.Lbl_description.Text = MiscDonations[i].Link;
+                btns.Add(btn);
+            }
+            return btns;
         }
     }
 }

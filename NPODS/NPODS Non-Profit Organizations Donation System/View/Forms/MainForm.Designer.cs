@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.headerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.HeaderControl();
-            this.editDonationOptions1 = new NPODS_Non_Profit_Organizations_Donation_System.editDonationOptions();
+            this.chooseDonationOption1 = new NPODS_Non_Profit_Organizations_Donation_System.chooseDonationOption();
             this.SuspendLayout();
             // 
             // headerControl1
@@ -41,23 +41,20 @@
             this.headerControl1.Size = new System.Drawing.Size(1136, 65);
             this.headerControl1.TabIndex = 0;
             // 
-            // editDonationOptions1
+            // chooseDonationOption1
             // 
-            this.editDonationOptions1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editDonationOptions1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editDonationOptions1.Location = new System.Drawing.Point(0, 65);
-            this.editDonationOptions1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.editDonationOptions1.Name = "editDonationOptions1";
-            this.editDonationOptions1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.editDonationOptions1.Size = new System.Drawing.Size(1136, 559);
-            this.editDonationOptions1.TabIndex = 1;
+            this.chooseDonationOption1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chooseDonationOption1.Location = new System.Drawing.Point(0, 65);
+            this.chooseDonationOption1.Name = "chooseDonationOption1";
+            this.chooseDonationOption1.Size = new System.Drawing.Size(1136, 559);
+            this.chooseDonationOption1.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1136, 624);
-            this.Controls.Add(this.editDonationOptions1);
+            this.Controls.Add(this.chooseDonationOption1);
             this.Controls.Add(this.headerControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
@@ -70,7 +67,7 @@
         #endregion
 
         private HeaderControl headerControl1;
-        private editDonationOptions editDonationOptions1;
+        private chooseDonationOption chooseDonationOption1;
     }
 }
 

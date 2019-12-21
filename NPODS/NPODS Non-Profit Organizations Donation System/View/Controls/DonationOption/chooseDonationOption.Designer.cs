@@ -1,4 +1,9 @@
-﻿namespace NPODS_Non_Profit_Organizations_Donation_System
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donation;
+using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
+using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
+
+namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     partial class chooseDonationOption
     {
@@ -32,17 +37,12 @@
             this.btn_singlePayment = new System.Windows.Forms.Button();
             this.btn_subscription = new System.Windows.Forms.Button();
             this.btn_miscellaneous = new System.Windows.Forms.Button();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_save = new System.Windows.Forms.Button();
             this.lbl_custom = new System.Windows.Forms.Label();
+            this.pnl_displayOptions = new System.Windows.Forms.FlowLayoutPanel();
             this.donationTextBox1 = new NPODS_Non_Profit_Organizations_Donation_System.DonationTextBox();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1021, 82);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1021, 69);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btn_singlePayment
@@ -68,107 +68,41 @@
             this.btn_singlePayment.Location = new System.Drawing.Point(0, 0);
             this.btn_singlePayment.Margin = new System.Windows.Forms.Padding(0);
             this.btn_singlePayment.Name = "btn_singlePayment";
-            this.btn_singlePayment.Size = new System.Drawing.Size(185, 82);
+            this.btn_singlePayment.Size = new System.Drawing.Size(185, 69);
             this.btn_singlePayment.TabIndex = 0;
             this.btn_singlePayment.Text = "Single Payment";
             this.btn_singlePayment.UseVisualStyleBackColor = false;
+            this.btn_singlePayment.Click += new System.EventHandler(this.btn_singlePayment_Click);
             // 
             // btn_subscription
             // 
-            this.btn_subscription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.btn_subscription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(216)))), ((int)(((byte)(238)))));
             this.btn_subscription.FlatAppearance.BorderSize = 0;
             this.btn_subscription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_subscription.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_subscription.Location = new System.Drawing.Point(185, 0);
             this.btn_subscription.Margin = new System.Windows.Forms.Padding(0);
             this.btn_subscription.Name = "btn_subscription";
-            this.btn_subscription.Size = new System.Drawing.Size(182, 82);
+            this.btn_subscription.Size = new System.Drawing.Size(182, 69);
             this.btn_subscription.TabIndex = 1;
             this.btn_subscription.Text = "Subscription";
             this.btn_subscription.UseVisualStyleBackColor = false;
+            this.btn_subscription.Click += new System.EventHandler(this.btn_subscription_Click);
             // 
             // btn_miscellaneous
             // 
-            this.btn_miscellaneous.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.btn_miscellaneous.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(216)))), ((int)(((byte)(238)))));
             this.btn_miscellaneous.FlatAppearance.BorderSize = 0;
             this.btn_miscellaneous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_miscellaneous.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_miscellaneous.Location = new System.Drawing.Point(367, 0);
             this.btn_miscellaneous.Margin = new System.Windows.Forms.Padding(0);
             this.btn_miscellaneous.Name = "btn_miscellaneous";
-            this.btn_miscellaneous.Size = new System.Drawing.Size(182, 82);
+            this.btn_miscellaneous.Size = new System.Drawing.Size(182, 69);
             this.btn_miscellaneous.TabIndex = 2;
             this.btn_miscellaneous.Text = "Miscellaneous";
             this.btn_miscellaneous.UseVisualStyleBackColor = false;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.button1);
-            this.flowLayoutPanel3.Controls.Add(this.button2);
-            this.flowLayoutPanel3.Controls.Add(this.button3);
-            this.flowLayoutPanel3.Controls.Add(this.button4);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 82);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1021, 370);
-            this.flowLayoutPanel3.TabIndex = 5;
-            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(30, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 142);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Single Payment";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(229, 15);
-            this.button2.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 142);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Single Payment";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(428, 15);
-            this.button3.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(166, 142);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Single Payment";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(627, 15);
-            this.button4.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(166, 142);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Single Payment";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_miscellaneous.Click += new System.EventHandler(this.btn_miscellaneous_Click);
             // 
             // panel1
             // 
@@ -204,6 +138,15 @@
             this.lbl_custom.TabIndex = 0;
             this.lbl_custom.Text = "Custom Amount:";
             // 
+            // pnl_displayOptions
+            // 
+            this.pnl_displayOptions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_displayOptions.Location = new System.Drawing.Point(0, 69);
+            this.pnl_displayOptions.Name = "pnl_displayOptions";
+            this.pnl_displayOptions.Size = new System.Drawing.Size(1021, 383);
+            this.pnl_displayOptions.TabIndex = 9;
+            
+            // 
             // donationTextBox1
             // 
             this.donationTextBox1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,13 +162,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel3);
+            this.Controls.Add(this.pnl_displayOptions);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "chooseDonationOption";
             this.Size = new System.Drawing.Size(1021, 565);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -238,14 +180,11 @@
         private System.Windows.Forms.Button btn_singlePayment;
         private System.Windows.Forms.Button btn_subscription;
         private System.Windows.Forms.Button btn_miscellaneous;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_custom;
         private DonationTextBox donationTextBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_save;
+        private Organization organization;
+        private System.Windows.Forms.FlowLayoutPanel pnl_displayOptions;
     }
 }
