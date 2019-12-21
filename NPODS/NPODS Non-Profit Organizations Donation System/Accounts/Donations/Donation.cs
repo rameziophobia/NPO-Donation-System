@@ -1,6 +1,9 @@
-﻿namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
+﻿using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
+using System.Collections.Generic;
+
+namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
 {
-    public class Donation
+    public abstract class Donation
     {
         private DonationTier[] donationTiers;
 
@@ -12,5 +15,6 @@
             customEnabled = false;
             DonationTiers = donationTiers;
         }
+        public abstract List<DonationButton> getOptions();
     }
 }

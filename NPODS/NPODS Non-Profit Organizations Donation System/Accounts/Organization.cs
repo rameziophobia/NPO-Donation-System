@@ -33,7 +33,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         public List<DonationButton> getMiscOptions()
         {
             List<DonationButton> btns = new List<DonationButton>();
-            for(int i = 0; i < MiscDonations.Length; i++)
+            for(int i = 0; i < MiscDonations.Count; i++)
             {
                 DonationButton btn = new DonationButton();
                 btn.Lbl_donationValue.Visible = false;

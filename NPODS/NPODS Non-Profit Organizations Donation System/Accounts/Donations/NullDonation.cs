@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
         public static Donation getInstance()
         {
             return instance;
+        }
+        public override List<DonationButton> getOptions()
+        {
+            return null;
         }
 
     }

@@ -60,6 +60,7 @@
     <Compile Include="Accounts\Donations\NullDonation.cs" />
     <Compile Include="Accounts\Donations\NullDonationGoal.cs" />
     <Compile Include="Accounts\Donations\SingleDonation.cs" />
+    <Compile Include="Accounts\Donations\SubscriptionDonation.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
     <Compile Include="View\Controls\DonationOption\chooseDonationOption.cs">
