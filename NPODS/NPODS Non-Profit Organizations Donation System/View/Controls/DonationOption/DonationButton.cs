@@ -17,7 +17,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
         public Label Lbl_description { get; set; }
         private Boolean m_bIsHover;
         private System.Drawing.Color baseColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-    public DonationButton(): base()
+        private System.Drawing.Color mouseEnterColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(214)))));
+        private System.Drawing.Color mouseDownColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(212)))), ((int)(((byte)(222)))));
+
+        public DonationButton(): base()
         {
             Lbl_tierName = new Label();
             Lbl_donationValue = new Label();
@@ -36,6 +39,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
             this.Controls.Add(pnl_optionPnl);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnl_displayOptions_MouseClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_displayOptions_MouseDown);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_displayOptions_MouseEnter);
             this.MouseEnter += new System.EventHandler(this.pnl_displayOptions_MouseEnter);
             this.MouseLeave += new System.EventHandler(pnl_displayOptions_MouseLeave);
             foreach (Control childs in Controls)
@@ -52,6 +56,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
         {
             child.MouseEnter += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
             child.MouseLeave += (s, e) => this.OnMouseLeave(e);
+            child.MouseUp += (s, e) => this.pnl_displayOptions_MouseEnter(s,e);
             child.MouseClick += (s, e) => this.pnl_displayOptions_MouseClick(s, e);
             child.MouseDown += (s, e) => this.pnl_displayOptions_MouseDown(s, e);
         }
@@ -124,7 +129,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
         private void pnl_displayOptions_MouseEnter(object sender, EventArgs e)
         {
             m_bIsHover = true;
-            this.pnl_optionPnl.BackColor = System.Drawing.Color.Red;
+            this.pnl_optionPnl.BackColor = this.mouseEnterColor;
         }
         protected override void OnMouseLeave(EventArgs e)
         {
@@ -150,6 +155,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
 
         private void pnl_displayOptions_MouseDown(object sender, MouseEventArgs e)
         {
+            this.pnl_optionPnl.BackColor = this.mouseDownColor;
         }
         private void pnl_displayOptions_MouseClick(object sender, MouseEventArgs e)
         {
