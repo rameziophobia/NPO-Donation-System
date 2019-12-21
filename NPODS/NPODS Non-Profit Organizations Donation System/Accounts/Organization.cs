@@ -9,7 +9,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
     {
         public string Description { get; set; }
         public string LogoFilePath { get; set; }
-        public string Email { get; set; }
         public bool Certified { get; private set; }
         public List<MiscDonation> MiscDonations { get; set; }
         public Donation SubscriptionDonation { get; set; }
