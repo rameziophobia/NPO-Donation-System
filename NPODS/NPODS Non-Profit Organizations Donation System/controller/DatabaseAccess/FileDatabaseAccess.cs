@@ -62,6 +62,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
                 //todo raise exception ?
                 return new T();
             }
+            catch (DirectoryNotFoundException)
+            {
+                string temp = filePath.Substring(0, filePath.Length - filePath.LastIndexOf('/')-1);
+                Directory.CreateDirectory(temp);
+                return readJson<T>(filePath);
+            }
         }
 
         internal override List<Donor> loadDonors()
