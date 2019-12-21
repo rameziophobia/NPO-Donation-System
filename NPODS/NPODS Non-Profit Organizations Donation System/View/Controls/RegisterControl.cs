@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
-using System.Security.Cryptography;
-using NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAccess;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration;
+using System;
+using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
@@ -68,7 +59,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 {
                     registrationUtil.registerDonor(donor, txt_password.Text);
                 }
-                catch(EmailAlreadyExistsException)
+                catch (EmailAlreadyExistsException)
                 {
                     lbl_errorMessage.Text = "error: this donor email already exists";
                     return;
@@ -81,7 +72,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 {
                     registrationUtil.registerOrganization(organization, txt_password.Text);
                 }
-                catch(EmailAlreadyExistsException)
+                catch (EmailAlreadyExistsException)
                 {
                     lbl_errorMessage.Text = "error: this organization email already exists";
                     return;
@@ -125,6 +116,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 return true;
             }
             return false;
+        }
+
+        private void RegisterControl_Load(object sender, EventArgs e)
+        {
+            cbo_accountType.SelectedIndex = 0;
         }
     }
 }

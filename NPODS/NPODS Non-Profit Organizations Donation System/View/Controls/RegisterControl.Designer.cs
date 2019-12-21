@@ -173,7 +173,7 @@
             "Female",
             "Non-Binary"});
             this.cbo_gender.Location = new System.Drawing.Point(181, 223);
-            this.cbo_gender.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.cbo_gender.Margin = new System.Windows.Forms.Padding(1);
             this.cbo_gender.Name = "cbo_gender";
             this.cbo_gender.Size = new System.Drawing.Size(338, 27);
             this.cbo_gender.TabIndex = 19;
@@ -195,7 +195,7 @@
             // 
             this.dtp_birthday.Font = new System.Drawing.Font("Gadugi", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_birthday.Location = new System.Drawing.Point(181, 259);
-            this.dtp_birthday.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dtp_birthday.Margin = new System.Windows.Forms.Padding(1);
             this.dtp_birthday.Name = "dtp_birthday";
             this.dtp_birthday.Size = new System.Drawing.Size(338, 27);
             this.dtp_birthday.TabIndex = 21;
@@ -284,9 +284,10 @@
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_email);
             this.Controls.Add(this.txt_password);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "RegisterControl";
             this.Size = new System.Drawing.Size(548, 380);
+            this.Load += new System.EventHandler(this.RegisterControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
