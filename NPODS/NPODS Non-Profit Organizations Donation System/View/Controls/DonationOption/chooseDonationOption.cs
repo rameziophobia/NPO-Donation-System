@@ -15,8 +15,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private readonly System.Drawing.Color COLOR_SELECTED = System.Drawing.Color.FromArgb(199, 236, 238);
         private readonly System.Drawing.Color COLOR_NOT_SELECTED = System.Drawing.Color.FromArgb(199, 216, 238);
-        private List<Button> availableTypes = new List<Button>();
-        public DonationButton[] defaultOption;
+        private List<Donation> availableTypes = new List<Donation>();
 
         public chooseDonationOption()
         {
@@ -71,24 +70,33 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         public void setAvailableTypes()
         {
-            if (Organization.SingleDonation.DonationTiers.Length == 0) 
+            if (!(Organization.SingleDonation is NullDonation)) 
             {
-                btn_singlePayment.Visible = false;
+                btn_singlePayment.Visible = true;
+                availableTypes.Add(Organization.SingleDonation);
             }
-            if (Organization.SubscriptionDonation.DonationTiers.Length == 0)
+            if (!(Organization.SubscriptionDonation is NullDonation))
             {
-                btn_subscription.Visible = false;
+                btn_subscription.Visible = true;
+                availableTypes.Add(Organization.SubscriptionDonation);
             }
-            if(Organization.MiscDonations.Count == 0)
+            if(Organization.MiscDonations.Count > 0)
             {
-                btn_miscellaneous.Visible = false;
+                btn_miscellaneous.Visible = true;
             }
         }
         public void updateDefault()
         {
             pnl_displayOptions.Controls.Clear();
-            pnl_displayOptions.Controls.AddRange(Organization.SingleDonation.getOptions().ToArray());
-            pnl_customDonation.Visible = Organization.SingleDonation.customEnabled;
+            if (availableTypes.Count > 0)
+            {
+                pnl_displayOptions.Controls.AddRange(availableTypes[0].getOptions().ToArray());
+                pnl_customDonation.Visible = availableTypes[0].customEnabled;
+            }
+            else if (Organization.MiscDonations.Count > 0)
+            {
+                pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
+            }
         }
 
         private void btn_back_Click(object sender, EventArgs e)

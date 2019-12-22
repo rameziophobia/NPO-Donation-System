@@ -28,7 +28,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
                 MiscDonations = new List<MiscDonation> { new MiscDonation("Ramesbasdahdsuihdy.com") },
                 SubscriptionDonation = new SubscriptionDonation(new DonationTier[] { new DonationTier("plz", "send help", 54.2f) }),
-                SingleDonation = new SingleDonation(new DonationTier[] { new DonationTier("plz", "send help", 50.2f) }),
+                
                 DonationGoal = new DonationGoal(true, 500f, 8458f),
                 OrganizationStatistics = new OrganizationStatistics()
             };
@@ -41,8 +41,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 switchControls(chooseDonationOption1);
                 chooseDonationOption1.Organization = organization;
-                chooseDonationOption1.updateDefault();
                 chooseDonationOption1.setAvailableTypes();
+                chooseDonationOption1.updateDefault();
             };
             chooseDonationOption1.OnBackPress += () =>
             {

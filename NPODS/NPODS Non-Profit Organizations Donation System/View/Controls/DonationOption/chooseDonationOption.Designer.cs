@@ -77,6 +77,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_singlePayment.TabIndex = 0;
             this.btn_singlePayment.Text = "Single Payment";
             this.btn_singlePayment.UseVisualStyleBackColor = false;
+            this.btn_singlePayment.Visible = false;
             this.btn_singlePayment.Click += new System.EventHandler(this.btn_singlePayment_Click);
             // 
             // btn_subscription
@@ -92,6 +93,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_subscription.TabIndex = 1;
             this.btn_subscription.Text = "Subscription";
             this.btn_subscription.UseVisualStyleBackColor = false;
+            this.btn_subscription.Visible = false;
             this.btn_subscription.Click += new System.EventHandler(this.btn_subscription_Click);
             // 
             // btn_miscellaneous
@@ -107,6 +109,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_miscellaneous.TabIndex = 2;
             this.btn_miscellaneous.Text = "Miscellaneous";
             this.btn_miscellaneous.UseVisualStyleBackColor = false;
+            this.btn_miscellaneous.Visible = false;
             this.btn_miscellaneous.Click += new System.EventHandler(this.btn_miscellaneous_Click);
             // 
             // pnl_customDonation
