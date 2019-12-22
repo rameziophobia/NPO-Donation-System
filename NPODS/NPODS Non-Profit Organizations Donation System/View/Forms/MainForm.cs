@@ -25,12 +25,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 LogoFilePath = "Iceland.png",
                 Description = "ignore the name. there's no ice here",
-                MiscDonations = new List<MiscDonation> { new MiscDonation("Ramesbasdahdsuihdy.com") },
-                SingleDonation = new SingleDonation(new DonationTier[] {}),
+                DonationOptions = new DonationOptions(),
                 DonationGoal = new DonationGoal(true, 500f, 8458f),
                 OrganizationStatistics = new OrganizationStatistics()
             };
-            organization.SingleDonation.customEnabled = true;
+            organization.DonationOptions.appendSubscriptionDonation(new DonationTier("ss", "ss", 3));
             tempHome1.OnTempClick = () =>
             {
                 switchControls(organizationInfo1);

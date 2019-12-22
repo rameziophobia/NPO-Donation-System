@@ -27,23 +27,23 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
-            pnl_displayOptions.Controls.AddRange(Organization.SingleDonation.getOptions().ToArray());
-            pnl_customDonation.Visible = Organization.SingleDonation.customEnabled;
+            pnl_displayOptions.Controls.AddRange(Organization.DonationOptions.SingleDonation.getOptions().ToArray());
+            pnl_customDonation.Visible = Organization.DonationOptions.SingleDonation.customEnabled;
         }
 
         private void btn_subscription_Click(object sender, EventArgs e)
         {
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
-            pnl_displayOptions.Controls.AddRange(Organization.SubscriptionDonation.getOptions().ToArray());
-            pnl_customDonation.Visible = Organization.SubscriptionDonation.customEnabled;
+            pnl_displayOptions.Controls.AddRange(Organization.DonationOptions.SubscriptionDonation.getOptions().ToArray());
+            pnl_customDonation.Visible = Organization.DonationOptions.SubscriptionDonation.customEnabled;
         }
 
         private void btn_miscellaneous_Click(object sender, EventArgs e)
         {
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
-            pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
+            pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.DonationOptions.MiscDonations).ToArray());
             pnl_customDonation.Visible = false;
 
         }
@@ -73,17 +73,17 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         public void setAvailableTypes()
         {
-            if (!(Organization.SingleDonation is NullDonation))
+            if (!(Organization.DonationOptions.SingleDonation.isNull()))
             {
                 btn_singlePayment.Visible = true;
                 defaultOptionFlag += 1;
             }
-            if (!(Organization.SubscriptionDonation is NullDonation))
+            if (!(Organization.DonationOptions.SubscriptionDonation.isNull()))
             {
                 btn_subscription.Visible = true;
                 defaultOptionFlag += 10;
             }
-            if (Organization.MiscDonations.Count > 0)
+            if (Organization.DonationOptions.MiscDonations.Count > 0)
             {
                 defaultOptionFlag += 100;
                 btn_miscellaneous.Visible = true;
@@ -93,12 +93,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             if (defaultOptionFlag % 2 == 1)
             {
-                donationOption = Organization.SingleDonation;
+                donationOption = Organization.DonationOptions.SingleDonation;
                 selectColor(btn_singlePayment);
             }
             else if ((defaultOptionFlag / 10) % 10 == 1)
             {
-                donationOption = Organization.SubscriptionDonation;
+                donationOption = Organization.DonationOptions.SubscriptionDonation;
                 selectColor(btn_subscription);
             }
             else if ((defaultOptionFlag / 100) % 10 == 1)
@@ -111,7 +111,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             pnl_displayOptions.Controls.Clear();
             if (donationOption == null && (defaultOptionFlag / 100) % 10 == 1)
             {
-                pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
+                pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.DonationOptions.MiscDonations).ToArray());
                 pnl_customDonation.Visible = false;
             }
             else

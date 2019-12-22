@@ -5,9 +5,13 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
 {
     public class SingleDonation : Donation
     {
-        public SingleDonation(DonationTier[] donationTiers) : base(donationTiers)
+        public SingleDonation(List<DonationTier> donationTiers) : base(donationTiers)
         {
         }
+        public SingleDonation() : base(new List<DonationTier>())
+        {
+        }
+
         public override List<DonationButton> getOptions()
         {
             List<DonationButton> btns_donation = base.getOptions();

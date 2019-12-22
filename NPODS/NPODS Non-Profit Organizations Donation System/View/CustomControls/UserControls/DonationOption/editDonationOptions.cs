@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
+using System;
 using System.Windows.Forms;
 
 
@@ -6,8 +7,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     public partial class editDonationOptions : UserControl
     {
+        private DonationOptions donationOptions;
+
         public editDonationOptions()
         {
+            donationOptions = new DonationOptions(); // todo load options from current org
             InitializeComponent();
         }
         private void txt_value_Click(object sender, EventArgs e)
@@ -48,6 +52,35 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private void btn_addOption_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_confirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chk_customSubcription_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_customSubcription.Checked)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void chk_customSinglePayment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_customSinglePayment.Checked)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

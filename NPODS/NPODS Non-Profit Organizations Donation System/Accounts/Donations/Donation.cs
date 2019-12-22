@@ -5,12 +5,17 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
 {
     public abstract class Donation
     {
-        private DonationTier[] donationTiers;
+        private List<DonationTier> donationTiers;
 
         public bool customEnabled { get; set; }
-        public DonationTier[] DonationTiers { get => donationTiers; set => donationTiers = value; }
+        public List<DonationTier> DonationTiers { get => donationTiers; set => donationTiers = value; }
 
-        public Donation(DonationTier[] donationTiers)
+        public Donation(List<DonationTier> donationTiers)
+        {
+            DonationTiers = donationTiers;
+        }
+
+        public Donation(): this(new List<DonationTier>())
         {
             customEnabled = false;
             DonationTiers = donationTiers;
@@ -18,7 +23,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
         public virtual List<DonationButton> getOptions()
         {
             List<DonationButton> btns_donation = new List<DonationButton>();
-            for (int i = 0; i < DonationTiers.Length; i++)
+            for (int i = 0; i < DonationTiers.Count; i++)
             {
                 DonationButton btn = new DonationButton();
                 btn.Lbl_tierName.Text = DonationTiers[i].Name;
@@ -27,6 +32,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
                 btns_donation.Add(btn);
             }
             return btns_donation;
+        }
+        public virtual bool isNull()
+        {
+            return false;
         }
     }
 }

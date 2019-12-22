@@ -6,7 +6,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
     class NullDonation : Donation
     {
         private static readonly NullDonation instance = new NullDonation();
-        private NullDonation() : base(new DonationTier[] { new DonationTier("null", "null", 0) })
+        private NullDonation() : base(new  List<DonationTier>() { new DonationTier("null", "null", 0) })
         {
         }
 
@@ -18,6 +18,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
         {
             return new List<DonationButton>();
         }
-
+        public override bool isNull()
+        {
+            return true;
+        }
     }
 }
