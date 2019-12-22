@@ -42,6 +42,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 switchControls(chooseDonationOption1);
                 chooseDonationOption1.Organization = organization;
                 chooseDonationOption1.updateDefault();
+                chooseDonationOption1.setAvailableTypes();
+            };
+            chooseDonationOption1.OnBackPress += () =>
+            {
+                switchControls(organizationInfo1);
+                organizationInfo1.updateOrganisation(organization);
             };
         }
         private void switchControls(UserControl userControl)

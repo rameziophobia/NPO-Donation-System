@@ -1,4 +1,4 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
 using System;
@@ -10,6 +10,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
     public partial class chooseDonationOption : UserControl
     {
         public Organization Organization { get; set; }
+        public delegate void OnButtonClick();
+        public OnButtonClick OnBackPress { get; set; }
 
         private readonly System.Drawing.Color COLOR_SELECTED = System.Drawing.Color.FromArgb(199, 236, 238);
         private readonly System.Drawing.Color COLOR_NOT_SELECTED = System.Drawing.Color.FromArgb(199, 216, 238);
@@ -68,6 +70,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             pnl_displayOptions.Controls.Clear();
             pnl_displayOptions.Controls.AddRange(Organization.SingleDonation.getOptions().ToArray());
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            OnBackPress();
         }
     }
 }

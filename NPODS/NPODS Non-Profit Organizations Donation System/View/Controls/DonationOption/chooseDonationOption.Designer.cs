@@ -33,31 +33,36 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnl_donationType = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_singlePayment = new System.Windows.Forms.Button();
             this.btn_subscription = new System.Windows.Forms.Button();
             this.btn_miscellaneous = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_customDonation = new System.Windows.Forms.Panel();
             this.btn_save = new System.Windows.Forms.Button();
-            this.donationTextBox1 = new NPODS_Non_Profit_Organizations_Donation_System.DonationTextBox();
             this.lbl_custom = new System.Windows.Forms.Label();
+            this.pnl_back = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_back = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_displayOptions = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.donationTextBox1 = new NPODS_Non_Profit_Organizations_Donation_System.DonationTextBox();
+            this.pnl_donationType.SuspendLayout();
+            this.pnl_customDonation.SuspendLayout();
+            this.pnl_back.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // pnl_donationType
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.flowLayoutPanel1.Controls.Add(this.btn_singlePayment);
-            this.flowLayoutPanel1.Controls.Add(this.btn_subscription);
-            this.flowLayoutPanel1.Controls.Add(this.btn_miscellaneous);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1021, 69);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.pnl_donationType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.pnl_donationType.Controls.Add(this.btn_singlePayment);
+            this.pnl_donationType.Controls.Add(this.btn_subscription);
+            this.pnl_donationType.Controls.Add(this.btn_miscellaneous);
+            this.pnl_donationType.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl_donationType.Location = new System.Drawing.Point(0, 0);
+            this.pnl_donationType.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_donationType.Name = "pnl_donationType";
+            this.pnl_donationType.Size = new System.Drawing.Size(600, 69);
+            this.pnl_donationType.TabIndex = 0;
             // 
             // btn_singlePayment
             // 
@@ -104,16 +109,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_miscellaneous.UseVisualStyleBackColor = false;
             this.btn_miscellaneous.Click += new System.EventHandler(this.btn_miscellaneous_Click);
             // 
-            // panel1
+            // pnl_customDonation
             // 
-            this.panel1.Controls.Add(this.btn_save);
-            this.panel1.Controls.Add(this.donationTextBox1);
-            this.panel1.Controls.Add(this.lbl_custom);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 452);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1021, 113);
-            this.panel1.TabIndex = 8;
+            this.pnl_customDonation.Controls.Add(this.btn_save);
+            this.pnl_customDonation.Controls.Add(this.donationTextBox1);
+            this.pnl_customDonation.Controls.Add(this.lbl_custom);
+            this.pnl_customDonation.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl_customDonation.Location = new System.Drawing.Point(0, 452);
+            this.pnl_customDonation.Name = "pnl_customDonation";
+            this.pnl_customDonation.Size = new System.Drawing.Size(1021, 113);
+            this.pnl_customDonation.TabIndex = 8;
             // 
             // btn_save
             // 
@@ -128,6 +133,63 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_save.Text = "Confirm Donation";
             this.btn_save.UseVisualStyleBackColor = false;
             // 
+            // lbl_custom
+            // 
+            this.lbl_custom.AutoSize = true;
+            this.lbl_custom.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_custom.Location = new System.Drawing.Point(29, 14);
+            this.lbl_custom.Name = "lbl_custom";
+            this.lbl_custom.Size = new System.Drawing.Size(276, 39);
+            this.lbl_custom.TabIndex = 0;
+            this.lbl_custom.Text = "Custom Amount:";
+            // 
+            // pnl_back
+            // 
+            this.pnl_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.pnl_back.Controls.Add(this.btn_back);
+            this.pnl_back.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_back.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnl_back.Location = new System.Drawing.Point(600, 0);
+            this.pnl_back.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_back.Name = "pnl_back";
+            this.pnl_back.Size = new System.Drawing.Size(421, 69);
+            this.pnl_back.TabIndex = 1;
+            // 
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(216)))), ((int)(((byte)(238)))));
+            this.btn_back.FlatAppearance.BorderSize = 0;
+            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_back.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.Location = new System.Drawing.Point(239, 0);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(182, 69);
+            this.btn_back.TabIndex = 3;
+            this.btn_back.Text = "Back";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.panel2.Controls.Add(this.pnl_back);
+            this.panel2.Controls.Add(this.pnl_donationType);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1021, 69);
+            this.panel2.TabIndex = 10;
+            // 
+            // pnl_displayOptions
+            // 
+            this.pnl_displayOptions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_displayOptions.Location = new System.Drawing.Point(0, 69);
+            this.pnl_displayOptions.Name = "pnl_displayOptions";
+            this.pnl_displayOptions.Size = new System.Drawing.Size(1021, 383);
+            this.pnl_displayOptions.TabIndex = 11;
+            // 
             // donationTextBox1
             // 
             this.donationTextBox1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,50 +201,37 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.donationTextBox1.TabIndex = 1;
             this.donationTextBox1.Text = "Value";
             // 
-            // lbl_custom
-            // 
-            this.lbl_custom.AutoSize = true;
-            this.lbl_custom.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_custom.Location = new System.Drawing.Point(29, 14);
-            this.lbl_custom.Name = "lbl_custom";
-            this.lbl_custom.Size = new System.Drawing.Size(276, 39);
-            this.lbl_custom.TabIndex = 0;
-            this.lbl_custom.Text = "Custom Amount:";
-            // 
-            // pnl_displayOptions
-            // 
-            this.pnl_displayOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_displayOptions.Location = new System.Drawing.Point(0, 69);
-            this.pnl_displayOptions.Name = "pnl_displayOptions";
-            this.pnl_displayOptions.Size = new System.Drawing.Size(1021, 383);
-            this.pnl_displayOptions.TabIndex = 9;
-            // 
             // chooseDonationOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnl_displayOptions);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnl_customDonation);
             this.Name = "chooseDonationOption";
             this.Size = new System.Drawing.Size(1021, 565);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_donationType.ResumeLayout(false);
+            this.pnl_customDonation.ResumeLayout(false);
+            this.pnl_customDonation.PerformLayout();
+            this.pnl_back.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel pnl_donationType;
         private System.Windows.Forms.Button btn_singlePayment;
         private System.Windows.Forms.Button btn_subscription;
         private System.Windows.Forms.Button btn_miscellaneous;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_customDonation;
         private System.Windows.Forms.Label lbl_custom;
         private DonationTextBox donationTextBox1;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.FlowLayoutPanel pnl_back;
+        private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel pnl_displayOptions;
     }
 }
