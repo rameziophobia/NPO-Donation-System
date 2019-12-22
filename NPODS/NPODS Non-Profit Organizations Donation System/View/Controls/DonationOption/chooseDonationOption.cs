@@ -65,6 +65,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             pnl_displayOptions.Controls.AddRange(organization.getMiscOptions().ToArray());
         }
 
-        
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
