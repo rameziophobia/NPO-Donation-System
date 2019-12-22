@@ -36,15 +36,20 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private void btn_confirm_Click(object sender, EventArgs e)
         {
-            foreach(DonationFlowPanel donationGroupBox in donationGroupBoxes)
+            foreach (DonationFlowPanel donationGroupBox in donationGroupBoxes)
             {
+
                 int value = 0;
                 try
                 {
                     value = Convert.ToInt32(donationGroupBox.txt_donationValue.Text);
                 }
                 catch { }
-                    
+                if (!checkValidInput(donationGroupBox))
+                {
+                    MessageBox.Show("Please fill all the fields with valid data", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
                 appendDonationOption(donationGroupBox.cbo_donation.SelectedItem.ToString(),
                     donationGroupBox.txt_donationName.Text,
                     donationGroupBox.txt_donationDescription.Text,
@@ -55,6 +60,17 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             Console.WriteLine("hi");
             // todo display el7aga elli kanet mawgooda already ??
             // todo set current_org.DonationOptions = donationOptions;
+        }
+
+        private bool checkValidInput(DonationFlowPanel donationGroupBox)
+        {
+            if (donationGroupBox.txt_donationName.Text.Equals("Name") ||
+                    donationGroupBox.txt_donationDescription.Text.Equals("Description"))
+                return false;
+            else if (!int.TryParse(donationGroupBox.txt_donationValue.Text, out int number) &&
+                !donationGroupBox.cbo_donation.SelectedItem.ToString().Equals("Miscellaneous"))
+                return false;
+            return true;
         }
 
         private void appendDonationOption(string type, string name, string description, int value)

@@ -32,6 +32,19 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             base.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             base.Size = new System.Drawing.Size(1104, 53);
             base.TabIndex = 2;
+            this.cbo_donation.SelectedIndexChanged += new System.EventHandler(this.cbo_donation_SelectedIndexChanged);
+        }
+
+        private void cbo_donation_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            if (cbo_donation.SelectedItem.ToString().Trim() == "Miscellaneous")
+            {
+                txt_donationValue.Hide();
+            }
+            else
+            {
+                txt_donationValue.Show();
+            }
         }
 
     }
