@@ -113,16 +113,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fawry_pay_english_logo {
-            get {
-                object obj = ResourceManager.GetObject("fawry-pay-english-logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap hamburger_button {
             get {
                 object obj = ResourceManager.GetObject("hamburger_button", resourceCulture);
