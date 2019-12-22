@@ -44,6 +44,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
             pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
+            pnl_customDonation.Visible = false;
+
         }
 
         private void selectColor(Button button)
@@ -107,9 +109,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         public void updateDefault()
         {
             pnl_displayOptions.Controls.Clear();
-            if (defaultOptionFlag % 100 == 1)
+            if (donationOption == null && (defaultOptionFlag / 100) % 10 == 1)
             {
                 pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
+                pnl_customDonation.Visible = false;
             }
             else { 
                 try
