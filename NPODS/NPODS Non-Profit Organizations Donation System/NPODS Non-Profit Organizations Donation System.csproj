@@ -69,11 +69,8 @@
     <Compile Include="View\Controls\DonationOption\chooseDonationOption.Designer.cs">
       <DependentUpon>chooseDonationOption.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\DonationOption\DisplayDonationOptions.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="View\Controls\DonationOption\DonationButton.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\Controls\DonationOption\DonationType.cs" />
     <Compile Include="View\Controls\DonationOption\optionFlowPanel.cs">
@@ -161,9 +158,6 @@
     </Compile>
     <EmbeddedResource Include="View\Controls\DonationOption\chooseDonationOption.resx">
       <DependentUpon>chooseDonationOption.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\DonationOption\DisplayDonationOptions.resx">
-      <DependentUpon>DisplayDonationOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\DonationOption\editDonationOptions.resx">
       <DependentUpon>editDonationOptions.cs</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
+using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
 using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
 using System.Collections.Generic;
 
@@ -29,6 +30,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             OrganizationStatistics = new OrganizationStatistics();
         }
 
+        public void recieve(Transaction transaction)
+        {
+            transactionHistory.Add(transaction);
+        }
 
     }
 }

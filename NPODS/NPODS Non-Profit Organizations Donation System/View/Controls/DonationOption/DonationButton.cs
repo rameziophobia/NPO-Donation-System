@@ -8,30 +8,69 @@ using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption
 {
-    public class DonationButton : FlowLayoutPanel
+    public class DonationButton : UserControl
     {
+        private FlowLayoutPanel pnl_optionPnl = new FlowLayoutPanel();
         public Label Lbl_tierName { get; set; }
-        public Label Lbl_donationValue = new System.Windows.Forms.Label();
-        public Label Lbl_monthly = new System.Windows.Forms.Label();
-        public Label Lbl_description = new System.Windows.Forms.Label();
+        public Label Lbl_donationValue { get; set; }
+        public Label Lbl_monthly { get; set; }
+        public Label Lbl_description { get; set; }
+        private Boolean m_bIsHover;
+        private System.Drawing.Color baseColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+        private System.Drawing.Color mouseEnterColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(214)))));
+        private System.Drawing.Color mouseDownColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(212)))), ((int)(((byte)(222)))));
+
         public DonationButton(): base()
         {
             Lbl_tierName = new Label();
             Lbl_donationValue = new Label();
             Lbl_monthly = new Label();
             Lbl_description = new Label();
+            initialize_panel();
             initialize_labels();
-            base.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+
+            base.BackColor = System.Drawing.Color.Red;
             base.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             base.Location = new System.Drawing.Point(428, 15);
             base.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
             base.Name = "panel";
-            base.Size = new System.Drawing.Size(166, 142);
+            base.Size = new System.Drawing.Size(168, 144);
             base.TabIndex = 6;
-            base.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnl_displayOptions_MouseClick);
-            base.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_displayOptions_MouseDown);
-            base.MouseEnter += new System.EventHandler(this.pnl_displayOptions_MouseEnter);
-            base.MouseLeave += new System.EventHandler(this.pnl_displayOptions_MouseLeave);
+            this.Controls.Add(pnl_optionPnl);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnl_displayOptions_MouseClick);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_displayOptions_MouseDown);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_displayOptions_MouseEnter);
+            this.MouseEnter += new System.EventHandler(this.pnl_displayOptions_MouseEnter);
+            this.MouseLeave += new System.EventHandler(pnl_displayOptions_MouseLeave);
+            foreach (Control childs in Controls)
+            {
+                foreach(Control child in childs.Controls)
+                {
+                    setEvents(child);
+                }
+                setEvents(childs);
+            }
+        }
+
+        private void setEvents(Control child)
+        {
+            child.MouseEnter += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
+            child.MouseLeave += (s, e) => this.OnMouseLeave(e);
+            child.MouseUp += (s, e) => this.pnl_displayOptions_MouseEnter(s,e);
+            child.MouseClick += (s, e) => this.pnl_displayOptions_MouseClick(s, e);
+            child.MouseDown += (s, e) => this.pnl_displayOptions_MouseDown(s, e);
+        }
+
+        private void initialize_panel()
+        {
+            this.pnl_optionPnl.BackColor = this.baseColor;
+            this.pnl_optionPnl.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnl_optionPnl.Location = new System.Drawing.Point(428, 15);
+            this.pnl_optionPnl.Margin = new System.Windows.Forms.Padding(30, 15, 3, 3);
+            this.pnl_optionPnl.Name = "panel";
+            this.pnl_optionPnl.Size = new System.Drawing.Size(166, 142);
+            this.pnl_optionPnl.TabIndex = 6;
+            this.pnl_optionPnl.Dock = DockStyle.Fill;
         }
         private void initialize_labels()
         {
@@ -50,7 +89,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
             Lbl_tierName.TabIndex = 3;
             Lbl_tierName.Text = "Saied";
             Lbl_tierName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Controls.Add(Lbl_tierName);
+            this.pnl_optionPnl.Controls.Add(Lbl_tierName);
         }
         private void initialize_donationValue()
         {
@@ -62,7 +101,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
             Lbl_donationValue.TabIndex = 2;
             Lbl_donationValue.Text = "12$";
             Lbl_donationValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Controls.Add(Lbl_donationValue);
+            this.pnl_optionPnl.Controls.Add(Lbl_donationValue);
         }
         private void initialize_monthly()
         {
@@ -74,7 +113,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
             Lbl_monthly.TabIndex = 1;
             Lbl_monthly.Text = "PER MONTH";
             Lbl_monthly.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Controls.Add(Lbl_monthly);
+            this.pnl_optionPnl.Controls.Add(Lbl_monthly);
         }
         private void initialize_description()
         {
@@ -85,17 +124,38 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
             Lbl_description.Size = new System.Drawing.Size(166, 70);
             Lbl_description.TabIndex = 0;
             Lbl_description.Text = "Blalalalal";
-            this.Controls.Add(Lbl_description);
+            this.pnl_optionPnl.Controls.Add(Lbl_description);
         }
         private void pnl_displayOptions_MouseEnter(object sender, EventArgs e)
         {
+            m_bIsHover = true;
+            this.pnl_optionPnl.BackColor = this.mouseEnterColor;
+        }
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            if (this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
+                return; //suppress mouse leave event handling
+
+            if (m_bIsHover)
+            {
+                m_bIsHover = false;
+                pnl_displayOptions_MouseLeave();
+            }
+
+            base.OnMouseLeave(e);
         }
         private void pnl_displayOptions_MouseLeave(object sender, EventArgs e)
         {
+            pnl_displayOptions_MouseLeave();
+        }
+        private void pnl_displayOptions_MouseLeave()
+        {
+            this.pnl_optionPnl.BackColor = this.baseColor;
         }
 
         private void pnl_displayOptions_MouseDown(object sender, MouseEventArgs e)
         {
+            this.pnl_optionPnl.BackColor = this.mouseDownColor;
         }
         private void pnl_displayOptions_MouseClick(object sender, MouseEventArgs e)
         {
