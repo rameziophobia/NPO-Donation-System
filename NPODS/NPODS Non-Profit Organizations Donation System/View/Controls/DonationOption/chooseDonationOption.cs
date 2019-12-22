@@ -15,7 +15,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private readonly System.Drawing.Color COLOR_SELECTED = System.Drawing.Color.FromArgb(199, 236, 238);
         private readonly System.Drawing.Color COLOR_NOT_SELECTED = System.Drawing.Color.FromArgb(199, 216, 238);
-        private List<Donation> availableTypes = new List<Donation>();
+        private Donation donationOption;
+        private int defaultOptionFlag = 0;
 
         public chooseDonationOption()
         {
@@ -70,32 +71,65 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         public void setAvailableTypes()
         {
-            if (!(Organization.SingleDonation is NullDonation)) 
+            if (!(Organization.SingleDonation is NullDonation))
             {
                 btn_singlePayment.Visible = true;
-                availableTypes.Add(Organization.SingleDonation);
+                defaultOptionFlag += 1;
             }
             if (!(Organization.SubscriptionDonation is NullDonation))
             {
                 btn_subscription.Visible = true;
-                availableTypes.Add(Organization.SubscriptionDonation);
+                defaultOptionFlag += 10;
             }
-            if(Organization.MiscDonations.Count > 0)
+            if (Organization.MiscDonations.Count > 0)
             {
+                defaultOptionFlag += 100;
                 btn_miscellaneous.Visible = true;
+            }
+        }
+        public void setDefaultOption()
+        {
+            if (defaultOptionFlag % 2 == 1)
+            {
+                donationOption = Organization.SingleDonation;
+                selectColor(btn_singlePayment);
+            }
+            else if ((defaultOptionFlag/10) % 10 == 1)
+            {
+                donationOption = Organization.SubscriptionDonation;
+                selectColor(btn_subscription);
+            }
+            else if ((defaultOptionFlag/100) % 10 == 1)
+            {
+                selectColor(btn_miscellaneous);
             }
         }
         public void updateDefault()
         {
             pnl_displayOptions.Controls.Clear();
-            if (availableTypes.Count > 0)
-            {
-                pnl_displayOptions.Controls.AddRange(availableTypes[0].getOptions().ToArray());
-                pnl_customDonation.Visible = availableTypes[0].customEnabled;
-            }
-            else if (Organization.MiscDonations.Count > 0)
+            if (defaultOptionFlag % 100 == 1)
             {
                 pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
+            }
+            else { 
+                try
+                {
+                    pnl_displayOptions.Controls.AddRange(donationOption.getOptions().ToArray());
+                    pnl_customDonation.Visible = donationOption.customEnabled;
+                }
+                catch (Exception ex)
+                {
+                    if (ex is NullReferenceException)
+                    {
+                        pnl_displayOptions.Controls.Add(lbl_noOptions);
+                        lbl_noOptions.Visible = true;
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+            
             }
         }
 

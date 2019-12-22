@@ -44,11 +44,13 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_displayOptions = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl_noOptions = new System.Windows.Forms.Label();
             this.donationTextBox1 = new NPODS_Non_Profit_Organizations_Donation_System.DonationTextBox();
             this.pnl_donationType.SuspendLayout();
             this.pnl_customDonation.SuspendLayout();
             this.pnl_back.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnl_displayOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_donationType
@@ -122,6 +124,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.pnl_customDonation.Name = "pnl_customDonation";
             this.pnl_customDonation.Size = new System.Drawing.Size(1021, 113);
             this.pnl_customDonation.TabIndex = 8;
+            this.pnl_customDonation.Visible = false;
             // 
             // btn_save
             // 
@@ -187,11 +190,24 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             // 
             // pnl_displayOptions
             // 
+            this.pnl_displayOptions.Controls.Add(this.lbl_noOptions);
             this.pnl_displayOptions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_displayOptions.Location = new System.Drawing.Point(0, 69);
             this.pnl_displayOptions.Name = "pnl_displayOptions";
             this.pnl_displayOptions.Size = new System.Drawing.Size(1021, 383);
             this.pnl_displayOptions.TabIndex = 11;
+            // 
+            // lbl_noOptions
+            // 
+            this.lbl_noOptions.AutoSize = true;
+            this.lbl_noOptions.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_noOptions.Location = new System.Drawing.Point(50, 50);
+            this.lbl_noOptions.Margin = new System.Windows.Forms.Padding(50);
+            this.lbl_noOptions.Name = "lbl_noOptions";
+            this.lbl_noOptions.Size = new System.Drawing.Size(739, 39);
+            this.lbl_noOptions.TabIndex = 0;
+            this.lbl_noOptions.Text = "Sorry, no donation options availabe right now.";
+            this.lbl_noOptions.Visible = false;
             // 
             // donationTextBox1
             // 
@@ -218,6 +234,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.pnl_customDonation.PerformLayout();
             this.pnl_back.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.pnl_displayOptions.ResumeLayout(false);
+            this.pnl_displayOptions.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -236,5 +254,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel pnl_displayOptions;
+        private System.Windows.Forms.Label lbl_noOptions;
     }
 }
