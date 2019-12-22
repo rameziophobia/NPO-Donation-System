@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption
@@ -20,7 +15,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
         private System.Drawing.Color mouseEnterColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(214)))));
         private System.Drawing.Color mouseDownColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(212)))), ((int)(((byte)(222)))));
 
-        public DonationButton(): base()
+        public DonationButton() : base()
         {
             Lbl_tierName = new Label();
             Lbl_donationValue = new Label();
@@ -44,7 +39,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
             this.MouseLeave += new System.EventHandler(pnl_displayOptions_MouseLeave);
             foreach (Control childs in Controls)
             {
-                foreach(Control child in childs.Controls)
+                foreach (Control child in childs.Controls)
                 {
                     setEvents(child);
                 }
@@ -56,7 +51,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
         {
             child.MouseEnter += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
             child.MouseLeave += (s, e) => this.OnMouseLeave(e);
-            child.MouseUp += (s, e) => this.pnl_displayOptions_MouseEnter(s,e);
+            child.MouseUp += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
             child.MouseClick += (s, e) => this.pnl_displayOptions_MouseClick(s, e);
             child.MouseDown += (s, e) => this.pnl_displayOptions_MouseDown(s, e);
         }

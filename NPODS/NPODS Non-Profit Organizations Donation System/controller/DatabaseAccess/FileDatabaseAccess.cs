@@ -2,7 +2,6 @@
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAccess
 {
@@ -64,7 +63,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             }
             catch (DirectoryNotFoundException)
             {
-                string temp = filePath.Substring(0, filePath.Length - filePath.LastIndexOf('/')-1);
+                string temp = filePath.Substring(0, filePath.Length - filePath.LastIndexOf('/') - 1);
                 Directory.CreateDirectory(temp);
                 return readJson<T>(filePath);
             }

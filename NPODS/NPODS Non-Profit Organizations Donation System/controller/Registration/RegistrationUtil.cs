@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration
 {
@@ -16,7 +15,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration
         private List<Organization> organizations;
         private List<Donor> donors;
 
-        private RegistrationUtil() 
+        private RegistrationUtil()
         {
             databaseAccess = DatabaseAccess.getInstance();
             organizations = databaseAccess.loadOrganizations();

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.View
 {
     class RemoveLabel : Label
     {
-        public RemoveLabel(): base()
+        public RemoveLabel() : base()
         {
             base.AutoSize = true;
             base.BackColor = System.Drawing.Color.DarkRed;
