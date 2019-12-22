@@ -2,6 +2,8 @@
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption;
 using System;
+using System.IO;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -69,6 +71,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         }
 
+
+    private void selectColor(Button button)
+        {
+            btn_singlePayment.BackColor = COLOR_NOT_SELECTED;
+            btn_subscription.BackColor = COLOR_NOT_SELECTED;
+            btn_miscellaneous.BackColor = COLOR_NOT_SELECTED;
+            button.BackColor = COLOR_SELECTED;
+
+
+        }
         public List<DonationButton> getOptions(DonationTier[] donationTiers,bool isMonthly)
         {
             List<DonationButton> btns_donation = new List<DonationButton>();
@@ -84,16 +96,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             return btns_donation;
         }
 
-    private void selectColor(Button button)
-        {
-            btn_singlePayment.BackColor = COLOR_NOT_SELECTED;
-            btn_subscription.BackColor = COLOR_NOT_SELECTED;
-            btn_miscellaneous.BackColor = COLOR_NOT_SELECTED;
-            button.BackColor = COLOR_SELECTED;
-
-
-        }
-
         private List<DonationButton> getMiscOptionsButtons(List<MiscDonation> miscDonations)
         {
             List<DonationButton> btns = new List<DonationButton>();
@@ -103,10 +105,19 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 btn.Lbl_donationValue.Visible = false;
                 btn.Lbl_monthly.Visible = false;
                 btn.Lbl_tierName.Visible = false;
-                btn.Lbl_description.Text = miscDonation.Link;
+                btn.Lbl_description.Visible = false;
+                btn.Link_description.Visible = true;
+                btn.Link_description.MouseClick += Link_description_MouseClick;
+                btn.Link_description.Text = miscDonation.Link;
                 btns.Add(btn);
             }
             return btns;
+        }
+
+        private void Link_description_MouseClick(object sender, MouseEventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            Process.Start("http://"+link.Text);
         }
 
         public void setAvailableTypes()

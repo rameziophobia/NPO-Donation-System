@@ -12,6 +12,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
         public Label Lbl_monthly { get; set; }
         public delegate void OnButtonClick();
         public Label Lbl_description { get; set; }
+        public LinkLabel Link_description { get; set; }
         private Boolean enterFlag;
         private readonly Color baseColor = Color.FromArgb(126, 214, 223);
         private readonly Color mouseEnterColor = Color.FromArgb(179, 194, 214);
@@ -23,6 +24,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             Lbl_donationValue = new Label();
             Lbl_monthly = new Label();
             Lbl_description = new Label();
+            Link_description = new LinkLabel();
+
             initialize_panel(onButtonClick);
             initialize_labels();
 
@@ -77,6 +80,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             initialize_donationValue();
             initialize_monthly();
             initialize_description();
+            initialize_link();
         }
         private void initialize_tierName()
         {
@@ -124,6 +128,19 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             Lbl_description.TabIndex = 0;
             Lbl_description.Text = "Blalalalal";
             this.pnl_optionPnl.Controls.Add(Lbl_description);
+
+        }
+        private void initialize_link()
+        {
+            Link_description.Dock = DockStyle.Top;
+            Link_description.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            Link_description.Location = new Point(0, 72);
+            Link_description.Name = "Lbl_description";
+            Link_description.Size = new Size(166, 70);
+            Link_description.TabIndex = 0;
+            Link_description.Text = "Blalalalal";
+            Link_description.Visible = false;
+            this.pnl_optionPnl.Controls.Add(Link_description);
         }
         private void pnl_displayOptions_MouseEnter(object sender, EventArgs e)
         {
