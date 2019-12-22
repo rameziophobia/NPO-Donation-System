@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tempHome1 = new NPODS_Non_Profit_Organizations_Donation_System.View.Controls.tempHome();
+            this.tempHome1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.tempHome();
             this.registerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.RegisterControl();
             this.loginControl1 = new NPODS_Non_Profit_Organizations_Donation_System.LoginControl();
             this.headerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.HeaderControl();
@@ -120,7 +120,7 @@
         private LoginControl loginControl1;
         private RegisterControl registerControl1;
         private organizationInfo organizationInfo1;
-        private View.Controls.tempHome tempHome1;
+        private View.CustomControls.tempHome tempHome1;
         private chooseDonationOption chooseDonationOption1;
     }
 }
