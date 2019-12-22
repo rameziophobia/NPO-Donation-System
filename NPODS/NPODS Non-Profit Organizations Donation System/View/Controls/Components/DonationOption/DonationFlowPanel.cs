@@ -1,9 +1,4 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
@@ -35,6 +30,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             base.Size = new System.Drawing.Size(1104, 53);
             base.TabIndex = 2;
         }
-        
+
     }
 }

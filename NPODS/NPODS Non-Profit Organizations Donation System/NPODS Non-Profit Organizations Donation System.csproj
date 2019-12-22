@@ -41,6 +41,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -116,11 +118,41 @@
     <Compile Include="Controller\Registration\EmailAlreadyExistsException.cs" />
     <Compile Include="Controller\Registration\RegistrationUtil.cs" />
     <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />
+    <Compile Include="View\Controls\tempHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\tempHome.Designer.cs">
+      <DependentUpon>tempHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\Controls\Components\Browser\circularPicBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Controls\Components\Browser\CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\UserControl\Browser\org card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\UserControl\Browser\org card.Designer.cs">
+      <DependentUpon>org card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganizationDashboard.Designer.cs">
+      <DependentUpon>OrganizationDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\UserControl\Browser\OrganizationCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\UserControl\Browser\OrganizationCard.Designer.cs">
+      <DependentUpon>OrganizationCard.cs</DependentUpon>
     </Compile>
     <Compile Include="OrganizationUtil\NonMoneyDonation.cs" />
     <Compile Include="Payment\Fawry.cs" />
@@ -165,8 +197,20 @@
     <EmbeddedResource Include="View\Controls\OrganizationInfo\organizationInfo.resx">
       <DependentUpon>organizationInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\tempHome.resx">
+      <DependentUpon>tempHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\UserControl\Browser\org card.resx">
+      <DependentUpon>org card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganizationDashboard.resx">
+      <DependentUpon>OrganizationDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\UserControl\Browser\OrganizationCard.resx">
+      <DependentUpon>OrganizationCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -187,8 +231,6 @@
     <EmbeddedResource Include="View\Controls\RegisterControl.resx">
       <DependentUpon>RegisterControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="data\logins.json" />
-    <None Include="data\Organizations.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -217,5 +259,41 @@
     <None Include="Resources\placeholder.com-logo4.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\Banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\hamburger_button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\misc_donation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\money_donation_resized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\misc_donation_resized_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\data_resized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\Stats_resized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\212.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

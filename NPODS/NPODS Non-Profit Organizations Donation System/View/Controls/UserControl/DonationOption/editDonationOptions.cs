@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -20,7 +13,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private void txt_value_Click(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
-            if(textBox.Text == "Value" || textBox.Text == "Description")
+            if (textBox.Text == "Value" || textBox.Text == "Description")
             {
                 textBox.Text = "";
                 textBox.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -54,7 +47,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private void btn_addOption_Click(object sender, EventArgs e)
         {
-                
+
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
-using NPODS_Non_Profit_Organizations_Donation_System.Payment;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Transactions
 {

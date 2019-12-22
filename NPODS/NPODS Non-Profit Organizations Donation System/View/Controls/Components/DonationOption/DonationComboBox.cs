@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     class DonationComboBox : ComboBox
     {
-        
+
         public DonationComboBox(int i) : base()
         {
             base.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;

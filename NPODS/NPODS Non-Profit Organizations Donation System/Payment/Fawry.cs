@@ -6,7 +6,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Payment
     {
         public void pay(Transaction transaction)
         {
-            
+
         }
 
         public bool verifyPayment(Transaction transaction)
