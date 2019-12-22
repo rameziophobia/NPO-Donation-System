@@ -1,4 +1,5 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.controller.Login;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.controller.Login;
 using System;
 using System.Net.Mail;
 using System.Windows.Forms;
@@ -7,6 +8,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     public partial class LoginControl : UserControl
     {
+        public delegate void OnAction(Account account);
+
+        public OnAction OnLogin { get; set; }
+
         private const string LOGIN_STATUS_MSG_INVALID_PASSWORD = "Invalid Password";
         private const string LOGIN_STATUS_MSG_NOT_REGISTERED = "User Not Registered";
         private const string LOGIN_STATUS_MSG_INVALID_EMAIL = "Invalid Email";
@@ -40,7 +45,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 {
                     if (loginVerification.VerifyUser(email, password))
                     {
-                        showLoginStatus("(WIP) Succes");
+                        OnLogin(new Account(email, "temp"));//todo temp
                     }
                     else
                     {
@@ -72,6 +77,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private void btn_recoverPassword_Click(object sender, EventArgs e)
         {
             MessageBox.Show("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void LoginControl_VisibleChanged(object sender, EventArgs e)
+        {
+            txt_email.Text = "";
+            txt_password.Text = "";
+            chk_rememberMe.Checked = false;
+            hideLoginStatus();
         }
     }
 }

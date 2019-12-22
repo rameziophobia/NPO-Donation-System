@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -64,7 +65,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             catch (DirectoryNotFoundException)
             {
                 string temp = filePath.Substring(0, filePath.Length - filePath.LastIndexOf('/') - 1);
-                Directory.CreateDirectory(temp);
+                try
+                {
+                    Directory.CreateDirectory(temp);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    return null;
+                }
                 return readJson<T>(filePath);
             }
         }

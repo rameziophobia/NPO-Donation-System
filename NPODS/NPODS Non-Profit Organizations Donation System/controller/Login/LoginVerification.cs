@@ -7,15 +7,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.Login
 {
     public class LoginVerification
     {
-        private readonly Dictionary<string, string> loginInfos;
-
-        public LoginVerification()
-        {
-            loginInfos = DatabaseAccess.DatabaseAccess.getInstance().GetLoginInfos();
-        }
-
         public bool VerifyUser(string email, string password)
         {
+            Dictionary<string, string> loginInfos = DatabaseAccess.DatabaseAccess.getInstance().GetLoginInfos();
             email = email.ToLower();
             if (loginInfos.ContainsKey(email))
             {
