@@ -169,4 +169,10 @@
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fawry_pay_english_logo_small4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\PaymentOptions\fawry-pay-english-logo-small4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PayPal_logo_logotype_smallpng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\PaymentOptions\PayPal_logo_logotype_smallpng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

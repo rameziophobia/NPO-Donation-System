@@ -269,7 +269,9 @@
   <ItemGroup>
     <None Include="Resources\placeholder.com-logo4.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\fawry_logo.bmp" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\OrganizationDashboard\Banner.png" />
   </ItemGroup>
@@ -305,6 +307,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\212.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\PaymentOptions\fawry-pay-english-logo-small4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\PaymentOptions\PayPal_logo_logotype_smallpng.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

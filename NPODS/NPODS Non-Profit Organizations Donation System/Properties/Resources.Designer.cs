@@ -113,6 +113,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fawry_pay_english_logo_small4 {
+            get {
+                object obj = ResourceManager.GetObject("fawry_pay_english_logo_small4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hamburger_button {
             get {
                 object obj = ResourceManager.GetObject("hamburger_button", resourceCulture);
@@ -206,6 +216,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Properties {
         internal static System.Drawing.Bitmap money_donation_resized {
             get {
                 object obj = ResourceManager.GetObject("money_donation_resized", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PayPal_logo_logotype_smallpng {
+            get {
+                object obj = ResourceManager.GetObject("PayPal_logo_logotype_smallpng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
