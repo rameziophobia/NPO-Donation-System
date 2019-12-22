@@ -1,4 +1,6 @@
-﻿namespace NPODS_Non_Profit_Organizations_Donation_System
+﻿using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption.PaymentOptions;
+
+namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     partial class MainForm
     {
@@ -28,12 +30,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tempHome1 = new NPODS_Non_Profit_Organizations_Donation_System.View.Controls.tempHome();
+            this.tempHome1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.tempHome();
             this.registerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.RegisterControl();
             this.loginControl1 = new NPODS_Non_Profit_Organizations_Donation_System.LoginControl();
             this.headerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.HeaderControl();
             this.organizationInfo1 = new NPODS_Non_Profit_Organizations_Donation_System.organizationInfo();
             this.chooseDonationOption1 = new NPODS_Non_Profit_Organizations_Donation_System.chooseDonationOption();
+            this.paymentOption1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption.PaymentOptions.PaymentOption();
             this.SuspendLayout();
             // 
             // tempHome1
@@ -93,6 +96,14 @@
             this.chooseDonationOption1.Size = new System.Drawing.Size(1136, 565);
             this.chooseDonationOption1.TabIndex = 7;
             this.chooseDonationOption1.Visible = false;
+            //
+            //paymentOption1
+            //
+            this.paymentOption1.Location = new System.Drawing.Point(0, 65);
+            this.paymentOption1.Name = "paymentOption1";
+            this.paymentOption1.Size = new System.Drawing.Size(1021, 565);
+            this.paymentOption1.TabIndex = 7;
+            this.paymentOption1.Visible = false;
             // 
             // MainForm
             // 
@@ -105,6 +116,7 @@
             this.Controls.Add(this.registerControl1);
             this.Controls.Add(this.tempHome1);
             this.Controls.Add(this.loginControl1);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -120,8 +132,9 @@
         private LoginControl loginControl1;
         private RegisterControl registerControl1;
         private organizationInfo organizationInfo1;
-        private View.Controls.tempHome tempHome1;
+        private View.CustomControls.tempHome tempHome1;
         private chooseDonationOption chooseDonationOption1;
+        private PaymentOption paymentOption1; 
     }
 }
 
