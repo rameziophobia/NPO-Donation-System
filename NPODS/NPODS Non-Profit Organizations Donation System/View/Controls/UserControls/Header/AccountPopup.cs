@@ -1,5 +1,4 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.UserControls.Header
 {
@@ -15,9 +14,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.UserContr
         {
             InitializeComponent();
 
-            btn_viewDashboard.Click +=  new System.EventHandler((sender, e) => OnViewDashboardClick());
-            btn_editAccount.Click +=  new System.EventHandler((sender, e) => OnEditAccountClick());
-            btn_logOut.Click +=  new System.EventHandler((sender, e) => OnLogOutClick());
+            btn_viewDashboard.Click += new System.EventHandler((sender, e) => OnViewDashboardClick());
+            btn_editAccount.Click += new System.EventHandler((sender, e) => OnEditAccountClick());
+            btn_logOut.Click += new System.EventHandler((sender, e) => OnLogOutClick());
         }
 
         private void flowLayoutPanel1_MouseLeave(object sender, System.EventArgs e)

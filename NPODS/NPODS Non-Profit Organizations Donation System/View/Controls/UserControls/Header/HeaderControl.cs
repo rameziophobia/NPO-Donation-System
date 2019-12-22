@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.UserControls.Header;
+using System;
+using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
@@ -37,8 +37,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             lbl_username.Text = USER_WELCOME + account.Name;
             lbl_username.Visible = true;
-            btn_login.Visible = false;    
-            btn_register.Visible = false;    
+            btn_login.Visible = false;
+            btn_register.Visible = false;
         }
 
         private void lbl_username_MouseEnter(object sender, EventArgs e)

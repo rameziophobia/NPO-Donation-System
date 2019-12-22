@@ -29,7 +29,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             DialogResult response = MessageBox.Show("Are you sure you want to logout?", "Logout Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (response == DialogResult.Yes)
             {
-            headerControl1.Logout();
+                headerControl1.Logout();
             }
         }
 
