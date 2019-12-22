@@ -1,6 +1,7 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration;
 using System;
+using System.Net.Mail;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
@@ -47,6 +48,17 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             }
 
             string email = txt_email.Text.ToLower();
+
+            try
+            {
+                MailAddress m = new MailAddress(email);
+            }
+            catch (FormatException)
+            {
+                lbl_errorMessage.Text = "error: Invalid Email";
+                return;
+            }
+
             string name = txt_name.Text;
 
             RegistrationUtil registrationUtil = RegistrationUtil.getInstance();

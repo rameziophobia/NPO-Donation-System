@@ -8,7 +8,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         public string Email { get; set; }
         public string Name { get; set; }
         protected List<Transaction> transactionHistory;
-        protected List<Subscription> currentSubscriptions; 
+        protected List<Subscription> currentSubscriptions;
         public Account(string email, string name)
         {
             this.Email = email;

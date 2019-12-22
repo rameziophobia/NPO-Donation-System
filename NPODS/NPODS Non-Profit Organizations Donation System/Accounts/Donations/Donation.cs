@@ -22,7 +22,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
             {
                 DonationButton btn = new DonationButton();
                 btn.Lbl_tierName.Text = DonationTiers[i].Name;
-                btn.Lbl_donationValue.Text = DonationTiers[i].Value.ToString() +"$";
+                btn.Lbl_donationValue.Text = DonationTiers[i].Value.ToString() + "$";
                 btn.Lbl_description.Text = DonationTiers[i].Description;
                 btns_donation.Add(btn);
             }

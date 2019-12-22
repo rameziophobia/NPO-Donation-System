@@ -1,7 +1,6 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
 using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
-using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
 using System.Collections.Generic;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
@@ -18,7 +17,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         public OrganizationStatistics OrganizationStatistics { get; set; }
         public string OrganizationUrl { get; set; }
 
-        public Organization(string email, string name): base(email, name)
+        public Organization(string email, string name) : base(email, name)
         {
             Description = "";
             LogoFilePath = "";

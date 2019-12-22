@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     class DonationTextBox : TextBox
     {
-        public DonationTextBox() : this(0,"Value",0)
+        public DonationTextBox() : this(0, "Value", 0)
         {
-            
+
         }
-        public DonationTextBox(int i, string watermark,int tabIndex) : base()
+        public DonationTextBox(int i, string watermark, int tabIndex) : base()
         {
             base.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             base.ForeColor = System.Drawing.SystemColors.WindowFrame;

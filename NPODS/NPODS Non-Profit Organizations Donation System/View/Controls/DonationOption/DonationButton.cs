@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption
@@ -16,11 +12,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
         public Label Lbl_monthly { get; set; }
         public Label Lbl_description { get; set; }
         private Boolean enterFlag;
-        private readonly Color baseColor = Color.FromArgb(126, 214,223);
-        private readonly Color mouseEnterColor = Color.FromArgb(179,194,214);
-        private readonly Color mouseDownColor = Color.FromArgb(204,212,222);
+        private readonly Color baseColor = Color.FromArgb(126, 214, 223);
+        private readonly Color mouseEnterColor = Color.FromArgb(179, 194, 214);
+        private readonly Color mouseDownColor = Color.FromArgb(204, 212, 222);
 
-        public DonationButton(): base()
+        public DonationButton() : base()
         {
             Lbl_tierName = new Label();
             Lbl_donationValue = new Label();
@@ -44,7 +40,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
             this.MouseLeave += new EventHandler(this.pnl_displayOptions_MouseLeave);
             foreach (Control childs in Controls)
             {
-                foreach(Control child in childs.Controls)
+                foreach (Control child in childs.Controls)
                 {
                     setEvents(child);
                 }
@@ -56,7 +52,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
         {
             child.MouseEnter += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
             child.MouseLeave += (s, e) => this.OnMouseLeave(e);
-            child.MouseUp += (s, e) => this.pnl_displayOptions_MouseEnter(s,e);
+            child.MouseUp += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
             child.MouseClick += (s, e) => this.pnl_displayOptions_MouseClick(s, e);
             child.MouseDown += (s, e) => this.pnl_displayOptions_MouseDown(s, e);
         }

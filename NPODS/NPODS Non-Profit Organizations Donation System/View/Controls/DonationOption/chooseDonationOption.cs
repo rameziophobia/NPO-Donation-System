@@ -96,12 +96,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 donationOption = Organization.SingleDonation;
                 selectColor(btn_singlePayment);
             }
-            else if ((defaultOptionFlag/10) % 10 == 1)
+            else if ((defaultOptionFlag / 10) % 10 == 1)
             {
                 donationOption = Organization.SubscriptionDonation;
                 selectColor(btn_subscription);
             }
-            else if ((defaultOptionFlag/100) % 10 == 1)
+            else if ((defaultOptionFlag / 100) % 10 == 1)
             {
                 selectColor(btn_miscellaneous);
             }
@@ -114,7 +114,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
                 pnl_customDonation.Visible = false;
             }
-            else { 
+            else
+            {
                 try
                 {
                     pnl_displayOptions.Controls.AddRange(donationOption.getOptions().ToArray());
@@ -132,7 +133,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                         throw;
                     }
                 }
-            
+
             }
         }
 
