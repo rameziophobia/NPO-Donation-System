@@ -14,10 +14,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
         {
             return instance;
         }
-        public override List<DonationButton> getOptions()
-        {
-            return new List<DonationButton>();
-        }
 
     }
 }

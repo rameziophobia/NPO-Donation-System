@@ -45,9 +45,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             }
         }
 
-        private void btn_addOption_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

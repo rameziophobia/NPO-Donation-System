@@ -105,7 +105,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_addOption.TabIndex = 6;
             this.btn_addOption.Text = "Add Option";
             this.btn_addOption.UseVisualStyleBackColor = false;
-            this.btn_addOption.Click += new System.EventHandler(this.btn_addOption_Click);
             this.btn_addOption.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_addOption_MouseClick);
             // 
             // pnl_buttons

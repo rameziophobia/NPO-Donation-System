@@ -26,7 +26,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 LogoFilePath = "Iceland.png",
                 Description = "ignore the name. there's no ice here",
                 MiscDonations = new List<MiscDonation> { new MiscDonation("Ramesbasdahdsuihdy.com") },
-                SingleDonation = new SingleDonation(new DonationTier[] {}),
+                SubscriptionDonation = new SubscriptionDonation(new DonationTier[] { new DonationTier("plz", "send help", 54.2f) }),
+                SingleDonation = new SingleDonation(new DonationTier[] { new DonationTier("plz", "send help", 50.2f) }),
                 DonationGoal = new DonationGoal(true, 500f, 8458f),
                 OrganizationStatistics = new OrganizationStatistics()
             };
@@ -39,15 +40,18 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             organizationInfo1.OnDonatePress += () =>
             {
                 switchControls(chooseDonationOption1);
-                chooseDonationOption1.Organization = organization;
-                chooseDonationOption1.setAvailableTypes();
-                chooseDonationOption1.setDefaultOption();
-                chooseDonationOption1.updateDefault();
+                initializeChooseDonation(organization);
             };
             chooseDonationOption1.OnBackPress += () =>
             {
                 switchControls(organizationInfo1);
                 organizationInfo1.updateOrganisation(organization);
+            };
+            
+            paymentOption1.OnBackPress += () =>
+            {
+                switchControls(chooseDonationOption1);
+                initializeChooseDonation(organization);
             };
         }
         private void switchControls(UserControl userControl)
@@ -56,7 +60,13 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             lastActiveUserControl.Visible = false;
             lastActiveUserControl = userControl;
         }
-
+        private void initializeChooseDonation(Organization organization)
+        {
+            chooseDonationOption1.Organization = organization;
+            chooseDonationOption1.setAvailableTypes();
+            chooseDonationOption1.setDefaultOption();
+            chooseDonationOption1.updateDefault();
+        }
         private void MainForm_Load(object sender, System.EventArgs e)
         {
         }

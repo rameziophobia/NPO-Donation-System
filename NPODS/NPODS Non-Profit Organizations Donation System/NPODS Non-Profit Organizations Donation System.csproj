@@ -200,6 +200,9 @@
     <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.resx">
       <DependentUpon>optionFlowPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\PaymentOptions\PaymentOption.resx">
+      <DependentUpon>PaymentOption.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.resx">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,7 +254,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Images\PaymentOptions\fawry-pay-english-logo.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\OrganizationInfo\Banner.png" />
   </ItemGroup>
