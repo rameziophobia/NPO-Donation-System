@@ -1,4 +1,4 @@
-using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
 using System;
@@ -15,18 +15,20 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private readonly System.Drawing.Color COLOR_SELECTED = System.Drawing.Color.FromArgb(199, 236, 238);
         private readonly System.Drawing.Color COLOR_NOT_SELECTED = System.Drawing.Color.FromArgb(199, 216, 238);
+        private List<Button> availableTypes = new List<Button>();
+        public DonationButton[] defaultOption;
 
         public chooseDonationOption()
         {
             InitializeComponent();
         }
 
-
         private void btn_singlePayment_Click(object sender, EventArgs e)
         {
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
             pnl_displayOptions.Controls.AddRange(Organization.SingleDonation.getOptions().ToArray());
+            pnl_customDonation.Visible = Organization.SingleDonation.customEnabled;
         }
 
         private void btn_subscription_Click(object sender, EventArgs e)
@@ -34,6 +36,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
             pnl_displayOptions.Controls.AddRange(Organization.SubscriptionDonation.getOptions().ToArray());
+            pnl_customDonation.Visible = Organization.SubscriptionDonation.customEnabled;
         }
 
         private void btn_miscellaneous_Click(object sender, EventArgs e)
@@ -66,10 +69,28 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             return btns;
         }
 
+        public void setAvailableTypes()
+        {
+            if (Organization.SingleDonation.DonationTiers.Length == 0) 
+            {
+                btn_singlePayment.Visible = false;
+            }
+            if (Organization.SubscriptionDonation.DonationTiers.Length == 0)
+            {
+                btn_subscription.Visible = false;
+            }
+            if(Organization.MiscDonations.Count == 0)
+            {
+                btn_miscellaneous.Visible = false;
+            }
+        }
         public void updateDefault()
         {
             pnl_displayOptions.Controls.Clear();
             pnl_displayOptions.Controls.AddRange(Organization.SingleDonation.getOptions().ToArray());
+            pnl_customDonation.Visible = Organization.SingleDonation.customEnabled;
+        }
+
         private void btn_back_Click(object sender, EventArgs e)
         {
             OnBackPress();
