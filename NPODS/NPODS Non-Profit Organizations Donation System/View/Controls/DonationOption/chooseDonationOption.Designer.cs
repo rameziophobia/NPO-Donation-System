@@ -184,7 +184,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private System.Windows.Forms.Label lbl_custom;
         private DonationTextBox donationTextBox1;
         private System.Windows.Forms.Button btn_save;
-        private Organization organization;
         private System.Windows.Forms.FlowLayoutPanel pnl_displayOptions;
     }
 }

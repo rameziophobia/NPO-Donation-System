@@ -29,19 +29,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             OrganizationStatistics = new OrganizationStatistics();
         }
 
-        public List<DonationButton> getMiscOptions()
-        {
-            List<DonationButton> btns = new List<DonationButton>();
-            for(int i = 0; i < MiscDonations.Count; i++)
-            {
-                DonationButton btn = new DonationButton();
-                btn.Lbl_donationValue.Visible = false;
-                btn.Lbl_monthly.Visible = false;
-                btn.Lbl_tierName.Visible = false;
-                btn.Lbl_description.Text = MiscDonations[i].Link;
-                btns.Add(btn);
-            }
-            return btns;
-        }
+
     }
 }

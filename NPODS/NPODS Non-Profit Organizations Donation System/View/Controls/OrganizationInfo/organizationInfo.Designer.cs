@@ -35,6 +35,7 @@
             this.lbl_description = new System.Windows.Forms.Label();
             this.pbr_goal = new System.Windows.Forms.ProgressBar();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_orgName = new System.Windows.Forms.Label();
             this.btn_donate = new System.Windows.Forms.Button();
             this.pic_orgLogo = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
@@ -114,6 +115,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lbl_orgName);
             this.panel3.Controls.Add(this.btn_donate);
             this.panel3.Controls.Add(this.pic_orgLogo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
@@ -122,18 +124,28 @@
             this.panel3.Size = new System.Drawing.Size(311, 584);
             this.panel3.TabIndex = 4;
             // 
+            // lbl_orgName
+            // 
+            this.lbl_orgName.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_orgName.Location = new System.Drawing.Point(52, 259);
+            this.lbl_orgName.Name = "lbl_orgName";
+            this.lbl_orgName.Size = new System.Drawing.Size(225, 53);
+            this.lbl_orgName.TabIndex = 3;
+            this.lbl_orgName.Text = "Org Name";
+            // 
             // btn_donate
             // 
             this.btn_donate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btn_donate.FlatAppearance.BorderSize = 0;
             this.btn_donate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_donate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_donate.Location = new System.Drawing.Point(94, 274);
+            this.btn_donate.Location = new System.Drawing.Point(94, 354);
             this.btn_donate.Name = "btn_donate";
             this.btn_donate.Size = new System.Drawing.Size(139, 52);
             this.btn_donate.TabIndex = 2;
             this.btn_donate.Text = "Donate";
             this.btn_donate.UseVisualStyleBackColor = false;
+            this.btn_donate.Click += new System.EventHandler(this.btn_donate_Click);
             // 
             // pic_orgLogo
             // 
@@ -172,5 +184,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_donate;
         private System.Windows.Forms.PictureBox pic_orgLogo;
+        private System.Windows.Forms.Label lbl_orgName;
     }
 }

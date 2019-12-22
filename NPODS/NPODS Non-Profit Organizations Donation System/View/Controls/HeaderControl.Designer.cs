@@ -63,6 +63,7 @@
             this.btn_login.TabIndex = 3;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // btn_register
             // 
@@ -78,6 +79,7 @@
             this.btn_register.TabIndex = 4;
             this.btn_register.Text = "Register";
             this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -102,6 +104,7 @@
             this.btn_home.TabIndex = 6;
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // btn_aboutUs
             // 

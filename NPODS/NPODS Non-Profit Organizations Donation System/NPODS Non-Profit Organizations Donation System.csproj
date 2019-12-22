@@ -119,6 +119,12 @@
     <Compile Include="Controller\Registration\EmailAlreadyExistsException.cs" />
     <Compile Include="Controller\Registration\RegistrationUtil.cs" />
     <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />
+    <Compile Include="View\Controls\tempHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\tempHome.Designer.cs">
+      <DependentUpon>tempHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\OrganizationInfo\organizationInfo.resx">
       <DependentUpon>organizationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\tempHome.resx">
+      <DependentUpon>tempHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
