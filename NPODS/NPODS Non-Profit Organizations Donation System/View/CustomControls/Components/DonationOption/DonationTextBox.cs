@@ -16,7 +16,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             base.Location = new System.Drawing.Point(253, 9);
             base.Margin = new System.Windows.Forms.Padding(5);
             base.Name = "txt_value0";
-            base.Size = new System.Drawing.Size(114, 33);
+            base.Size = new System.Drawing.Size(100, 33);
             base.TabIndex = 1;
             base.Text = watermark;
             base.Click += new System.EventHandler(donationTextBox_Click);

@@ -19,6 +19,18 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             base.Name = "cbo_donationOption0";
             base.Size = new System.Drawing.Size(210, 32);
             base.TabIndex = 0;
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // DonationComboBox
+            // 
+            this.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ResumeLayout(false);
+
         }
     }
 }
