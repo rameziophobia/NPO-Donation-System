@@ -39,5 +39,32 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
         {
             MiscDonations.Add(new MiscDonation(link));
         }
+
+        internal void enableCustomSubscription()
+        {
+            if (SubscriptionDonation.isNull())
+            {
+                SubscriptionDonation = new SubscriptionDonation();
+            }
+            SubscriptionDonation.customEnabled = true;
+        }
+
+        internal void enableCustomSingleDonation()
+        {
+            if (SingleDonation.isNull())
+            {
+                SingleDonation = new SingleDonation();
+            }
+            SingleDonation.customEnabled = true;
+        }
+        internal void disableCustomSubscription()
+        {
+            SubscriptionDonation.customEnabled = false;
+        }
+
+        internal void disableCustomSingleDonation()
+        {
+            SingleDonation.customEnabled = false;
+        }
     }
 }

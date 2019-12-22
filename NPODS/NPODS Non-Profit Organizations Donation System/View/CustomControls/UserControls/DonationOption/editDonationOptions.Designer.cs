@@ -80,7 +80,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.chk_customSinglePayment.TabIndex = 2;
             this.chk_customSinglePayment.Text = "Allow custom single payment amounts.";
             this.chk_customSinglePayment.UseVisualStyleBackColor = true;
-            this.chk_customSinglePayment.CheckedChanged += new System.EventHandler(this.chk_customSinglePayment_CheckedChanged);
             // 
             // chk_customSubcription
             // 
@@ -93,7 +92,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.chk_customSubcription.TabIndex = 3;
             this.chk_customSubcription.Text = "Allow custom subscription amounts.";
             this.chk_customSubcription.UseVisualStyleBackColor = true;
-            this.chk_customSubcription.CheckedChanged += new System.EventHandler(this.chk_customSubcription_CheckedChanged);
             // 
             // btn_addOption
             // 
@@ -108,7 +106,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_addOption.TabIndex = 6;
             this.btn_addOption.Text = "Add Option";
             this.btn_addOption.UseVisualStyleBackColor = false;
-            this.btn_addOption.Click += new System.EventHandler(this.btn_addOption_Click);
             this.btn_addOption.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_addOption_MouseClick);
             // 
             // pnl_buttons
@@ -142,7 +139,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel pnl_options;
-        private List<DonationFlowPanel> donationGroupBoxes = new List<DonationFlowPanel>();
+        internal List<DonationFlowPanel> donationGroupBoxes = new List<DonationFlowPanel>();
         private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.CheckBox chk_customSinglePayment;
         private System.Windows.Forms.CheckBox chk_customSubcription;

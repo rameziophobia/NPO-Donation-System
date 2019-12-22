@@ -5,6 +5,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View
 {
     class RemoveLabel : Label
     {
+        //public delegate void StatusUpdateHandler(object sender, ProgressEventArgs e);
+        //public event StatusUpdateHandler OnUpdateStatus;
         public RemoveLabel() : base()
         {
             base.AutoSize = true;
@@ -12,7 +14,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View
             base.Location = new System.Drawing.Point(8, 17);
             base.Margin = new System.Windows.Forms.Padding(5, 13, 5, 5);
             base.Name = "lbl_removeOption";
-            base.Size = new System.Drawing.Size(15, 16);
+            base.Size = new System.Drawing.Size(15, 15);
             base.TabIndex = 4;
             base.Text = "X";
             base.Click += new System.EventHandler(removeLabel_Click);
@@ -20,9 +22,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View
         private void removeLabel_Click(object sender, EventArgs e)
         {
             Label delete = (Label)sender;
-            FlowLayoutPanel groupBox = (FlowLayoutPanel)delete.Parent;
+            DonationFlowPanel groupBox = (DonationFlowPanel)delete.Parent;
             FlowLayoutPanel flowPanel = (FlowLayoutPanel)groupBox.Parent;
             flowPanel.Controls.Remove(groupBox);
+            
+
+        //editDonationOptions.donationGroupBoxes.Remove(groupBox);
         }
     }
 }

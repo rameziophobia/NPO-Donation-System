@@ -5,11 +5,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     class DonationFlowPanel : FlowLayoutPanel
     {
-        private RemoveLabel lbl_remove = new RemoveLabel();
-        private DonationComboBox cbo_donation;
-        private DonationTextBox txt_donationValue;
-        private DonationTextBox txt_donationName;
-        private DonationTextBox txt_donationDescription;
+        public RemoveLabel lbl_remove = new RemoveLabel();
+        public DonationComboBox cbo_donation { get; private set; }
+        public DonationTextBox txt_donationValue { get; private set; }
+        public DonationTextBox txt_donationName { get; private set; }
+        public DonationTextBox txt_donationDescription { get; private set; }
 
 
         public DonationFlowPanel(int i) : base()

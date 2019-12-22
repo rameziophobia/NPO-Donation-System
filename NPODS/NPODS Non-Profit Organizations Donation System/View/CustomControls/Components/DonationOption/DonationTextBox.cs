@@ -5,9 +5,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     class DonationTextBox : TextBox
     {
+        private bool firstClick = true;
+
         public DonationTextBox() : this(0, "Value", 0)
         {
-
         }
         public DonationTextBox(int i, string watermark, int tabIndex) : base()
         {
@@ -23,10 +24,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         }
         private void donationTextBox_Click(object sender, EventArgs e)
         {
-            if (this.Text == "Value" || this.Text == "Description")
+            if (firstClick)
             {
                 this.Text = "";
                 this.ForeColor = System.Drawing.SystemColors.WindowText;
+                firstClick = false;
             }
         }
     }

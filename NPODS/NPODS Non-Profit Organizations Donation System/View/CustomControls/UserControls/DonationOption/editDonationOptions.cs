@@ -11,75 +11,89 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         public editDonationOptions()
         {
-            donationOptions = new DonationOptions(); // todo load options from current org
             InitializeComponent();
-        }
-        private void txt_value_Click(object sender, EventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            if (textBox.Text == "Value" || textBox.Text == "Description")
-            {
-                textBox.Text = "";
-                textBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            }
+            this.VisibleChanged += new EventHandler(this.onVisibleChanged);
         }
 
-        private void btn_addOption_MouseClick(object sender, MouseEventArgs e)
+        private void btn_addOption_MouseClick(object sender, MouseEventArgs ev)
         {
             DonationFlowPanel grpBox = new DonationFlowPanel(donationGroupBoxes.Count + 1);
             this.donationGroupBoxes.Add(grpBox);
+            grpBox.lbl_remove.Click += (s, e) =>
+            {
+                donationGroupBoxes.Remove(grpBox);
+            };
             pnl_options.Controls.Add(grpBox);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void onVisibleChanged(object sender, EventArgs e)
         {
-            Label delete = (Label)sender;
-            Console.WriteLine(sender.GetType());
-            GroupBox groupBox = (GroupBox)delete.Parent;
-            pnl_options.Controls.Remove(groupBox);
-        }
-
-        private void txt_description_MouseClick(object sender, MouseEventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            if (textBox.Text == "Value" || textBox.Text == "Description")
+            if (Visible)
             {
-                textBox.Text = "";
-                textBox.ForeColor = System.Drawing.SystemColors.WindowText;
+                donationOptions = new DonationOptions();
             }
-        }
-
-        private void btn_addOption_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_confirm_Click(object sender, EventArgs e)
         {
-
+            foreach(DonationFlowPanel donationGroupBox in donationGroupBoxes)
+            {
+                int value = 0;
+                try
+                {
+                    value = Convert.ToInt32(donationGroupBox.txt_donationValue.Text);
+                }
+                catch { }
+                    
+                appendDonationOption(donationGroupBox.cbo_donation.SelectedItem.ToString(),
+                    donationGroupBox.txt_donationName.Text,
+                    donationGroupBox.txt_donationDescription.Text,
+                    value);
+            }
+            checkCustomSubscription();
+            checkCustomSinglePayment();
+            Console.WriteLine("hi");
+            // todo display el7aga elli kanet mawgooda already ??
+            // todo set current_org.DonationOptions = donationOptions;
         }
 
-        private void chk_customSubcription_CheckedChanged(object sender, EventArgs e)
+        private void appendDonationOption(string type, string name, string description, int value)
+        {
+            switch (type)
+            {
+                case "Subscription":
+                    donationOptions.appendSubscriptionDonation(new DonationTier(name, description, value));
+                    break;
+                case "Single Payment":
+                    donationOptions.appendSingleDonation(new DonationTier(name, description, value));
+                    break;
+                case "Miscellaneous":
+                    donationOptions.appendMiscDonation(description);
+                    break;
+            }
+        }
+
+        private void checkCustomSubscription()
         {
             if (chk_customSubcription.Checked)
             {
-
+                donationOptions.enableCustomSubscription();
             }
             else
             {
-
+                donationOptions.disableCustomSubscription();
             }
         }
 
-        private void chk_customSinglePayment_CheckedChanged(object sender, EventArgs e)
+        private void checkCustomSinglePayment()
         {
             if (chk_customSinglePayment.Checked)
             {
-
+                donationOptions.enableCustomSingleDonation();
             }
             else
             {
-
+                donationOptions.disableCustomSingleDonation();
             }
         }
     }
