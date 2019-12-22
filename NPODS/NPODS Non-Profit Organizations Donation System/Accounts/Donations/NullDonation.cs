@@ -20,7 +20,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
         }
         public override List<DonationButton> getOptions()
         {
-            return null;
+            return new List<DonationButton>();
         }
 
     }
