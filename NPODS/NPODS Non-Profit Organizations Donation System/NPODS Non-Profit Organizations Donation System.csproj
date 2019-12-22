@@ -57,6 +57,7 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donations\Donation.cs" />
     <Compile Include="Accounts\Donations\DonationGoal.cs" />
+    <Compile Include="Accounts\Donations\DonationOptions.cs" />
     <Compile Include="Accounts\Donations\DonationTier.cs" />
     <Compile Include="Accounts\Donations\MiscDonation.cs" />
     <Compile Include="Accounts\Donations\NullDonation.cs" />
@@ -105,12 +106,6 @@
     </Compile>
     <Compile Include="View\CustomControls\UserControls\DonationOption\editDonationOptions.Designer.cs">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.Designer.cs">
-      <DependentUpon>optionFlowPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\DonationOption\PaymentOptions\PaymentOption.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +183,9 @@
     <Compile Include="View\CustomControls\HeaderControl.Designer.cs">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CustomControls\Components\DonationOption\DonationComboBox.resx">
+      <DependentUpon>DonationComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\tempHome.resx">
       <DependentUpon>tempHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,9 +194,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\editDonationOptions.resx">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.resx">
-      <DependentUpon>optionFlowPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.resx">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
