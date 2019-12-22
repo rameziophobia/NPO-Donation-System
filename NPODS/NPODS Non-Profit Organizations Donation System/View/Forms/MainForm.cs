@@ -1,7 +1,6 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
@@ -25,7 +24,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 LogoFilePath = "Iceland.png",
                 Description = "ignore the name. there's no ice here",
-                
+
                 DonationGoal = new DonationGoal(true, 500f, 8458f),
                 OrganizationStatistics = new OrganizationStatistics()
             };

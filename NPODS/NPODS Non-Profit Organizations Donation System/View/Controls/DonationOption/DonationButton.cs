@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption
@@ -11,9 +12,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationO
         public Label Lbl_monthly { get; set; }
         public Label Lbl_description { get; set; }
         private Boolean enterFlag;
-        private readonly Color baseColor = Color.FromArgb(126, 214,223);
-        private readonly Color mouseEnterColor = Color.FromArgb(179,194,214);
-        private readonly Color mouseDownColor = Color.FromArgb(204,212,222);
+        private readonly Color baseColor = Color.FromArgb(126, 214, 223);
+        private readonly Color mouseEnterColor = Color.FromArgb(179, 194, 214);
+        private readonly Color mouseDownColor = Color.FromArgb(204, 212, 222);
 
         public DonationButton() : base()
         {
