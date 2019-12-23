@@ -1,4 +1,4 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using System;
 using System.Drawing;
 using System.IO;
@@ -19,8 +19,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         public void updateOrganisation(Organization organization)
         {
             lbl_description.Text = organization.Description;
-            pbr_goal.Value = (int)organization.DonationGoal.CurrentProgress;
-            lbl_donated.Text = organization.DonationGoal.CurrentProgress.ToString();
+            lbl_donated.Text = "US$" + organization.DonationGoal.CurrentProgress.ToString();
+            lbl_goal.Text = "pledged of US$ "+ organization.DonationGoal.Target.ToString() + " goal.";
             pbr_goal.Maximum = (int)organization.DonationGoal.Target;
             lbl_goal.Text = organization.DonationGoal.Target.ToString();
             lbl_orgName.Text = organization.Name;
