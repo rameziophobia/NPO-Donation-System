@@ -1,4 +1,4 @@
-using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using System;
 using System.Drawing;
 using System.IO;
@@ -10,7 +10,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
     {
         public delegate void OnButtonClick();
         public OnButtonClick OnDonatePress { get; set; }
-
         public organizationInfo()
         {
             InitializeComponent();
@@ -21,9 +20,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             lbl_description.Text = organization.Description;
             lbl_donated.Text = "US$" + organization.DonationGoal.CurrentProgress.ToString();
             lbl_goal.Text = "pledged of US$ "+ organization.DonationGoal.Target.ToString() + " goal.";
-            pbr_goal.Maximum = (int)organization.DonationGoal.Target;
-            lbl_goal.Text = organization.DonationGoal.Target.ToString();
             lbl_orgName.Text = organization.Name;
+            setGoalBar(organization);
             try
             {
                 string logoFilePath = organization.LogoFilePath;
@@ -41,7 +39,15 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 }
             }
         }
-
+        private void setGoalBar(Organization organization)
+        {
+            if(organization.DonationGoal.Target == 0)
+            {
+                pbr_goal.Visible = false;
+            }
+            pbr_goal.Value = (int)organization.DonationGoal.CurrentProgress;
+            pbr_goal.Maximum = (int)organization.DonationGoal.Target;
+        }
         private void btn_donate_Click(object sender, EventArgs e)
         {
             OnDonatePress();
