@@ -35,6 +35,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_aboutUs = new System.Windows.Forms.Button();
+            this.lbl_username = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_logo)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,6 @@
             this.btn_login.TabIndex = 3;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // btn_register
             // 
@@ -79,7 +79,6 @@
             this.btn_register.TabIndex = 4;
             this.btn_register.Text = "Register";
             this.btn_register.UseVisualStyleBackColor = true;
-            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -104,7 +103,6 @@
             this.btn_home.TabIndex = 6;
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = true;
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // btn_aboutUs
             // 
@@ -120,13 +118,28 @@
             this.btn_aboutUs.TabIndex = 7;
             this.btn_aboutUs.Text = "About Us";
             this.btn_aboutUs.UseVisualStyleBackColor = true;
-            this.btn_aboutUs.Click += new System.EventHandler(this.btn_aboutUs_Click);
+            // 
+            // lbl_username
+            // 
+            this.lbl_username.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_username.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_username.ForeColor = System.Drawing.Color.White;
+            this.lbl_username.Location = new System.Drawing.Point(679, 0);
+            this.lbl_username.Name = "lbl_username";
+            this.lbl_username.Size = new System.Drawing.Size(361, 65);
+            this.lbl_username.TabIndex = 8;
+            this.lbl_username.Text = "Hi, XXXXXXXXXXXXXXZZZ";
+            this.lbl_username.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_username.Visible = false;
+            this.lbl_username.MouseEnter += new System.EventHandler(this.lbl_username_MouseEnter);
             // 
             // HeaderControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.Controls.Add(this.lbl_username);
             this.Controls.Add(this.btn_aboutUs);
             this.Controls.Add(this.btn_home);
             this.Controls.Add(this.btn_register);
@@ -148,5 +161,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button btn_aboutUs;
+        private System.Windows.Forms.Label lbl_username;
     }
 }

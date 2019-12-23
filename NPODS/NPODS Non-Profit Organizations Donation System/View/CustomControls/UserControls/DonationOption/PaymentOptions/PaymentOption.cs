@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using System;
 using System.Windows.Forms;
-using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
-using NPODS_Non_Profit_Organizations_Donation_System.Properties;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption.PaymentOptions
 {
