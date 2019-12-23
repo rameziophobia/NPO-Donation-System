@@ -67,5 +67,18 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
 
         }
+
+        private void ChooseDonationOption1_Load_1(object sender, System.EventArgs e)
+        {
+
+        }
+
+       
+
+        private void Org_card2_Load_1(object sender, System.EventArgs e)
+        {
+            org_card2.dispalyOrgs();
+
+        }
     }
 }

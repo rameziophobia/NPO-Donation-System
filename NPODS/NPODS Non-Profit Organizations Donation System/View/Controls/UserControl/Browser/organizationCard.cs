@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
@@ -10,32 +12,39 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             InitializeComponent();
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
+      
+        private void OrgDesc_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Label2_Click(object sender, EventArgs e)
+        private void OrgName_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Label1_Click(object sender, EventArgs e)
+        
+        private void LogoPic_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+
+        public void display( Organization org)
+        {
+            OrgName.Text = org.Name;
+            OrgDesc.Text = org.Description;
+            
+
+
+        }
+
+        private void OrgPic_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CircularPicBox2_Click(object sender, EventArgs e)
+        private void OrganizationCard_Load(object sender, EventArgs e)
         {
 
         }

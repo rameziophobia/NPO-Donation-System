@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.organization1 = new NPODS_Non_Profit_Organizations_Donation_System.OrganizationCard();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // organization1
+            // flowLayoutPanel1
             // 
-            this.organization1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.organization1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.organization1.Location = new System.Drawing.Point(197, 72);
-            this.organization1.Name = "organization1";
-            this.organization1.Size = new System.Drawing.Size(1275, 349);
-            this.organization1.TabIndex = 0;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(80, 10, 3, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1509, 713);
+            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowLayoutPanel1_Paint);
             // 
             // org_card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.Controls.Add(this.organization1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "org_card";
-            this.Size = new System.Drawing.Size(1627, 626);
+            this.Size = new System.Drawing.Size(1515, 719);
+            this.Load += new System.EventHandler(this.Org_card_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private OrganizationCard organization1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

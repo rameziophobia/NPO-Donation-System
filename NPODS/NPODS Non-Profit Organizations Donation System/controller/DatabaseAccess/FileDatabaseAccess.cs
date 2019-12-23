@@ -64,7 +64,15 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             catch (DirectoryNotFoundException)
             {
                 string temp = filePath.Substring(0, filePath.Length - filePath.LastIndexOf('/') - 1);
+                try
+                {
                 Directory.CreateDirectory(temp);
+
+                }
+                catch (System.UnauthorizedAccessException)
+                {
+
+                }
                 return readJson<T>(filePath);
             }
         }

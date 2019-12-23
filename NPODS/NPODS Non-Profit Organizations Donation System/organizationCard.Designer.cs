@@ -32,16 +32,16 @@
             this.OrgDesc = new System.Windows.Forms.Label();
             this.OrgName = new System.Windows.Forms.Label();
             this.OrgPic = new System.Windows.Forms.PictureBox();
-            this.LogoPic = new NPODS_Non_Profit_Organizations_Donation_System.CircularPictureBox();
+            this.OrgLogo = new NPODS_Non_Profit_Organizations_Donation_System.CircularPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.OrgPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrgLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // OrgDesc
             // 
             this.OrgDesc.AutoSize = true;
             this.OrgDesc.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrgDesc.Location = new System.Drawing.Point(3, 184);
+            this.OrgDesc.Location = new System.Drawing.Point(-1, 247);
             this.OrgDesc.Name = "OrgDesc";
             this.OrgDesc.Size = new System.Drawing.Size(748, 88);
             this.OrgDesc.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.OrgName.AutoSize = true;
             this.OrgName.Font = new System.Drawing.Font("Century Schoolbook", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrgName.Location = new System.Drawing.Point(175, 125);
+            this.OrgName.Location = new System.Drawing.Point(176, 167);
             this.OrgName.Name = "OrgName";
             this.OrgName.Size = new System.Drawing.Size(205, 45);
             this.OrgName.TabIndex = 2;
@@ -65,23 +65,24 @@
             this.OrgPic.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.images2;
             this.OrgPic.Location = new System.Drawing.Point(0, 0);
             this.OrgPic.Name = "OrgPic";
-            this.OrgPic.Size = new System.Drawing.Size(1276, 122);
+            this.OrgPic.Size = new System.Drawing.Size(1276, 153);
             this.OrgPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.OrgPic.TabIndex = 4;
+            this.OrgPic.TabIndex = 3;
             this.OrgPic.TabStop = false;
             this.OrgPic.Click += new System.EventHandler(this.OrgPic_Click);
             // 
-            // LogoPic
+            // OrgLogo
             // 
-            this.LogoPic.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.LogoPic.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources._212;
-            this.LogoPic.Location = new System.Drawing.Point(32, 63);
-            this.LogoPic.Name = "LogoPic";
-            this.LogoPic.Size = new System.Drawing.Size(118, 105);
-            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoPic.TabIndex = 3;
-            this.LogoPic.TabStop = false;
-            this.LogoPic.Click += new System.EventHandler(this.LogoPic_Click);
+            this.OrgLogo.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.images;
+            this.OrgLogo.Location = new System.Drawing.Point(25, 85);
+            this.OrgLogo.Name = "OrgLogo";
+            this.OrgLogo.Size = new System.Drawing.Size(117, 117);
+            this.OrgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.OrgLogo.TabIndex = 4;
+            this.OrgLogo.TabStop = false;
+            this.OrgLogo.Click += new System.EventHandler(this.OrgLogo_Click);
+            this.OrgLogo.MouseEnter += new System.EventHandler(this.OrgLogo_Click);
+            this.OrgLogo.MouseHover += new System.EventHandler(this.OrgLogo_Click);
             // 
             // OrganizationCard
             // 
@@ -89,15 +90,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.LogoPic);
+            this.Controls.Add(this.OrgLogo);
             this.Controls.Add(this.OrgPic);
             this.Controls.Add(this.OrgName);
             this.Controls.Add(this.OrgDesc);
             this.Name = "OrganizationCard";
-            this.Size = new System.Drawing.Size(1276, 269);
-            this.Load += new System.EventHandler(this.OrganizationCard_Load);
+            this.Size = new System.Drawing.Size(1276, 349);
+            this.Load += new System.EventHandler(this.Organization_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrgPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrgLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,7 +107,7 @@
         #endregion
         private System.Windows.Forms.Label OrgDesc;
         private System.Windows.Forms.Label OrgName;
-        private CircularPictureBox LogoPic;
         private System.Windows.Forms.PictureBox OrgPic;
+        private CircularPictureBox OrgLogo;
     }
 }
