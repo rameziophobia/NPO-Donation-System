@@ -65,24 +65,15 @@
     <Compile Include="Accounts\Donations\SubscriptionDonation.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
-    <Compile Include="View\CustomControls\Components\DonationOption\DonationComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="View\CustomControls\Components\DonationOption\DonationFlowPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="View\CustomControls\Components\DonationOption\DonationTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="View\CustomControls\Components\DonationOption\RemoveLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controller\DatabaseAccess\DatabaseAccess.cs" />
-    <Compile Include="Controller\DatabaseAccess\FileDatabaseAccess.cs" />
-    <Compile Include="Controller\Login\LoginVerification.cs" />
-    <Compile Include="Controller\Login\UserNotRegisteredException.cs" />
-    <Compile Include="Controller\Registration\EmailAlreadyExistsException.cs" />
-    <Compile Include="Controller\Registration\RegistrationUtil.cs" />
+    <Compile Include="controller\DatabaseAccess\DatabaseAccess.cs" />
+    <Compile Include="controller\DatabaseAccess\FileDatabaseAccess.cs" />
+    <Compile Include="Accounts\AccountType.cs" />
+    <Compile Include="controller\Login\LoginInfo.cs" />
+    <Compile Include="controller\Login\LoginManager.cs" />
+    <Compile Include="controller\Login\UserNotRegisteredException.cs" />
+    <Compile Include="controller\Login\WrongPasswordException.cs" />
+    <Compile Include="controller\Registration\EmailAlreadyExistsException.cs" />
+    <Compile Include="controller\Registration\RegistrationUtil.cs" />
     <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />
     <Compile Include="View\CustomControls\tempHome.cs">
       <SubType>UserControl</SubType>
@@ -100,6 +91,18 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\DonationOption\DonationType.cs" />
+    <Compile Include="View\CustomControls\Components\DonationOption\RemoveLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\Components\DonationOption\DonationFlowPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\Components\DonationOption\DonationTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\Components\DonationOption\DonationComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\CustomControls\UserControls\DonationOption\editDonationOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +123,12 @@
     </Compile>
     <Compile Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\UserControls\Header\AccountPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\UserControls\Header\AccountPopup.Designer.cs">
+      <DependentUpon>AccountPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.Designer.cs">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
@@ -182,10 +191,10 @@
     <Compile Include="View\CustomControls\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CustomControls\HeaderControl.cs">
+    <Compile Include="View\CustomControls\UserControls\Header\HeaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\CustomControls\HeaderControl.Designer.cs">
+    <Compile Include="View\CustomControls\UserControls\Header\HeaderControl.Designer.cs">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\CustomControls\tempHome.resx">
@@ -205,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.resx">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomControls\UserControls\Header\AccountPopup.resx">
+      <DependentUpon>AccountPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationInfo\organizationInfo.resx">
       <DependentUpon>organizationInfo.cs</DependentUpon>
@@ -234,12 +246,13 @@
     <EmbeddedResource Include="View\CustomControls\LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomControls\HeaderControl.resx">
+    <EmbeddedResource Include="View\CustomControls\UserControls\Header\HeaderControl.resx">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\RegisterControl.resx">
       <DependentUpon>RegisterControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="data\logins.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

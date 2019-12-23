@@ -1,4 +1,4 @@
-﻿namespace NPODS_Non_Profit_Organizations_Donation_System
+﻿namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
 {
     partial class RegisterControl
     {
@@ -288,6 +288,7 @@
             this.Name = "RegisterControl";
             this.Size = new System.Drawing.Size(548, 380);
             this.Load += new System.EventHandler(this.RegisterControl_Load);
+            this.VisibleChanged += new System.EventHandler(this.RegisterControl_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
