@@ -32,15 +32,26 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.paymentOption1 = new PaymentOption();
-            this.accountPopup1 = new AccountPopup();
-            this.headerControl1 = new HeaderControl();
-            this.tempHome1 = new tempHome();
-            this.chooseDonationOption1 = new chooseDonationOption();
-            this.organizationInfo1 = new organizationInfo();
-            this.registerControl1 = new RegisterControl();
-            this.loginControl1 = new LoginControl();
+            this.paymentOption1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption.PaymentOptions.PaymentOption();
+            this.accountPopup1 = new NPODS_Non_Profit_Organizations_Donation_System.View.UserControls.Header.AccountPopup();
+            this.headerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.HeaderControl();
+            this.tempHome1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.tempHome();
+            this.chooseDonationOption1 = new NPODS_Non_Profit_Organizations_Donation_System.chooseDonationOption();
+            this.organizationInfo1 = new NPODS_Non_Profit_Organizations_Donation_System.organizationInfo();
+            this.registerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.RegisterControl();
+            this.loginControl1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.LoginControl();
+            this.editOrganizationInfo1 = new NPODS_Non_Profit_Organizations_Donation_System.editOrganizationInfo();
             this.SuspendLayout();
+            // 
+            // paymentOption1
+            // 
+            this.paymentOption1.Location = new System.Drawing.Point(0, 65);
+            this.paymentOption1.Name = "paymentOption1";
+            this.paymentOption1.OnBackPress = null;
+            this.paymentOption1.Organization = null;
+            this.paymentOption1.Size = new System.Drawing.Size(1021, 565);
+            this.paymentOption1.TabIndex = 7;
+            this.paymentOption1.Visible = false;
             // 
             // accountPopup1
             // 
@@ -80,6 +91,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.chooseDonationOption1.Location = new System.Drawing.Point(0, 65);
             this.chooseDonationOption1.Name = "chooseDonationOption1";
             this.chooseDonationOption1.OnBackPress = null;
+            this.chooseDonationOption1.OnMiscPress = null;
             this.chooseDonationOption1.Organization = null;
             this.chooseDonationOption1.Size = new System.Drawing.Size(1136, 565);
             this.chooseDonationOption1.TabIndex = 7;
@@ -89,18 +101,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             // 
             this.organizationInfo1.Location = new System.Drawing.Point(0, 65);
             this.organizationInfo1.Name = "organizationInfo1";
-            this.organizationInfo1.OnDonatePress = null;
             this.organizationInfo1.Size = new System.Drawing.Size(1136, 584);
             this.organizationInfo1.TabIndex = 4;
             this.organizationInfo1.Visible = false;
-            //
-            //paymentOption1
-            //
-            this.paymentOption1.Location = new System.Drawing.Point(0, 65);
-            this.paymentOption1.Name = "paymentOption1";
-            this.paymentOption1.Size = new System.Drawing.Size(1021, 565);
-            this.paymentOption1.TabIndex = 7;
-            this.paymentOption1.Visible = false;
             // 
             // registerControl1
             // 
@@ -112,15 +115,23 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.registerControl1.TabIndex = 3;
             this.registerControl1.Visible = false;
             // 
-            // loginControl2
+            // loginControl1
             // 
             this.loginControl1.BackColor = System.Drawing.Color.Transparent;
             this.loginControl1.Location = new System.Drawing.Point(409, 271);
-            this.loginControl1.Name = "loginControl2";
+            this.loginControl1.Name = "loginControl1";
             this.loginControl1.OnLogin = null;
             this.loginControl1.Size = new System.Drawing.Size(367, 231);
             this.loginControl1.TabIndex = 9;
             this.loginControl1.Visible = false;
+            // 
+            // editOrganizationInfo1
+            // 
+            this.editOrganizationInfo1.Location = new System.Drawing.Point(0, 65);
+            this.editOrganizationInfo1.Name = "editOrganizationInfo1";
+            this.editOrganizationInfo1.Size = new System.Drawing.Size(1166, 565);
+            this.editOrganizationInfo1.TabIndex = 11;
+            this.editOrganizationInfo1.Visible = false;
             // 
             // MainForm
             // 
@@ -134,6 +145,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.Controls.Add(this.tempHome1);
             this.Controls.Add(this.chooseDonationOption1);
             this.Controls.Add(this.organizationInfo1);
+            this.Controls.Add(this.editOrganizationInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -153,6 +165,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private chooseDonationOption chooseDonationOption1;
         private AccountPopup accountPopup1;
         private LoginControl loginControl1;
+        private editOrganizationInfo editOrganizationInfo1;
     }
 }
 
