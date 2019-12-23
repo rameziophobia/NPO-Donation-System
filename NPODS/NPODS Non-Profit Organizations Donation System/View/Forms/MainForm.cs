@@ -80,7 +80,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
 
             accountPopup1.OnViewDashboardClick += () => {
                 if (isCurrentAccountOrganization) {
-                    MessageBox.Show ("WIP (ORG)", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    switchControls(organizationDashboard1);
                 } else {
                     MessageBox.Show ("WIP (Donor)", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

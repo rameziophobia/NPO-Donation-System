@@ -143,10 +143,10 @@
     <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DashboardRegion.cs">
+    <Compile Include="View\CustomControls\Components\OrganizationDashboard\DashboardRegion.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DashboardRegion.Designer.cs">
+    <Compile Include="View\CustomControls\Components\OrganizationDashboard\DashboardRegion.Designer.cs">
       <DependentUpon>DashboardRegion.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomControls\Components\Browser\circularPicBox.cs">
@@ -164,10 +164,10 @@
     <Compile Include="View\CustomControls\UserControls\Browser\org card.Designer.cs">
       <DependentUpon>org card.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrganizationDashboard.cs">
+    <Compile Include="View\CustomControls\UserControls\OrganizationDashboard\OrganizationDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="OrganizationDashboard.Designer.cs">
+    <Compile Include="View\CustomControls\UserControls\OrganizationDashboard\OrganizationDashboard.Designer.cs">
       <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\Browser\OrganizationCard.cs">
@@ -234,10 +234,10 @@
     <EmbeddedResource Include="View\CustomControls\UserControls\Browser\org card.resx">
       <DependentUpon>org card.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DashboardRegion.resx">
+    <EmbeddedResource Include="View\CustomControls\Components\OrganizationDashboard\DashboardRegion.resx">
       <DependentUpon>DashboardRegion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrganizationDashboard.resx">
+    <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationDashboard\OrganizationDashboard.resx">
       <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\Browser\OrganizationCard.resx">

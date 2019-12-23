@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
@@ -14,6 +15,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         public Organization Organization { get; set; }
         public delegate void OnButtonClick();
         public OnButtonClick OnBackPress { get; set; }
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DonationButton.OnButtonClick OnDonatePress { get; set; }
         public DonationButton.OnButtonClick OnMiscPress { get; set; }
 

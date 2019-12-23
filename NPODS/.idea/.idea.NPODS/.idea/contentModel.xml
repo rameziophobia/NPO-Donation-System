@@ -39,17 +39,11 @@
             <e p="RegistrationUtil.cs" t="Include" />
           </e>
         </e>
-        <e p="DashboardRegion.cs" t="Include" />
-        <e p="DashboardRegion.Designer.cs" t="Include" />
-        <e p="DashboardRegion.resx" t="Include" />
         <e p="data" t="Include">
           <e p="logins.json" t="Include" />
         </e>
         <e p="NPODS Non-Profit Organizations Donation System.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
-        <e p="OrganizationDashboard.cs" t="Include" />
-        <e p="OrganizationDashboard.Designer.cs" t="Include" />
-        <e p="OrganizationDashboard.resx" t="Include" />
         <e p="OrganizationUtil" t="Include">
           <e p="NonMoneyDonation.cs" t="Include" />
           <e p="OrganizationStatistics.cs" t="Include" />
@@ -119,6 +113,11 @@
                 <e p="DonationTextBox.cs" t="Include" />
                 <e p="RemoveLabel.cs" t="Include" />
               </e>
+              <e p="OrganizationDashboard" t="Include">
+                <e p="DashboardRegion.cs" t="Include" />
+                <e p="DashboardRegion.Designer.cs" t="Include" />
+                <e p="DashboardRegion.resx" t="Include" />
+              </e>
             </e>
             <e p="LoginControl.cs" t="Include" />
             <e p="LoginControl.Designer.cs" t="Include" />
@@ -163,6 +162,11 @@
                 <e p="HeaderControl.cs" t="Include" />
                 <e p="HeaderControl.Designer.cs" t="Include" />
                 <e p="HeaderControl.resx" t="Include" />
+              </e>
+              <e p="OrganizationDashboard" t="Include">
+                <e p="OrganizationDashboard.cs" t="Include" />
+                <e p="OrganizationDashboard.Designer.cs" t="Include" />
+                <e p="OrganizationDashboard.resx" t="Include" />
               </e>
               <e p="OrganizationInfo" t="Include">
                 <e p="editOrganizationInfo.cs" t="Include" />

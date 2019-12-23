@@ -1,8 +1,21 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d44a682-499b-4d2e-a4fd-be4087ed23ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/DashboardRegion.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/DashboardRegion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/DashboardRegion.resx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/NPODS Non-Profit Organizations Donation System.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/NPODS Non-Profit Organizations Donation System.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/OrganizationDashboard.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/OrganizationDashboard.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/OrganizationDashboard.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/organizationInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/organizationInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,19 +27,30 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/organizationInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS.Test/LoginVerificationTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/NPODS.Test/LoginVerificationTests.cs" />
+        <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.Designer.cs" />
+        <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.cs" />
+        <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/organizationInfo.cs" />
+        <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1VOMJ95uXSsWbc5CQODNoqerQVe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -36,6 +60,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -79,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577119615834</updated>
-      <workItem from="1577119623271" duration="2518000" />
+      <workItem from="1577119623271" duration="4745000" />
     </task>
     <servers />
   </component>

@@ -15,11 +15,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.UserControls.Heade
         {
             InitializeComponent();
 
-            btn_viewDashboard.Click += new System.EventHandler((sender, e) => OnViewDashboardClick());
+            btn_viewDashboard.Click += new EventHandler((sender, e) => OnViewDashboardClick());
             btn_viewDashboard.Click += hidePopup;
-            btn_editAccount.Click += new System.EventHandler((sender, e) => OnEditAccountClick());
+            btn_editAccount.Click += new EventHandler((sender, e) => OnEditAccountClick());
             btn_editAccount.Click += hidePopup;
-            btn_logOut.Click += new System.EventHandler((sender, e) => OnLogOutClick());
+            btn_logOut.Click += new EventHandler((sender, e) => OnLogOutClick());
             btn_logOut.Click += hidePopup;
         }
 
