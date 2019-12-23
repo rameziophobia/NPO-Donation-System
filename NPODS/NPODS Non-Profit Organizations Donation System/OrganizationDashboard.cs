@@ -11,21 +11,22 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System {
-    public partial class OrganizationDashboard : UserControl {
-        private bool isExpanded;
+    public partial class OrganizationDashboard : Form {
         private readonly int pnl_side_MAXWIDTH;
         private readonly int pnl_side_MINWIDTH;
         private readonly Dictionary<Button, String> hiddenText;
         private readonly List<DateTime> dates;
         private readonly Color accentMain = ColorTranslator.FromHtml("#7ed6df");
         private readonly Color accentSub = ColorTranslator.FromHtml("#c7ecee");
-        private DateTime dt;
+        private Dictionary<String, Label> labels;
         private Organization org;
         private Chart chart;
+        private ProgressBar goalProgress;
+        private DateTime dt;
+        private bool isExpanded;
 
         public OrganizationDashboard() {
             InitializeComponent();
-            panel1.BackColor = accentMain;
             pnl_side.BackColor = accentSub;
             pnl_side_MAXWIDTH = 190;
             pnl_side_MINWIDTH = 70;
@@ -51,17 +52,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             setOrganization(new Organization("example@email.com", "NOTAPASS123")); //todo set organization
             this.pic_Banner.Image = org.banner;
             this.pic_Banner.BringToFront();
-            updateLabels();
         }
-        private void updateLabels() {
-            lbl_noSubs_value.Text = org.Stats.NumberOfSubs.ToString();
-            lbl_TotalSubs_value.Text = org.Stats.TotalNumberOfSubs.ToString();
-            lbl_noUnique_value.Text = org.Stats.NumberOfSubs.ToString();
-            dtp_lastModified.Value = org.Stats.lastUpdate;
-
-            foreach(Control c in dbr_Info.Controls) {
-                c.BringToFront();
-            }
+        private void updateLabel(String name, int newValue) {
+            labels[name].Text = newValue.ToString();
         }
         public void setOrganization(Organization organization) {
             this.org = organization;
@@ -141,9 +134,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             this.fpl_Main.ScrollControlIntoView(dbr_MiscDonations);
         }
         private void setRegions() {
+            addGoal();
+
+            labels = new Dictionary<string, Label>();
+            addLabel("Number of subscribtions", org.Stats.NumberOfSubs);
+            addLabel("Number of Donators", org.Stats.UniqueDonators);
+
             this.pic_Banner.BringToFront();
             setVisibility("Money", org.Stats.hasMoneyDonations);
             setVisibility("Misc", org.Stats.hasMiscDonations);
+
             this.Invalidate();
         }
         private void setVisibility(string name, bool isEnabled) {
@@ -181,7 +181,44 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             pic_Banner.BringToFront();
             chart.Show();
         }
+        public void addLabel(String Text,int value) {
+            FlowLayoutPanel flp_labelPanel = new FlowLayoutPanel();
+            flp_labelPanel.FlowDirection = FlowDirection.RightToLeft;
 
+            Label lbl_Name = new Label();
+            Label lbl_Value = new Label();
+
+            lbl_Name.Text = Text + ": ";
+            lbl_Value.Text = value.ToString();
+
+            flp_labelPanel.Controls.Add(lbl_Value);
+            flp_labelPanel.Controls.Add(lbl_Name);
+            dbr_Info.Controls.Add(flp_labelPanel);
+            flp_labelPanel.Dock = DockStyle.Top;
+
+            labels.Add(lbl_Name.Text, lbl_Value);
+
+            foreach(Label lbl in labels.Values) {
+                lbl.BringToFront();
+            }
+        }
+        private void addGoal() {
+            if (org.DonationGoal.Value != 0) {
+
+                goalProgress = new ProgressBar();
+
+                goalProgress.Maximum = org.DonationGoal.Value;
+
+                dbr_Info.Controls.Add(goalProgress);
+                goalProgress.BringToFront();
+            }
+            updateGoal();
+        }
+        public void updateGoal() {
+            if(goalProgress != null) {
+                goalProgress.Value = org.DonationGoal.CurentProgress;
+            }
+        }
     }
 }
 
