@@ -7,8 +7,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     public partial class editOrganizationInfo : UserControl
     {
-        public delegate void OnButtonClick();
-        public OnButtonClick OnSavePress { get; set; }
         public Organization Organization { get; set; }
         public editOrganizationInfo()
         {
