@@ -1,6 +1,6 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
-using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.DonationOption;
+using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -11,23 +11,44 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
     {
         public Organization Organization { get; set; }
         public delegate void OnButtonClick();
+
         public OnButtonClick OnBackPress { get; set; }
+
+        public DonationButton.OnButtonClick OnDonatePress { get; set; }
+        public DonationButton.OnButtonClick OnMiscPress { get; set; }
 
         private readonly System.Drawing.Color COLOR_SELECTED = System.Drawing.Color.FromArgb(199, 236, 238);
         private readonly System.Drawing.Color COLOR_NOT_SELECTED = System.Drawing.Color.FromArgb(199, 216, 238);
         private Donation donationOption;
         private int defaultOptionFlag = 0;
+        private bool perMonth;
 
         public chooseDonationOption()
         {
             InitializeComponent();
+            OnDonatePress += () =>
+            {
+                paymentOption2.Organization = this.Organization;
+                paymentOption2.Visible = true;
+                pnl_chooseDisplayOption.Visible = false;
+                paymentOption2.Dock = DockStyle.Fill;
+            };
+            OnMiscPress += () =>
+            {
+            };
+            paymentOption2.OnBackPress += () =>
+            {
+                paymentOption2.Visible = false;
+                pnl_chooseDisplayOption.Visible = true;
+                paymentOption2.Dock = DockStyle.None;
+            };
         }
 
         private void btn_singlePayment_Click(object sender, EventArgs e)
         {
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
-            pnl_displayOptions.Controls.AddRange(Organization.SingleDonation.getOptions().ToArray());
+            pnl_displayOptions.Controls.AddRange(getOptions(Organization.SubscriptionDonation.DonationTiers,false).ToArray());
             pnl_customDonation.Visible = Organization.SingleDonation.customEnabled;
         }
 
@@ -35,7 +56,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
-            pnl_displayOptions.Controls.AddRange(Organization.SubscriptionDonation.getOptions().ToArray());
+            pnl_displayOptions.Controls.AddRange(getOptions(Organization.SubscriptionDonation.DonationTiers,true).ToArray());
             pnl_customDonation.Visible = Organization.SubscriptionDonation.customEnabled;
         }
 
@@ -48,7 +69,22 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         }
 
-        private void selectColor(Button button)
+        public List<DonationButton> getOptions(DonationTier[] donationTiers,bool isMonthly)
+        {
+            List<DonationButton> btns_donation = new List<DonationButton>();
+            for (int i = 0; i < donationTiers.Length; i++)
+            {
+                DonationButton btn = new DonationButton(OnDonatePress);
+                btn.Lbl_tierName.Text = donationTiers[i].Name;
+                btn.Lbl_donationValue.Text = donationTiers[i].Value.ToString() + "$";
+                btn.Lbl_monthly.Visible = isMonthly;
+                btn.Lbl_description.Text = donationTiers[i].Description;
+                btns_donation.Add(btn);
+            }
+            return btns_donation;
+        }
+
+    private void selectColor(Button button)
         {
             btn_singlePayment.BackColor = COLOR_NOT_SELECTED;
             btn_subscription.BackColor = COLOR_NOT_SELECTED;
@@ -61,7 +97,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             List<DonationButton> btns = new List<DonationButton>();
             foreach (MiscDonation miscDonation in miscDonations)
             {
-                DonationButton btn = new DonationButton();
+                DonationButton btn = new DonationButton(OnMiscPress);
                 btn.Lbl_donationValue.Visible = false;
                 btn.Lbl_monthly.Visible = false;
                 btn.Lbl_tierName.Visible = false;
@@ -95,11 +131,13 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 donationOption = Organization.SingleDonation;
                 selectColor(btn_singlePayment);
+                perMonth = false;
             }
             else if ((defaultOptionFlag / 10) % 10 == 1)
             {
                 donationOption = Organization.SubscriptionDonation;
                 selectColor(btn_subscription);
+                perMonth = true;
             }
             else if ((defaultOptionFlag / 100) % 10 == 1)
             {
@@ -118,7 +156,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 try
                 {
-                    pnl_displayOptions.Controls.AddRange(donationOption.getOptions().ToArray());
+                    pnl_displayOptions.Controls.AddRange(getOptions(donationOption.DonationTiers,perMonth).ToArray());
                     pnl_customDonation.Visible = donationOption.customEnabled;
                 }
                 catch (Exception ex)
@@ -140,6 +178,30 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private void btn_back_Click(object sender, EventArgs e)
         {
             OnBackPress();
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            int donationValue = 0;
+            try
+            {
+                donationValue = Convert.ToInt32(txt_customValue.Text);
+            }
+            catch(Exception ex)
+            {
+                if(ex is FormatException)
+                {
+                    donationValue = -1;
+                }
+            }
+            if (donationValue > 0)
+            {
+                OnDonatePress();
+            }
+            else
+            {
+                MessageBox.Show("Please, enter a value greater than 0.", "Value equal or less than 0", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

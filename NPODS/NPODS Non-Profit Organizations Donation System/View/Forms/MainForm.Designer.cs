@@ -1,4 +1,5 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls;
+using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption.PaymentOptions;
 using NPODS_Non_Profit_Organizations_Donation_System.View.UserControls.Header;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
@@ -31,6 +32,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.paymentOption1 = new PaymentOption();
             this.accountPopup1 = new AccountPopup();
             this.headerControl1 = new HeaderControl();
             this.tempHome1 = new tempHome();
@@ -91,6 +93,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.organizationInfo1.Size = new System.Drawing.Size(1136, 584);
             this.organizationInfo1.TabIndex = 4;
             this.organizationInfo1.Visible = false;
+            //
+            //paymentOption1
+            //
+            this.paymentOption1.Location = new System.Drawing.Point(0, 65);
+            this.paymentOption1.Name = "paymentOption1";
+            this.paymentOption1.Size = new System.Drawing.Size(1021, 565);
+            this.paymentOption1.TabIndex = 7;
+            this.paymentOption1.Visible = false;
             // 
             // registerControl1
             // 
@@ -138,6 +148,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private HeaderControl headerControl1;
         private RegisterControl registerControl1;
         private organizationInfo organizationInfo1;
+        private PaymentOption paymentOption1;
         private tempHome tempHome1;
         private chooseDonationOption chooseDonationOption1;
         private AccountPopup accountPopup1;

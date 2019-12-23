@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.DonationOption
+namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption
 {
     public class DonationButton : UserControl
     {
@@ -10,19 +10,20 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Don
         public Label Lbl_tierName { get; set; }
         public Label Lbl_donationValue { get; set; }
         public Label Lbl_monthly { get; set; }
+        public delegate void OnButtonClick();
         public Label Lbl_description { get; set; }
         private Boolean enterFlag;
         private readonly Color baseColor = Color.FromArgb(126, 214, 223);
         private readonly Color mouseEnterColor = Color.FromArgb(179, 194, 214);
         private readonly Color mouseDownColor = Color.FromArgb(204, 212, 222);
 
-        public DonationButton() : base()
+        public DonationButton(OnButtonClick onButtonClick) : base()
         {
             Lbl_tierName = new Label();
             Lbl_donationValue = new Label();
             Lbl_monthly = new Label();
             Lbl_description = new Label();
-            initialize_panel();
+            initialize_panel(onButtonClick);
             initialize_labels();
 
             base.BackColor = Color.Red;
@@ -33,7 +34,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Don
             base.Size = new Size(168, 144);
             base.TabIndex = 6;
             this.Controls.Add(pnl_optionPnl);
-            this.MouseClick += new MouseEventHandler(this.pnl_displayOptions_MouseClick);
+            this.MouseClick += (s, e) => onButtonClick();
             this.MouseDown += new MouseEventHandler(this.pnl_displayOptions_MouseDown);
             this.MouseUp += new MouseEventHandler(this.pnl_displayOptions_MouseEnter);
             this.MouseEnter += new EventHandler(this.pnl_displayOptions_MouseEnter);
@@ -42,22 +43,23 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Don
             {
                 foreach (Control child in childs.Controls)
                 {
-                    setEvents(child);
+                    setEvents(child,onButtonClick);
                 }
-                setEvents(childs);
+                setEvents(childs,onButtonClick);
             }
         }
 
-        private void setEvents(Control child)
+
+        private void setEvents(Control child,OnButtonClick onButtonClick)
         {
-            child.MouseEnter += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
+            child.MouseEnter += this.pnl_displayOptions_MouseEnter;
             child.MouseLeave += (s, e) => this.OnMouseLeave(e);
-            child.MouseUp += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
-            child.MouseClick += (s, e) => this.pnl_displayOptions_MouseClick(s, e);
-            child.MouseDown += (s, e) => this.pnl_displayOptions_MouseDown(s, e);
+            child.MouseUp += this.pnl_displayOptions_MouseEnter;
+            child.MouseClick += (s,e) => onButtonClick();
+            child.MouseDown += this.pnl_displayOptions_MouseDown;
         }
 
-        private void initialize_panel()
+        private void initialize_panel(OnButtonClick onButtonClick)
         {
             this.pnl_optionPnl.BackColor = this.baseColor;
             this.pnl_optionPnl.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
@@ -67,6 +69,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Don
             this.pnl_optionPnl.Size = new Size(166, 142);
             this.pnl_optionPnl.TabIndex = 6;
             this.pnl_optionPnl.Dock = DockStyle.Fill;
+            this.MouseClick += (s,e) => onButtonClick();
         }
         private void initialize_labels()
         {
@@ -152,9 +155,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Don
         private void pnl_displayOptions_MouseDown(object sender, MouseEventArgs e)
         {
             this.pnl_optionPnl.BackColor = this.mouseDownColor;
-        }
-        private void pnl_displayOptions_MouseClick(object sender, MouseEventArgs e)
-        {
         }
     }
 }

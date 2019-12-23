@@ -91,12 +91,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\DonationOption\DonationType.cs" />
-    <Compile Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.Designer.cs">
-      <DependentUpon>optionFlowPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\CustomControls\Components\DonationOption\RemoveLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -115,14 +109,26 @@
     <Compile Include="View\CustomControls\UserControls\DonationOption\editDonationOptions.Designer.cs">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.Designer.cs">
+      <DependentUpon>optionFlowPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomControls\UserControls\DonationOption\PaymentOptions\PaymentOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\UserControls\DonationOption\PaymentOptions\PaymentOption.Designer.cs">
+      <DependentUpon>PaymentOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="View\CustomControls\UserControls\Header\AccountPopup.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\Header\AccountPopup.Designer.cs">
       <DependentUpon>AccountPopup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.cs">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.Designer.cs">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
@@ -200,14 +206,17 @@
     <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\editDonationOptions.resx">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomControls\UserControls\Header\AccountPopup.resx">
-      <DependentUpon>AccountPopup.cs</DependentUpon>
+    <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.resx">
+      <DependentUpon>optionFlowPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\PaymentOptions\PaymentOption.resx">
+      <DependentUpon>PaymentOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.resx">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.resx">
-      <DependentUpon>optionFlowPanel.cs</DependentUpon>
+    <EmbeddedResource Include="View\CustomControls\UserControls\Header\AccountPopup.resx">
+      <DependentUpon>AccountPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationInfo\organizationInfo.resx">
       <DependentUpon>organizationInfo.cs</DependentUpon>
@@ -258,7 +267,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Images\PaymentOptions\fawry-pay-english-logo.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\OrganizationInfo\Banner.png" />
   </ItemGroup>
@@ -271,7 +282,9 @@
   <ItemGroup>
     <None Include="Resources\placeholder.com-logo4.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\fawry_logo.bmp" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\OrganizationDashboard\Banner.png" />
   </ItemGroup>
@@ -307,6 +320,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\212.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\PaymentOptions\fawry-pay-english-logo-small4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\PaymentOptions\PayPal_logo_logotype_smallpng.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
