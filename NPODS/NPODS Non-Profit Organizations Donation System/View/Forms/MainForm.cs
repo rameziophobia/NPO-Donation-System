@@ -26,8 +26,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 LogoFilePath = "Iceland.png",
                 Description = "ignore the name. there's no ice here",
                 MiscDonations = new List<MiscDonation> { new MiscDonation("Ramesbasdahdsuihdy.com") },
-                SubscriptionDonation = new SubscriptionDonation(new DonationTier[] { new DonationTier("plz", "send help", 54.2f) }),
-                SingleDonation = new SingleDonation(new DonationTier[] { new DonationTier("plz", "send help", 50.2f) }),
+                SingleDonation = new SingleDonation(new DonationTier[] {  }),
                 DonationGoal = new DonationGoal(true, 500f, 8458f),
                 OrganizationStatistics = new OrganizationStatistics()
             };
@@ -64,8 +63,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             chooseDonationOption1.Organization = organization;
             chooseDonationOption1.setAvailableTypes();
-            chooseDonationOption1.setDefaultOption();
-            chooseDonationOption1.updateDefault();
         }
         private void MainForm_Load(object sender, System.EventArgs e)
         {
