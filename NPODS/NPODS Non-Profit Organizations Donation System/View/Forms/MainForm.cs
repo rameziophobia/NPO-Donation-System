@@ -87,9 +87,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             };
             accountPopup1.OnEditAccountClick += () => {
                 if (isCurrentAccountOrganization) {
-                    MessageBox.Show ("WIP (ORG)", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    switchControls(editOrganizationInfo1);
+                    editOrganizationInfo1.updateOrgDetails(organization);
                 } else {
-                    MessageBox.Show ("WIP (Donor)", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show ("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             };;
             accountPopup1.OnLogOutClick += logout;

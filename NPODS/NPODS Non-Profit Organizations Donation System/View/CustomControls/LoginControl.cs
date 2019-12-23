@@ -28,19 +28,19 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
         {
             string email = txt_email.Text.Trim();
 
-            try
-            {
-                MailAddress m = new MailAddress(email);
-            }
-            catch (FormatException)
-            {
-                showLoginStatus(LOGIN_STATUS_MSG_INVALID_EMAIL);
-                return;
-            }
 
             string password = txt_password.Text;
             if (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password))
             {
+                try
+                {
+                   new MailAddress(email);
+                }
+                catch (FormatException)
+                {
+                    showLoginStatus(LOGIN_STATUS_MSG_INVALID_EMAIL);
+                    return;
+                }
                 try
                 {
                     LoginInfo loginInfo = loginManager.getUser(email, password);
