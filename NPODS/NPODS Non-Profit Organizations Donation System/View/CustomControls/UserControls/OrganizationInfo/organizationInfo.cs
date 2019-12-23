@@ -18,8 +18,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         public void updateOrganisation(Organization organization)
         {
             lbl_description.Text = organization.Description;
-            lbl_donated.Text = "US$" + organization.DonationGoal.CurrentProgress.ToString();
-            lbl_goal.Text = "pledged of US$ "+ organization.DonationGoal.Target.ToString() + " goal.";
+            lbl_donated.Text = "US$ " + organization.DonationGoal.CurrentProgress.ToString();
+            lbl_goal.Text = "pledged of US$ " + organization.DonationGoal.Target.ToString() + isMonthly(organization)  + " goal.";
             lbl_orgName.Text = organization.Name;
             setGoalBar(organization);
             try
@@ -39,9 +39,20 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 }
             }
         }
+        private string isMonthly(Organization organization)
+        {
+            if (organization.DonationGoal.isMonthlyGoal)
+            {
+                return (" monthly");
+            }
+            else
+            {
+                return ("");
+            }
+        }
         private void setGoalBar(Organization organization)
         {
-            if(organization.DonationGoal.Target == 0)
+            if (organization.DonationGoal.Target == 0)
             {
                 pbr_goal.Visible = false;
             }
