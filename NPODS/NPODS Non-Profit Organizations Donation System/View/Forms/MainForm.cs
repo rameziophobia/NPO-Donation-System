@@ -40,9 +40,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private void switchControls(UserControl userControl)
         {
-            userControl.Visible = true;
-            lastActiveUserControl.Visible = false;
-            lastActiveUserControl = userControl;
+            if (userControl != lastActiveUserControl)
+            {
+                userControl.Visible = true;
+                lastActiveUserControl.Visible = false;
+                lastActiveUserControl = userControl;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
