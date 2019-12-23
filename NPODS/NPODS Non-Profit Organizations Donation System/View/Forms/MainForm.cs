@@ -96,11 +96,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
 
             loginControl1.OnLogin += login;
         }
-        private void initializeChooseDonation (Organization organization) {
+        private void initializeChooseDonation(Organization organization)
+        {
             chooseDonationOption1.Organization = organization;
-            chooseDonationOption1.setAvailableTypes ();
-            chooseDonationOption1.setDefaultOption ();
-            chooseDonationOption1.updateDefault ();
+            chooseDonationOption1.setAvailableTypes();
         }
     }
 }

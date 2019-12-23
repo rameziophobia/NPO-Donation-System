@@ -2,6 +2,8 @@
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption;
 using System;
+using System.IO;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -11,16 +13,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
     {
         public Organization Organization { get; set; }
         public delegate void OnButtonClick();
-
         public OnButtonClick OnBackPress { get; set; }
-
         public DonationButton.OnButtonClick OnDonatePress { get; set; }
         public DonationButton.OnButtonClick OnMiscPress { get; set; }
 
         private readonly System.Drawing.Color COLOR_SELECTED = System.Drawing.Color.FromArgb(199, 236, 238);
         private readonly System.Drawing.Color COLOR_NOT_SELECTED = System.Drawing.Color.FromArgb(199, 216, 238);
         private Donation donationOption;
-        private int defaultOptionFlag = 0;
+        private bool defaultOptionDone = false;
         private bool perMonth;
 
         public chooseDonationOption()
@@ -48,7 +48,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
-            pnl_displayOptions.Controls.AddRange(getOptions(Organization.SubscriptionDonation.DonationTiers,false).ToArray());
+            pnl_displayOptions.Controls.AddRange(getOptions(Organization.SingleDonation.DonationTiers, false).ToArray());
             pnl_customDonation.Visible = Organization.SingleDonation.customEnabled;
         }
 
@@ -56,7 +56,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             selectColor((Button)sender);
             pnl_displayOptions.Controls.Clear();
-            pnl_displayOptions.Controls.AddRange(getOptions(Organization.SubscriptionDonation.DonationTiers,true).ToArray());
+            pnl_displayOptions.Controls.AddRange(getOptions(Organization.SubscriptionDonation.DonationTiers, true).ToArray());
             pnl_customDonation.Visible = Organization.SubscriptionDonation.customEnabled;
         }
 
@@ -69,7 +69,17 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         }
 
-        public List<DonationButton> getOptions(DonationTier[] donationTiers,bool isMonthly)
+
+        private void selectColor(Button button)
+        {
+            btn_singlePayment.BackColor = COLOR_NOT_SELECTED;
+            btn_subscription.BackColor = COLOR_NOT_SELECTED;
+            btn_miscellaneous.BackColor = COLOR_NOT_SELECTED;
+            button.BackColor = COLOR_SELECTED;
+
+
+        }
+        public List<DonationButton> getOptions(DonationTier[] donationTiers, bool isMonthly)
         {
             List<DonationButton> btns_donation = new List<DonationButton>();
             for (int i = 0; i < donationTiers.Length; i++)
@@ -84,14 +94,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             return btns_donation;
         }
 
-    private void selectColor(Button button)
-        {
-            btn_singlePayment.BackColor = COLOR_NOT_SELECTED;
-            btn_subscription.BackColor = COLOR_NOT_SELECTED;
-            btn_miscellaneous.BackColor = COLOR_NOT_SELECTED;
-            button.BackColor = COLOR_SELECTED;
-        }
-
         private List<DonationButton> getMiscOptionsButtons(List<MiscDonation> miscDonations)
         {
             List<DonationButton> btns = new List<DonationButton>();
@@ -101,77 +103,76 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 btn.Lbl_donationValue.Visible = false;
                 btn.Lbl_monthly.Visible = false;
                 btn.Lbl_tierName.Visible = false;
-                btn.Lbl_description.Text = miscDonation.Link;
+                btn.Lbl_description.Visible = false;
+                btn.Link_description.Visible = true;
+                btn.Link_description.MouseClick += Link_description_MouseClick;
+                btn.Link_description.Text = miscDonation.Link;
                 btns.Add(btn);
             }
             return btns;
         }
 
+        private void Link_description_MouseClick(object sender, MouseEventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            Process.Start("http://" + link.Text);
+        }
+
         public void setAvailableTypes()
         {
+            pnl_displayOptions.Controls.Clear();
             if (!(Organization.SingleDonation is NullDonation))
-            {
-                btn_singlePayment.Visible = true;
-                defaultOptionFlag += 1;
-            }
-            if (!(Organization.SubscriptionDonation is NullDonation))
-            {
-                btn_subscription.Visible = true;
-                defaultOptionFlag += 10;
-            }
-            if (Organization.MiscDonations.Count > 0)
-            {
-                defaultOptionFlag += 100;
-                btn_miscellaneous.Visible = true;
-            }
-        }
-        public void setDefaultOption()
-        {
-            if (defaultOptionFlag % 2 == 1)
             {
                 donationOption = Organization.SingleDonation;
                 selectColor(btn_singlePayment);
                 perMonth = false;
+                btn_singlePayment.Visible = true;
+                defaultOptionDone = true;
             }
-            else if ((defaultOptionFlag / 10) % 10 == 1)
+            if (!(Organization.SubscriptionDonation is NullDonation))
             {
-                donationOption = Organization.SubscriptionDonation;
-                selectColor(btn_subscription);
-                perMonth = true;
-            }
-            else if ((defaultOptionFlag / 100) % 10 == 1)
-            {
-                selectColor(btn_miscellaneous);
-            }
-        }
-        public void updateDefault()
-        {
-            pnl_displayOptions.Controls.Clear();
-            if (donationOption == null && (defaultOptionFlag / 100) % 10 == 1)
-            {
-                pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
-                pnl_customDonation.Visible = false;
-            }
-            else
-            {
-                try
+                if (!defaultOptionDone)
                 {
-                    pnl_displayOptions.Controls.AddRange(getOptions(donationOption.DonationTiers,perMonth).ToArray());
-                    pnl_customDonation.Visible = donationOption.customEnabled;
+                    donationOption = Organization.SubscriptionDonation;
+                    selectColor(btn_subscription);
+                    perMonth = true;
                 }
-                catch (Exception ex)
+                btn_subscription.Visible = true;
+            }
+            displayDonationOptions();
+            if (Organization.MiscDonations.Count > 0)
+            {
+                btn_miscellaneous.Visible = true;
+            }
+
+        }
+        public void displayDonationOptions()
+        {
+            try
+            {
+                pnl_displayOptions.Controls.AddRange(getOptions(donationOption.DonationTiers, perMonth).ToArray());
+                pnl_customDonation.Visible = donationOption.customEnabled;
+            }
+            catch (Exception ex)
+            {
+                if (ex is NullReferenceException)
                 {
-                    if (ex is NullReferenceException)
+                    if (Organization.MiscDonations.Count > 0)
+                    {
+                        selectColor(btn_miscellaneous);
+                        pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
+                        pnl_customDonation.Visible = false;
+                    }
+                    else
                     {
                         pnl_displayOptions.Controls.Add(lbl_noOptions);
                         lbl_noOptions.Visible = true;
                     }
-                    else
-                    {
-                        throw;
-                    }
                 }
-
+                else
+                {
+                    throw;
+                }
             }
         }
 
@@ -187,9 +188,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 donationValue = Convert.ToInt32(txt_customValue.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                if(ex is FormatException)
+                if (ex is FormatException)
                 {
                     donationValue = -1;
                 }
