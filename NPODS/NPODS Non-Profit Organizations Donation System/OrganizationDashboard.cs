@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System {
-    public partial class OrganizationDashboard : Form {
+    public partial class OrganizationDashboard : UserControl {
         private readonly int pnl_side_MAXWIDTH;
         private readonly int pnl_side_MINWIDTH;
         private readonly Dictionary<Button, String> hiddenText;
@@ -221,6 +221,3 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         }
     }
 }
-
-
-
