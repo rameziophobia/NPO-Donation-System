@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
 {
-    public abstract class Donation
+    public class Donation //todo temp not abstract
     {
         private DonationTier[] donationTiers;
 

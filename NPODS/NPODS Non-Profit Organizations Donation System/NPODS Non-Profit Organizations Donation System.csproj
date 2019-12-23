@@ -67,8 +67,11 @@
     <Compile Include="Accounts\Organization.cs" />
     <Compile Include="controller\DatabaseAccess\DatabaseAccess.cs" />
     <Compile Include="controller\DatabaseAccess\FileDatabaseAccess.cs" />
-    <Compile Include="controller\Login\LoginVerification.cs" />
+    <Compile Include="Accounts\AccountType.cs" />
+    <Compile Include="controller\Login\LoginInfo.cs" />
+    <Compile Include="controller\Login\LoginManager.cs" />
     <Compile Include="controller\Login\UserNotRegisteredException.cs" />
+    <Compile Include="controller\Login\WrongPasswordException.cs" />
     <Compile Include="controller\Registration\EmailAlreadyExistsException.cs" />
     <Compile Include="controller\Registration\RegistrationUtil.cs" />
     <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />

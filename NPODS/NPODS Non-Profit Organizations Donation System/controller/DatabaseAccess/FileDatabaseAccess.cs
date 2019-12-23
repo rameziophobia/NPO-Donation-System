@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.controller.Login;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,9 +14,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
         private const string PATH_FILE_DONOR = PATH_FOLDER_DATA + "Donors.json";
         private const string PATH_FILE_LOGINS = PATH_FOLDER_DATA + "logins.json";
 
-        public override Dictionary<string, string> GetLoginInfos()
+        public override List<LoginInfo> LoadLoginInfos()
         {
-            return readJson<Dictionary<string, string>>(PATH_FILE_LOGINS);
+            return readJson<List<LoginInfo>>(PATH_FILE_LOGINS);
         }
 
         public override List<Organization> loadOrganizations()
@@ -82,10 +83,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             return readJson<List<Donor>>(PATH_FILE_DONOR);
         }
 
-        internal override void addLogin(string email, string password)
+        internal override void addLogin(string email, string password, AccountType accountType)
         {
-            var logins = GetLoginInfos();
-            logins[email] = password;
+            List<LoginInfo> logins = LoadLoginInfos();
+            logins.Add(new LoginInfo(email, password, accountType));
             writeJson(PATH_FILE_LOGINS, logins);
         }
     }

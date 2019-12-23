@@ -8,7 +8,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     public partial class LoginControl : UserControl
     {
-        public delegate void OnAction(Account account);
+        public delegate void OnAction(Account account, bool isOrganization);
 
         public OnAction OnLogin { get; set; }
 
@@ -16,11 +16,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private const string LOGIN_STATUS_MSG_NOT_REGISTERED = "User Not Registered";
         private const string LOGIN_STATUS_MSG_INVALID_EMAIL = "Invalid Email";
 
-        private readonly LoginVerification loginVerification;
+        private readonly LoginManager loginManager;
 
         public LoginControl()
         {
-            loginVerification = new LoginVerification();
+            loginManager = new LoginManager();
             InitializeComponent();
         }
 
@@ -43,18 +43,23 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 try
                 {
-                    if (loginVerification.VerifyUser(email, password))
+                    LoginInfo loginInfo = loginManager.getUser(email, password);
+                    if (loginInfo.AccountType == AccountType.Donor) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
                     {
-                        OnLogin(new Account(email, "temp"));//todo temp
+                        OnLogin(loginManager.findDonor(loginInfo.Email), false);
                     }
                     else
                     {
-                        showLoginStatus(LOGIN_STATUS_MSG_INVALID_PASSWORD);
+                        OnLogin(loginManager.findOrganization(loginInfo.Email), true);
                     }
                 }
                 catch (UserNotRegisteredException)
                 {
                     showLoginStatus(LOGIN_STATUS_MSG_NOT_REGISTERED);
+                }
+                catch (WrongPasswordException)
+                {
+                    showLoginStatus(LOGIN_STATUS_MSG_INVALID_PASSWORD);
                 }
             }
             else

@@ -9,24 +9,29 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     public partial class MainForm : Form
     {
+        private const string MSG_LOGOUT_CONFIRM = "Are you sure you want to logout?";
+        private const string MSG_LOGOUT_CONFRIM_TITLE = "Logout Confirm";
+
         private UserControl lastActiveUserControl;
         private Account currentAccount;
+        private bool isCurrentAccountOrganization;
 
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void login(Account account)
+        private void login(Account account, bool isOrganization)
         {
             headerControl1.ShowAccount(account);
+            isCurrentAccountOrganization = isOrganization;
             currentAccount = account;
             switchControls(tempHome1);
         }
 
         private void logout()
         {
-            DialogResult response = MessageBox.Show("Are you sure you want to logout?", "Logout Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult response = MessageBox.Show(MSG_LOGOUT_CONFIRM, MSG_LOGOUT_CONFRIM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (response == DialogResult.Yes)
             {
                 headerControl1.Logout();
@@ -80,8 +85,28 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 organizationInfo1.updateOrganisation(organization);
             };
 
-            accountPopup1.OnViewDashboardClick += () => MessageBox.Show("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            accountPopup1.OnEditAccountClick += () => MessageBox.Show("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            accountPopup1.OnViewDashboardClick += () =>
+            {
+                if (isCurrentAccountOrganization)
+                {
+                    MessageBox.Show("WIP (ORG)", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("WIP (Donor)", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            };
+            accountPopup1.OnEditAccountClick += () =>
+            {
+                if (isCurrentAccountOrganization)
+                {
+                    MessageBox.Show("WIP (ORG)", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("WIP (Donor)", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }; ;
             accountPopup1.OnLogOutClick += logout;
 
             loginControl1.OnLogin += login;
