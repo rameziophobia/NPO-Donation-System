@@ -44,7 +44,5 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 textBox.ForeColor = System.Drawing.SystemColors.WindowText;
             }
         }
-
-       
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace NPODS_Non_Profit_Organizations_Donation_System
+namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Components.Browser
 {
     public class CircularPictureBox : PictureBox
     {

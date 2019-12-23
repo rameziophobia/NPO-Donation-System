@@ -4,7 +4,7 @@ using System;
 using System.Net.Mail;
 using System.Windows.Forms;
 
-namespace NPODS_Non_Profit_Organizations_Donation_System
+namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
 {
     public partial class RegisterControl : UserControl
     {
@@ -133,6 +133,18 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private void RegisterControl_Load(object sender, EventArgs e)
         {
             cbo_accountType.SelectedIndex = 0;
+        }
+
+        private void RegisterControl_VisibleChanged(object sender, EventArgs e)
+        {
+            txt_email.Text = "";
+            txt_name.Text = "";
+            txt_password.Text = "";
+            txt_confirmPassword.Text = "";
+            txt_organizationUrl.Text = "";
+            cbo_accountType.SelectedIndex = 0;
+            cbo_gender.SelectedIndex = -1;
+            dtp_birthday.Value = DateTime.Now;
         }
     }
 }

@@ -90,8 +90,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             btn_subscription.BackColor = COLOR_NOT_SELECTED;
             btn_miscellaneous.BackColor = COLOR_NOT_SELECTED;
             button.BackColor = COLOR_SELECTED;
-
-
         }
 
         private List<DonationButton> getMiscOptionsButtons(List<MiscDonation> miscDonations)
@@ -177,7 +175,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             }
         }
 
-        
         private void btn_back_Click(object sender, EventArgs e)
         {
             OnBackPress();
