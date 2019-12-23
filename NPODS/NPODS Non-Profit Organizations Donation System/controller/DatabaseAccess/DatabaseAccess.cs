@@ -6,7 +6,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
 {
     public abstract class DatabaseAccess
     {
-        private static readonly DatabaseAccess instance = new FileDatabaseAccess();
+        private static readonly DatabaseAccess instance = FileDatabaseAccess.getInstance();
 
         protected DatabaseAccess() { }
 

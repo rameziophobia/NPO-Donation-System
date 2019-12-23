@@ -14,23 +14,54 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
         private const string PATH_FILE_DONOR = PATH_FOLDER_DATA + "Donors.json";
         private const string PATH_FILE_LOGINS = PATH_FOLDER_DATA + "logins.json";
 
+        private readonly Dictionary<CacheKeys, object> cache;
+
+        enum CacheKeys
+        {
+            LOGINS,
+            ORGANIZATIONS,
+            DONORS
+        }
+
+        private static readonly DatabaseAccess instance = new FileDatabaseAccess();
+
+        public static DatabaseAccess getInstance()
+        {
+            return instance;
+        }
+
+        protected FileDatabaseAccess()
+        {
+            cache = new Dictionary<CacheKeys, object>();
+        }
+
         public override List<LoginInfo> LoadLoginInfos()
         {
-            return readJson<List<LoginInfo>>(PATH_FILE_LOGINS);
+            if (!cache.ContainsKey(CacheKeys.LOGINS))
+            {
+                cache[CacheKeys.LOGINS] = readJson<List<LoginInfo>>(PATH_FILE_LOGINS);
+            }
+            return (List<LoginInfo>)cache[CacheKeys.LOGINS];
         }
 
         public override List<Organization> loadOrganizations()
         {
-            return readJson<List<Organization>>(PATH_FILE_ORG);
+            if (!cache.ContainsKey(CacheKeys.ORGANIZATIONS))
+            {
+                cache[CacheKeys.ORGANIZATIONS] = readJson<List<Organization>>(PATH_FILE_ORG);
+            }
+            return (List<Organization>)cache[CacheKeys.ORGANIZATIONS];
         }
 
         public override void SaveOrganizations(List<Organization> organizations)
         {
+            cache[CacheKeys.ORGANIZATIONS] = organizations;
             writeJson(PATH_FILE_ORG, organizations);
         }
 
         internal override void SaveDonors(List<Donor> donors)
         {
+            cache[CacheKeys.DONORS] = donors;
             writeJson(PATH_FILE_DONOR, donors);
         }
 
@@ -80,13 +111,18 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
 
         internal override List<Donor> loadDonors()
         {
-            return readJson<List<Donor>>(PATH_FILE_DONOR);
+            if (!cache.ContainsKey(CacheKeys.DONORS))
+            {
+                cache[CacheKeys.DONORS] = readJson<List<Donor>>(PATH_FILE_DONOR);
+            }
+            return (List<Donor>)cache[CacheKeys.DONORS];
         }
 
         internal override void addLogin(string email, string password, AccountType accountType)
         {
             List<LoginInfo> logins = LoadLoginInfos();
             logins.Add(new LoginInfo(email, password, accountType));
+            cache[CacheKeys.LOGINS] = logins;
             writeJson(PATH_FILE_LOGINS, logins);
         }
     }
