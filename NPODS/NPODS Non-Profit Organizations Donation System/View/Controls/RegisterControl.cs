@@ -134,5 +134,17 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             cbo_accountType.SelectedIndex = 0;
         }
+
+        private void RegisterControl_VisibleChanged(object sender, EventArgs e)
+        {
+            txt_email.Text = "";
+            txt_name.Text = "";
+            txt_password.Text = "";
+            txt_confirmPassword.Text = "";
+            txt_organizationUrl.Text = "";
+            cbo_accountType.SelectedIndex = 0;
+            cbo_gender.SelectedIndex = -1;
+            dtp_birthday.Value = DateTime.Now;
+        }
     }
 }

@@ -180,6 +180,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "LoginControl";
             this.Size = new System.Drawing.Size(367, 231);
+            this.VisibleChanged += new System.EventHandler(this.LoginControl_VisibleChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

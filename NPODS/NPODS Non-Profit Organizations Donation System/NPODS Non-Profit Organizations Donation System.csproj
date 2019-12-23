@@ -65,14 +65,39 @@
     <Compile Include="Accounts\Donations\SubscriptionDonation.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
-    <Compile Include="Controller\DatabaseAccess\DatabaseAccess.cs" />
-    <Compile Include="Controller\DatabaseAccess\FileDatabaseAccess.cs" />
-    <Compile Include="Controller\Login\LoginVerification.cs" />
-    <Compile Include="Controller\Login\UserNotRegisteredException.cs" />
-    <Compile Include="Controller\Registration\EmailAlreadyExistsException.cs" />
-    <Compile Include="Controller\Registration\RegistrationUtil.cs" />
+    <Compile Include="controller\DatabaseAccess\DatabaseAccess.cs" />
+    <Compile Include="controller\DatabaseAccess\FileDatabaseAccess.cs" />
+    <Compile Include="Accounts\AccountType.cs" />
+    <Compile Include="controller\Login\LoginInfo.cs" />
+    <Compile Include="controller\Login\LoginManager.cs" />
+    <Compile Include="controller\Login\UserNotRegisteredException.cs" />
+    <Compile Include="controller\Login\WrongPasswordException.cs" />
+    <Compile Include="controller\Registration\EmailAlreadyExistsException.cs" />
+    <Compile Include="controller\Registration\RegistrationUtil.cs" />
     <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />
-    <Compile Include="View\Controls\Components\DonationOption\DonationComboBox.cs">
+    <Compile Include="View\Controls\tempHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\tempHome.Designer.cs">
+      <DependentUpon>tempHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\UserControls\DonationOption\chooseDonationOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\UserControls\DonationOption\chooseDonationOption.Designer.cs">
+      <DependentUpon>chooseDonationOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\UserControls\DonationOption\DonationButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\UserControls\DonationOption\DonationType.cs" />
+    <Compile Include="View\Controls\UserControls\DonationOption\optionFlowPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\UserControls\DonationOption\optionFlowPanel.Designer.cs">
+      <DependentUpon>optionFlowPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\Components\DonationOption\RemoveLabel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Controls\Components\DonationOption\DonationFlowPanel.cs">
@@ -81,47 +106,31 @@
     <Compile Include="View\Controls\Components\DonationOption\DonationTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\Controls\Components\DonationOption\RemoveLabel.cs">
+    <Compile Include="View\Controls\Components\DonationOption\DonationComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\Controls\tempHome.cs">
+    <Compile Include="View\Controls\UserControls\DonationOption\editDonationOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\tempHome.Designer.cs">
-      <DependentUpon>tempHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Controls\UserControl\DonationOption\chooseDonationOption.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Controls\UserControl\DonationOption\chooseDonationOption.Designer.cs">
-      <DependentUpon>chooseDonationOption.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Controls\UserControl\DonationOption\DonationButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Controls\UserControl\DonationOption\DonationType.cs" />
-    <Compile Include="View\Controls\UserControl\DonationOption\editDonationOptions.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Controls\UserControl\DonationOption\editDonationOptions.Designer.cs">
+    <Compile Include="View\Controls\UserControls\DonationOption\editDonationOptions.Designer.cs">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\UserControl\DonationOption\optionFlowPanel.cs">
+    <Compile Include="View\Controls\UserControls\Header\AccountPopup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\UserControl\DonationOption\optionFlowPanel.Designer.cs">
-      <DependentUpon>optionFlowPanel.cs</DependentUpon>
+    <Compile Include="View\Controls\UserControls\Header\AccountPopup.Designer.cs">
+      <DependentUpon>AccountPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\UserControl\OrganizationInfo\editOrganizationInfo.cs">
+    <Compile Include="View\Controls\UserControls\OrganizationInfo\editOrganizationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\UserControl\OrganizationInfo\editOrganizationInfo.Designer.cs">
+    <Compile Include="View\Controls\UserControls\OrganizationInfo\editOrganizationInfo.Designer.cs">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\UserControl\OrganizationInfo\organizationInfo.cs">
+    <Compile Include="View\Controls\UserControls\OrganizationInfo\organizationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\UserControl\OrganizationInfo\organizationInfo.Designer.cs">
+    <Compile Include="View\Controls\UserControls\OrganizationInfo\organizationInfo.Designer.cs">
       <DependentUpon>organizationInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\MainForm.cs">
@@ -136,10 +145,10 @@
     <Compile Include="View\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\UserControl\Browser\org card.cs">
+    <Compile Include="View\Controls\UserControls\Browser\org card.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\UserControl\Browser\org card.Designer.cs">
+    <Compile Include="View\Controls\UserControls\Browser\org card.Designer.cs">
       <DependentUpon>org card.cs</DependentUpon>
     </Compile>
     <Compile Include="OrganizationDashboard.cs">
@@ -148,10 +157,10 @@
     <Compile Include="OrganizationDashboard.Designer.cs">
       <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\UserControl\Browser\OrganizationCard.cs">
+    <Compile Include="View\Controls\UserControls\Browser\OrganizationCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\UserControl\Browser\OrganizationCard.Designer.cs">
+    <Compile Include="View\Controls\UserControls\Browser\OrganizationCard.Designer.cs">
       <DependentUpon>OrganizationCard.cs</DependentUpon>
     </Compile>
     <Compile Include="OrganizationUtil\NonMoneyDonation.cs" />
@@ -176,40 +185,43 @@
     <Compile Include="View\Controls\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Controls\HeaderControl.cs">
+    <Compile Include="View\Controls\UserControls\Header\HeaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Controls\HeaderControl.Designer.cs">
+    <Compile Include="View\Controls\UserControls\Header\HeaderControl.Designer.cs">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\Controls\tempHome.resx">
       <DependentUpon>tempHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\UserControl\DonationOption\chooseDonationOption.resx">
+    <EmbeddedResource Include="View\Controls\UserControls\DonationOption\chooseDonationOption.resx">
       <DependentUpon>chooseDonationOption.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\UserControl\DonationOption\editDonationOptions.resx">
+    <EmbeddedResource Include="View\Controls\UserControls\DonationOption\editDonationOptions.resx">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\UserControl\DonationOption\optionFlowPanel.resx">
-      <DependentUpon>optionFlowPanel.cs</DependentUpon>
+    <EmbeddedResource Include="View\Controls\UserControls\Header\AccountPopup.resx">
+      <DependentUpon>AccountPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\UserControl\OrganizationInfo\editOrganizationInfo.resx">
+    <EmbeddedResource Include="View\Controls\UserControls\OrganizationInfo\editOrganizationInfo.resx">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\UserControl\OrganizationInfo\organizationInfo.resx">
+    <EmbeddedResource Include="View\Controls\UserControls\DonationOption\optionFlowPanel.resx">
+      <DependentUpon>optionFlowPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\UserControls\OrganizationInfo\organizationInfo.resx">
       <DependentUpon>organizationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\UserControl\Browser\org card.resx">
+    <EmbeddedResource Include="View\Controls\UserControls\Browser\org card.resx">
       <DependentUpon>org card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrganizationDashboard.resx">
       <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\UserControl\Browser\OrganizationCard.resx">
+    <EmbeddedResource Include="View\Controls\UserControls\Browser\OrganizationCard.resx">
       <DependentUpon>OrganizationCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -225,12 +237,13 @@
     <EmbeddedResource Include="View\Controls\LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Controls\HeaderControl.resx">
+    <EmbeddedResource Include="View\Controls\UserControls\Header\HeaderControl.resx">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\RegisterControl.resx">
       <DependentUpon>RegisterControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="data\logins.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

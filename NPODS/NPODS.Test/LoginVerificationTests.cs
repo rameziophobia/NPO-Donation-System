@@ -9,12 +9,12 @@ namespace NPODS.Test
         private const string TEST_USER_EMAIL = "testuser@testemail.com.test";
         private const string TEST_USER_PASSWORD = "TestPassword";
 
-        private static LoginVerification loginVerification;
+        private static LoginManager loginVerification;
 
         [ClassInitialize]
         public static void setup(TestContext testContext)
         {
-            loginVerification = new LoginVerification();
+            loginVerification = new LoginManager();
         }
 
         [TestMethod]
