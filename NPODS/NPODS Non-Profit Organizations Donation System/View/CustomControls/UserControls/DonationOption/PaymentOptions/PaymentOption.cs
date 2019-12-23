@@ -24,18 +24,21 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
 
         private void btn_fawry_Click(object sender, EventArgs e)
         {
-            DialogResult dr;
-            dr = MessageBox.Show("Confirm donating via Fawry to '" + Organization.Name +"'.", "Conofirm Donation", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
-            if( dr == DialogResult.OK)
-            {
-                MessageBox.Show("Transaction Completed","Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            comfirmDonation("Fawry");
         }
         private void btn_paypal_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Confirm donating " + "via PayPal to '" + Organization.Name  +  "'.", "Conofirm Donation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            comfirmDonation("Paypal");
         }
-
+        private void comfirmDonation(string donationMethod)
+        {
+            DialogResult dr;
+            dr = MessageBox.Show("Confirm donating via " + donationMethod + " to '" + Organization.Name + "'.", "Conofirm Donation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                MessageBox.Show("Transaction Completed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
         private void btn_back_Click(object sender, EventArgs e)
         {
             OnBackPress();
