@@ -4,7 +4,7 @@ using System;
 using System.Net.Mail;
 using System.Windows.Forms;
 
-namespace NPODS_Non_Profit_Organizations_Donation_System
+namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
 {
     public partial class RegisterControl : UserControl
     {

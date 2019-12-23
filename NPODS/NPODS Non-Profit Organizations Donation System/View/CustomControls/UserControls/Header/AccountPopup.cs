@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.UserControls.Header
+namespace NPODS_Non_Profit_Organizations_Donation_System.View.UserControls.Header
 {
     public partial class AccountPopup : UserControl
     {

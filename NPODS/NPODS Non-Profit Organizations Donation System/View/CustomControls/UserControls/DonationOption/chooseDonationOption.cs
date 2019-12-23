@@ -1,6 +1,6 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
-using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
+using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.DonationOption;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;

@@ -1,4 +1,4 @@
-﻿namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls
+﻿namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
 {
     partial class tempHome
     {

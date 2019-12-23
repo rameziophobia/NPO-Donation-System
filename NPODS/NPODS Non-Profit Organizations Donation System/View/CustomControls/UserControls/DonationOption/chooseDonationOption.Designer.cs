@@ -1,7 +1,6 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
-using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {

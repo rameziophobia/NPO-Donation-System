@@ -1,4 +1,7 @@
-﻿namespace NPODS_Non_Profit_Organizations_Donation_System
+﻿using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls;
+using NPODS_Non_Profit_Organizations_Donation_System.View.UserControls.Header;
+
+namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     partial class MainForm
     {
@@ -28,13 +31,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.accountPopup1 = new NPODS_Non_Profit_Organizations_Donation_System.View.Controls.UserControls.Header.AccountPopup();
-            this.headerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.HeaderControl();
-            this.tempHome1 = new NPODS_Non_Profit_Organizations_Donation_System.View.Controls.tempHome();
-            this.chooseDonationOption1 = new NPODS_Non_Profit_Organizations_Donation_System.chooseDonationOption();
-            this.organizationInfo1 = new NPODS_Non_Profit_Organizations_Donation_System.organizationInfo();
-            this.registerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.RegisterControl();
-            this.loginControl1 = new NPODS_Non_Profit_Organizations_Donation_System.LoginControl();
+            this.accountPopup1 = new AccountPopup();
+            this.headerControl1 = new HeaderControl();
+            this.tempHome1 = new tempHome();
+            this.chooseDonationOption1 = new chooseDonationOption();
+            this.organizationInfo1 = new organizationInfo();
+            this.registerControl1 = new RegisterControl();
+            this.loginControl1 = new LoginControl();
             this.SuspendLayout();
             // 
             // accountPopup1
@@ -135,9 +138,9 @@
         private HeaderControl headerControl1;
         private RegisterControl registerControl1;
         private organizationInfo organizationInfo1;
-        private View.Controls.tempHome tempHome1;
+        private tempHome tempHome1;
         private chooseDonationOption chooseDonationOption1;
-        private View.Controls.UserControls.Header.AccountPopup accountPopup1;
+        private AccountPopup accountPopup1;
         private LoginControl loginControl1;
     }
 }

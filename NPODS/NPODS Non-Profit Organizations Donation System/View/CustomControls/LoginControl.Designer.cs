@@ -1,4 +1,4 @@
-﻿namespace NPODS_Non_Profit_Organizations_Donation_System
+﻿namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
 {
     partial class LoginControl
     {

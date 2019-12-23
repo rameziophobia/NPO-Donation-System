@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption
+namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.DonationOption
 {
     public class DonationButton : UserControl
     {

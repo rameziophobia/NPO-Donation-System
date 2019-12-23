@@ -1,4 +1,4 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.View.Controls.DonationOption;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.DonationOption;
 using System.Collections.Generic;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations

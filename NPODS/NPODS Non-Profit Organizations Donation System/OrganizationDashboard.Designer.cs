@@ -1,4 +1,6 @@
-﻿namespace NPODS_Non_Profit_Organizations_Donation_System {
+﻿using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Components.Browser;
+
+namespace NPODS_Non_Profit_Organizations_Donation_System {
     partial class OrganizationDashboard {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +39,7 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.BannerPictureBox = new System.Windows.Forms.PictureBox();
             this.MainFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.circularPictureBox1 = new NPODS_Non_Profit_Organizations_Donation_System.CircularPictureBox();
+            this.circularPictureBox1 = new CircularPictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.MainPanel.SuspendLayout();
