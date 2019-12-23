@@ -39,6 +39,9 @@
             <e p="RegistrationUtil.cs" t="Include" />
           </e>
         </e>
+        <e p="DashboardRegion.cs" t="Include" />
+        <e p="DashboardRegion.Designer.cs" t="Include" />
+        <e p="DashboardRegion.resx" t="Include" />
         <e p="data" t="Include">
           <e p="logins.json" t="Include" />
         </e>
@@ -71,8 +74,10 @@
           <e p="Images" t="Include">
             <e p="OrganizationDashboard" t="Include">
               <e p="Banner.png" t="Include" />
+              <e p="coming-soon-placeholder-image-blackboard-background.jpg" t="Include" />
               <e p="data_resized.png" t="Include" />
               <e p="hamburger_button.jpg" t="Include" />
+              <e p="hamburger_button_resized.png" t="Include" />
               <e p="Logo.png" t="Include" />
               <e p="misc_donation.png" t="Include" />
               <e p="misc_donation_resized_transparent.png" t="Include" />

@@ -26,227 +26,275 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrganizationDashboard));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            System.Windows.Forms.Panel fpl_hidden;
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.pnl_side = new System.Windows.Forms.Panel();
+            this.btn_sideMoneyDonations = new System.Windows.Forms.Button();
+            this.btn_sideMiscDonations = new System.Windows.Forms.Button();
+            this.btn_sideStatistics = new System.Windows.Forms.Button();
+            this.btn_sideInformation = new System.Windows.Forms.Button();
+            this.tmr_panelAnimation = new System.Windows.Forms.Timer(this.components);
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.BannerPictureBox = new System.Windows.Forms.PictureBox();
-            this.MainFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.circularPictureBox1 = new CircularPictureBox();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.fpl_Main = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pic_Banner = new System.Windows.Forms.PictureBox();
+            this.dbr_MiscDonations = new NPODS_Non_Profit_Organizations_Donation_System.DashboardRegion();
+            this.dbr_MoneyDonations = new NPODS_Non_Profit_Organizations_Donation_System.DashboardRegion();
+            this.dbr_Stats = new NPODS_Non_Profit_Organizations_Donation_System.DashboardRegion();
+            this.cht_Main = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dbr_Info = new NPODS_Non_Profit_Organizations_Donation_System.DashboardRegion();
+            fpl_hidden = new System.Windows.Forms.Panel();
+            this.pnl_side.SuspendLayout();
             this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BannerPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
+            this.fpl_Main.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Banner)).BeginInit();
+            this.dbr_Stats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cht_Main)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // fpl_hidden
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.circularPictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 60);
-            this.panel1.TabIndex = 0;
+            fpl_hidden.Anchor = System.Windows.Forms.AnchorStyles.None;
+            fpl_hidden.Location = new System.Drawing.Point(0, 0);
+            fpl_hidden.MinimumSize = new System.Drawing.Size(100, 100);
+            fpl_hidden.Name = "fpl_hidden";
+            fpl_hidden.Size = new System.Drawing.Size(200, 200);
+            fpl_hidden.TabIndex = 0;
             // 
-            // button1
+            // pnl_side
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(10, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.pnl_side.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pnl_side.Controls.Add(this.btn_sideMoneyDonations);
+            this.pnl_side.Controls.Add(this.btn_sideMiscDonations);
+            this.pnl_side.Controls.Add(this.btn_sideStatistics);
+            this.pnl_side.Controls.Add(this.btn_sideInformation);
+            this.pnl_side.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl_side.Location = new System.Drawing.Point(0, 0);
+            this.pnl_side.Name = "pnl_side";
+            this.pnl_side.Size = new System.Drawing.Size(193, 812);
+            this.pnl_side.TabIndex = 1;
+            this.pnl_side.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
+            this.pnl_side.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
+            this.pnl_side.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             // 
-            // panel2
+            // btn_sideMoneyDonations
             // 
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 60);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 560);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
-            this.panel2.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
-            this.panel2.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
+            this.btn_sideMoneyDonations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_sideMoneyDonations.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_sideMoneyDonations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sideMoneyDonations.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.money_donation_resized;
+            this.btn_sideMoneyDonations.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sideMoneyDonations.Location = new System.Drawing.Point(-4, 292);
+            this.btn_sideMoneyDonations.Name = "btn_sideMoneyDonations";
+            this.btn_sideMoneyDonations.Size = new System.Drawing.Size(197, 84);
+            this.btn_sideMoneyDonations.TabIndex = 3;
+            this.btn_sideMoneyDonations.Text = "Money Donations";
+            this.btn_sideMoneyDonations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_sideMoneyDonations.UseVisualStyleBackColor = true;
+            this.btn_sideMoneyDonations.Click += new System.EventHandler(this.Btn_sideMoneyDonations_Click);
+            this.btn_sideMoneyDonations.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
+            this.btn_sideMoneyDonations.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             // 
-            // button5
+            // btn_sideMiscDonations
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.money_donation_resized;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(-7, 265);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(197, 84);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Money Donations";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
-            this.button5.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
+            this.btn_sideMiscDonations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_sideMiscDonations.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_sideMiscDonations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sideMiscDonations.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.misc_donation_resized_transparent;
+            this.btn_sideMiscDonations.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sideMiscDonations.Location = new System.Drawing.Point(-4, 376);
+            this.btn_sideMiscDonations.Name = "btn_sideMiscDonations";
+            this.btn_sideMiscDonations.Size = new System.Drawing.Size(197, 84);
+            this.btn_sideMiscDonations.TabIndex = 2;
+            this.btn_sideMiscDonations.Text = "Miscellaneous Donations";
+            this.btn_sideMiscDonations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sideMiscDonations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_sideMiscDonations.UseVisualStyleBackColor = true;
+            this.btn_sideMiscDonations.Click += new System.EventHandler(this.Btn_sideMiscDonations_Click);
+            this.btn_sideMiscDonations.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
+            this.btn_sideMiscDonations.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             // 
-            // button4
+            // btn_sideStatistics
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.misc_donation_resized_transparent;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-7, 349);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(197, 84);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Miscellaneous Donations";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
-            this.button4.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
+            this.btn_sideStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_sideStatistics.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_sideStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sideStatistics.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.Stats_resized;
+            this.btn_sideStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sideStatistics.Location = new System.Drawing.Point(-4, 208);
+            this.btn_sideStatistics.Name = "btn_sideStatistics";
+            this.btn_sideStatistics.Size = new System.Drawing.Size(197, 84);
+            this.btn_sideStatistics.TabIndex = 1;
+            this.btn_sideStatistics.Text = "Statistics";
+            this.btn_sideStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_sideStatistics.UseVisualStyleBackColor = true;
+            this.btn_sideStatistics.Click += new System.EventHandler(this.Btn_sideStatistics_Click);
+            this.btn_sideStatistics.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
+            this.btn_sideStatistics.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             // 
-            // button3
+            // btn_sideInformation
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.Stats_resized;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(-7, 181);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(197, 84);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Statistics";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
-            this.button3.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
+            this.btn_sideInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_sideInformation.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_sideInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sideInformation.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.data_resized;
+            this.btn_sideInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sideInformation.Location = new System.Drawing.Point(-4, 124);
+            this.btn_sideInformation.Name = "btn_sideInformation";
+            this.btn_sideInformation.Size = new System.Drawing.Size(197, 84);
+            this.btn_sideInformation.TabIndex = 0;
+            this.btn_sideInformation.Text = "Information";
+            this.btn_sideInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_sideInformation.UseVisualStyleBackColor = true;
+            this.btn_sideInformation.Click += new System.EventHandler(this.Btn_Info_Click);
+            this.btn_sideInformation.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
+            this.btn_sideInformation.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
             // 
-            // button2
+            // tmr_panelAnimation
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.data_resized;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(-7, 97);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 84);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Information";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            this.button2.MouseEnter += new System.EventHandler(this.Panel2_MouseEnter);
-            this.button2.MouseLeave += new System.EventHandler(this.Panel2_MouseLeave);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 5;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(998, 60);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 560);
-            this.vScrollBar1.TabIndex = 2;
+            this.tmr_panelAnimation.Interval = 5;
+            this.tmr_panelAnimation.Tick += new System.EventHandler(this.Timer1_Tick_1);
             // 
             // MainPanel
             // 
-            this.MainPanel.Controls.Add(this.MainFlowPanel);
-            this.MainPanel.Controls.Add(this.BannerPictureBox);
+            this.MainPanel.Controls.Add(this.fpl_Main);
+            this.MainPanel.Controls.Add(this.panel2);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(190, 60);
+            this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(808, 560);
+            this.MainPanel.Size = new System.Drawing.Size(1382, 812);
             this.MainPanel.TabIndex = 3;
             // 
-            // BannerPictureBox
+            // fpl_Main
             // 
-            this.BannerPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BannerPictureBox.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.Banner;
-            this.BannerPictureBox.Location = new System.Drawing.Point(-114, 0);
-            this.BannerPictureBox.Name = "BannerPictureBox";
-            this.BannerPictureBox.Size = new System.Drawing.Size(922, 124);
-            this.BannerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.BannerPictureBox.TabIndex = 0;
-            this.BannerPictureBox.TabStop = false;
+            this.fpl_Main.AutoScroll = true;
+            this.fpl_Main.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.fpl_Main.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.fpl_Main.Controls.Add(this.dbr_MiscDonations);
+            this.fpl_Main.Controls.Add(this.dbr_MoneyDonations);
+            this.fpl_Main.Controls.Add(this.dbr_Stats);
+            this.fpl_Main.Controls.Add(this.dbr_Info);
+            this.fpl_Main.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fpl_Main.Location = new System.Drawing.Point(190, 124);
+            this.fpl_Main.Name = "fpl_Main";
+            this.fpl_Main.Size = new System.Drawing.Size(1192, 688);
+            this.fpl_Main.TabIndex = 2;
             // 
-            // MainFlowPanel
+            // panel2
             // 
-            this.MainFlowPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainFlowPanel.AutoScroll = true;
-            this.MainFlowPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MainFlowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.MainFlowPanel.Location = new System.Drawing.Point(0, 123);
-            this.MainFlowPanel.Name = "MainFlowPanel";
-            this.MainFlowPanel.Size = new System.Drawing.Size(805, 437);
-            this.MainFlowPanel.TabIndex = 1;
-            this.MainFlowPanel.WrapContents = false;
+            this.panel2.Controls.Add(this.pic_Banner);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1382, 124);
+            this.panel2.TabIndex = 1;
             // 
-            // circularPictureBox1
+            // pic_Banner
             // 
-            this.circularPictureBox1.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.Logo;
-            this.circularPictureBox1.Location = new System.Drawing.Point(68, 0);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(63, 60);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox1.TabIndex = 2;
-            this.circularPictureBox1.TabStop = false;
+            this.pic_Banner.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pic_Banner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_Banner.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.Banner;
+            this.pic_Banner.Location = new System.Drawing.Point(0, 0);
+            this.pic_Banner.Name = "pic_Banner";
+            this.pic_Banner.Size = new System.Drawing.Size(1382, 124);
+            this.pic_Banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Banner.TabIndex = 0;
+            this.pic_Banner.TabStop = false;
+            // 
+            // dbr_MiscDonations
+            // 
+            this.dbr_MiscDonations.BackColor = System.Drawing.SystemColors.Control;
+            this.dbr_MiscDonations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dbr_MiscDonations.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dbr_MiscDonations.Location = new System.Drawing.Point(0, 1964);
+            this.dbr_MiscDonations.Name = "dbr_MiscDonations";
+            this.dbr_MiscDonations.Size = new System.Drawing.Size(1175, 640);
+            this.dbr_MiscDonations.TabIndex = 3;
+            // 
+            // dbr_MoneyDonations
+            // 
+            this.dbr_MoneyDonations.BackColor = System.Drawing.SystemColors.Control;
+            this.dbr_MoneyDonations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dbr_MoneyDonations.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dbr_MoneyDonations.Location = new System.Drawing.Point(0, 1364);
+            this.dbr_MoneyDonations.Name = "dbr_MoneyDonations";
+            this.dbr_MoneyDonations.Size = new System.Drawing.Size(1175, 600);
+            this.dbr_MoneyDonations.TabIndex = 2;
+            // 
+            // dbr_Stats
+            // 
+            this.dbr_Stats.BackColor = System.Drawing.SystemColors.Control;
+            this.dbr_Stats.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dbr_Stats.Controls.Add(this.cht_Main);
+            this.dbr_Stats.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dbr_Stats.Location = new System.Drawing.Point(0, 763);
+            this.dbr_Stats.Name = "dbr_Stats";
+            this.dbr_Stats.Size = new System.Drawing.Size(1175, 601);
+            this.dbr_Stats.TabIndex = 1;
+            // 
+            // cht_Main
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.cht_Main.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.cht_Main.Legends.Add(legend1);
+            this.cht_Main.Location = new System.Drawing.Point(232, 67);
+            this.cht_Main.Name = "cht_Main";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.cht_Main.Series.Add(series1);
+            this.cht_Main.Size = new System.Drawing.Size(690, 484);
+            this.cht_Main.TabIndex = 1;
+            this.cht_Main.Text = "chart1";
+            // 
+            // dbr_Info
+            // 
+            this.dbr_Info.BackColor = System.Drawing.SystemColors.Control;
+            this.dbr_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dbr_Info.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dbr_Info.Location = new System.Drawing.Point(0, 0);
+            this.dbr_Info.Name = "dbr_Info";
+            this.dbr_Info.Size = new System.Drawing.Size(1175, 763);
+            this.dbr_Info.TabIndex = 0;
             // 
             // OrganizationDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 620);
+            this.ClientSize = new System.Drawing.Size(1382, 812);
+            this.Controls.Add(this.pnl_side);
             this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Name = "OrganizationDashboard";
-            this.Text = "Form2";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.pnl_side.ResumeLayout(false);
             this.MainPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BannerPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
+            this.fpl_Main.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Banner)).EndInit();
+            this.dbr_Stats.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cht_Main)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private CircularPictureBox circularPictureBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.Panel pnl_side;
+        private System.Windows.Forms.Button btn_sideMoneyDonations;
+        private System.Windows.Forms.Button btn_sideMiscDonations;
+        private System.Windows.Forms.Button btn_sideStatistics;
+        private System.Windows.Forms.Button btn_sideInformation;
+        private System.Windows.Forms.Timer tmr_panelAnimation;
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.PictureBox BannerPictureBox;
-        private System.Windows.Forms.FlowLayoutPanel MainFlowPanel;
+        private System.Windows.Forms.PictureBox pic_Banner;
+        private System.Windows.Forms.Panel fpl_Main;
+        private System.Windows.Forms.Panel panel2;
+        private DashboardRegion dbr_MiscDonations;
+        private DashboardRegion dbr_MoneyDonations;
+        private DashboardRegion dbr_Stats;
+        private DashboardRegion dbr_Info;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cht_Main;
     }
 }

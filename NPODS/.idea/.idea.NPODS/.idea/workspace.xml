@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d44a682-499b-4d2e-a4fd-be4087ed23ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/organizationInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/organizationInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS.Test/LoginVerificationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS.Test/LoginVerificationTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/NPODS Non-Profit Organizations Donation System.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/NPODS Non-Profit Organizations Donation System.csproj" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +30,12 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -81,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577119615834</updated>
-      <workItem from="1577119623271" duration="957000" />
+      <workItem from="1577119623271" duration="2518000" />
     </task>
     <servers />
   </component>
