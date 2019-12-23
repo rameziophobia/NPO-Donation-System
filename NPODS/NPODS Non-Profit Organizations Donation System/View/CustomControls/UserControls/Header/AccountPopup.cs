@@ -13,7 +13,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.UserControls.Heade
         public AccountPopup()
         {
             InitializeComponent();
-
             btn_viewDashboard.Click += new System.EventHandler((sender, e) => OnViewDashboardClick());
             btn_editAccount.Click += new System.EventHandler((sender, e) => OnEditAccountClick());
             btn_logOut.Click += new System.EventHandler((sender, e) => OnLogOutClick());
