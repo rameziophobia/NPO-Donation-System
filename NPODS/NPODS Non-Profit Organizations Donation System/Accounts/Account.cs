@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
-    public class Account
+    public abstract class Account
     {
         public string Email { get; set; }
         public string Name { get; set; }
@@ -19,6 +19,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         public void addSubscription(Subscription subscription)
         {
             currentSubscriptions.Add(subscription);
+            saveToDatabase();
         }
+
+        protected abstract void saveToDatabase();
     }
 }

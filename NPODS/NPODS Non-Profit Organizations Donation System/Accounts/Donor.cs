@@ -1,4 +1,5 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.Payment;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAccess;
+using NPODS_Non_Profit_Organizations_Donation_System.Payment;
 using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
@@ -24,7 +25,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             }
             PaymentMethod.pay(transaction);
             transactionHistory.Add(transaction);
+            saveToDatabase();
         }
 
+        protected override void saveToDatabase()
+        {
+            DatabaseAccess.getInstance().saveDonor(this);
+        }
     }
 }

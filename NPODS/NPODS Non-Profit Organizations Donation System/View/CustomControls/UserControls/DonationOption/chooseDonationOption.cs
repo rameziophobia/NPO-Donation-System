@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
+using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
