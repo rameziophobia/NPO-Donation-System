@@ -8,6 +8,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
 {
     public partial class RegisterControl : UserControl
     {
+        public delegate void OnEvent(Organization organization);
+
+        public OnEvent OnOrganizationRegister { get; set; }
+
         public RegisterControl()
         {
             InitializeComponent();
@@ -41,6 +45,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
             {
                 return;
             }
+
             if (!(txt_password.Text.Equals(txt_confirmPassword.Text)))
             {
                 lbl_errorMessage.Text = "error: the two passwords do not match";
@@ -83,6 +88,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
                 try
                 {
                     registrationUtil.registerOrganization(organization, txt_password.Text);
+                    OnOrganizationRegister(organization);
                 }
                 catch (EmailAlreadyExistsException)
                 {
@@ -90,6 +96,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
                     return;
                 }
             }
+
             lbl_errorMessage.Text = "Success";
         }
 
@@ -121,12 +128,13 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
                 return true;
             }
             else if (txt_name.Text.Equals("") ||
-               txt_password.Text.Equals("") ||
-               txt_confirmPassword.Text.Equals(""))
+                     txt_password.Text.Equals("") ||
+                     txt_confirmPassword.Text.Equals(""))
             {
                 lbl_errorMessage.Text = "error: please fill the required fields";
                 return true;
             }
+
             return false;
         }
 

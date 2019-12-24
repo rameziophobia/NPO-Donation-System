@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
@@ -34,6 +35,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private void btn_rmvPhoto_Click(object sender, EventArgs e)
         {
             pic_orgLogo.Image = new Bitmap(Properties.Resources.defaultImage);
+        }
+
+        public void updateOrganization(Organization organization)
+        {
+            throw new NotImplementedException();
         }
     }
 }

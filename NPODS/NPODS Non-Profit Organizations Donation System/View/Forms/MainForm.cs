@@ -95,6 +95,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             accountPopup1.OnLogOutClick += logout;
 
             loginControl1.OnLogin += login;
+
+            registerControl1.OnOrganizationRegister += (newOrganization) =>
+            {
+                editOrganizationInfo1.updateOrganization(newOrganization);
+                switchControls(editOrganizationInfo1);
+            };
         }
         private void initializeChooseDonation(Organization organization)
         {
