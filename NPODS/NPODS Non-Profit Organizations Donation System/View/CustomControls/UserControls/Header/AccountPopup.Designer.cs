@@ -46,7 +46,7 @@
             this.btn_viewDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btn_viewDashboard.Location = new System.Drawing.Point(3, 3);
             this.btn_viewDashboard.Name = "btn_viewDashboard";
-            this.btn_viewDashboard.Size = new System.Drawing.Size(239, 30);
+            this.btn_viewDashboard.Size = new System.Drawing.Size(241, 30);
             this.btn_viewDashboard.TabIndex = 0;
             this.btn_viewDashboard.Text = "View Dashboard";
             this.btn_viewDashboard.UseVisualStyleBackColor = false;
@@ -75,7 +75,7 @@
             this.btn_editAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btn_editAccount.Location = new System.Drawing.Point(3, 39);
             this.btn_editAccount.Name = "btn_editAccount";
-            this.btn_editAccount.Size = new System.Drawing.Size(239, 30);
+            this.btn_editAccount.Size = new System.Drawing.Size(241, 30);
             this.btn_editAccount.TabIndex = 1;
             this.btn_editAccount.Text = "Edit Account";
             this.btn_editAccount.UseVisualStyleBackColor = false;
@@ -91,7 +91,7 @@
             this.btn_logOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btn_logOut.Location = new System.Drawing.Point(3, 75);
             this.btn_logOut.Name = "btn_logOut";
-            this.btn_logOut.Size = new System.Drawing.Size(239, 30);
+            this.btn_logOut.Size = new System.Drawing.Size(241, 30);
             this.btn_logOut.TabIndex = 2;
             this.btn_logOut.Text = "Log Out";
             this.btn_logOut.UseVisualStyleBackColor = false;

@@ -149,7 +149,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
         }
         protected override void OnMouseLeave(EventArgs e)
         {
-            if (this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
+            if (this.ClientRectangle.Contains(this.PointToClient(MousePosition)))
                 return; //suppress mouse leave event handling
 
             if (enterFlag)

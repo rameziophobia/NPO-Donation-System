@@ -88,6 +88,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             accountPopup1.OnEditAccountClick += () => {
                 if (isCurrentAccountOrganization) {
                     switchControls(editOrganizationInfo1);
+                    editOrganizationInfo1.updateOrgDetails(organization);
                 } else {
                     MessageBox.Show ("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -98,7 +99,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
 
             registerControl1.OnOrganizationRegister += (newOrganization) =>
             {
-                editOrganizationInfo1.updateOrganization(newOrganization);
+                editOrganizationInfo1.updateOrgDetails(newOrganization);
                 switchControls(editOrganizationInfo1);
             };
         }

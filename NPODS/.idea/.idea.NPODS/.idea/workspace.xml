@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9d44a682-499b-4d2e-a4fd-be4087ed23ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/RegisterControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/RegisterControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/DonationButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/DonationButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/editOrganizationInfo.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/editOrganizationInfo.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/editOrganizationInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/editOrganizationInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/editOrganizationInfo.resx" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/editOrganizationInfo.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577119615834</updated>
       <workItem from="1577119623271" duration="4745000" />
-      <workItem from="1577199625701" duration="267000" />
+      <workItem from="1577199625701" duration="1055000" />
     </task>
     <servers />
   </component>
