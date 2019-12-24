@@ -67,10 +67,27 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             if (donationGroupBox.txt_donationName.Text.Equals("Name") ||
                     donationGroupBox.txt_donationDescription.Text.Equals("Description"))
                 return false;
+            if (donationGroupBox.cbo_donation.SelectedItem.ToString().Equals("Miscellaneous"))
+            {
+                
+                bool result = isUriValid(donationGroupBox.txt_donationValue.Text);
+                result |= isUriValid("https://" + donationGroupBox.txt_donationValue.Text);
+                if (!result)
+                {
+                    return result;
+                }
+            }
             else if (!int.TryParse(donationGroupBox.txt_donationValue.Text, out int number) &&
                 !donationGroupBox.cbo_donation.SelectedItem.ToString().Equals("Miscellaneous"))
                 return false;
             return true;
+        }
+
+        private static bool isUriValid(string uri)
+        {
+            Uri uriResult;
+            return Uri.TryCreate(uri, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
         }
 
         private void appendDonationOption(string type, string name, string description, int value)
