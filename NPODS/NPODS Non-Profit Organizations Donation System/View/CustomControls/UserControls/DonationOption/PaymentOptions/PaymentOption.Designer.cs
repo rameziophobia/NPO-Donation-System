@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentOption));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_paypal = new System.Windows.Forms.Button();
             this.btn_fawry = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_back = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_back = new System.Windows.Forms.Button();
+            this.btn_paypal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnl_back.SuspendLayout();
@@ -53,30 +52,13 @@
             this.panel1.Size = new System.Drawing.Size(1021, 565);
             this.panel1.TabIndex = 0;
             // 
-            // btn_paypal
-            // 
-            this.btn_paypal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
-            this.btn_paypal.FlatAppearance.BorderSize = 0;
-            this.btn_paypal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_paypal.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_paypal.Image = ((System.Drawing.Image)(resources.GetObject("btn_paypal.Image")));
-            this.btn_paypal.Location = new System.Drawing.Point(480, 189);
-            this.btn_paypal.Name = "btn_paypal";
-            this.btn_paypal.Size = new System.Drawing.Size(189, 193);
-            this.btn_paypal.TabIndex = 5;
-            this.btn_paypal.Text = "\r\nPayPal";
-            this.btn_paypal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_paypal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_paypal.UseVisualStyleBackColor = false;
-            this.btn_paypal.Click += new System.EventHandler(this.btn_paypal_Click);
-            // 
             // btn_fawry
             // 
             this.btn_fawry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
             this.btn_fawry.FlatAppearance.BorderSize = 0;
             this.btn_fawry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_fawry.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_fawry.Image = ((System.Drawing.Image)(resources.GetObject("btn_fawry.Image")));
+            this.btn_fawry.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.fawry_pay_english_logo_small4;
             this.btn_fawry.Location = new System.Drawing.Point(206, 189);
             this.btn_fawry.Name = "btn_fawry";
             this.btn_fawry.Size = new System.Drawing.Size(189, 193);
@@ -134,6 +116,23 @@
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
+            // btn_paypal
+            // 
+            this.btn_paypal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(214)))), ((int)(((byte)(223)))));
+            this.btn_paypal.FlatAppearance.BorderSize = 0;
+            this.btn_paypal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_paypal.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_paypal.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources.PayPal_logo_logotype_smallpng;
+            this.btn_paypal.Location = new System.Drawing.Point(480, 189);
+            this.btn_paypal.Name = "btn_paypal";
+            this.btn_paypal.Size = new System.Drawing.Size(189, 193);
+            this.btn_paypal.TabIndex = 5;
+            this.btn_paypal.Text = "\r\nPayPal";
+            this.btn_paypal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_paypal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_paypal.UseVisualStyleBackColor = false;
+            this.btn_paypal.Click += new System.EventHandler(this.btn_paypal_Click);
             // 
             // PaymentOption
             // 

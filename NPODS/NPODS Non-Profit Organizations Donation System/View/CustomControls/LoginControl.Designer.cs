@@ -107,6 +107,7 @@
             this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(253, 27);
             this.txt_password.TabIndex = 4;
+            this.txt_password.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txt_password_PreviewKeyDown);
             // 
             // panel1
             // 

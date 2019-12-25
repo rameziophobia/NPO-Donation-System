@@ -28,7 +28,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             saveToDatabase();
         }
 
-        protected override void saveToDatabase()
+        public override void saveToDatabase()
         {
             DatabaseAccess.getInstance().saveDonor(this);
         }

@@ -11,9 +11,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         public string Description { get; set; }
         public string LogoFilePath { get; set; }
         public bool Certified { get; private set; }
-        public List<MiscDonation> MiscDonations { get; set; }
-        public Donation SubscriptionDonation { get; set; }
-        public Donation SingleDonation { get; set; }
+        public DonationOptions DonationOptions { get; set; }
         public DonationGoal DonationGoal { get; set; }
         public OrganizationStatistics OrganizationStatistics { get; set; }
         public string OrganizationUrl { get; set; }
@@ -23,9 +21,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             Description = "";
             LogoFilePath = "";
             Certified = false;
-            MiscDonations = new List<MiscDonation>();
-            SubscriptionDonation = NullDonation.getInstance();
-            SingleDonation = NullDonation.getInstance();
+            DonationOptions = new DonationOptions();
             DonationGoal = new DonationGoal(false, 0, 0); // NullDonationGoal ?
             OrganizationStatistics = new OrganizationStatistics();
         }
@@ -36,7 +32,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             saveToDatabase();
         }
 
-        protected override void saveToDatabase()
+        public override void saveToDatabase()
         {
             DatabaseAccess.getInstance().saveOrganisation(this);
         }

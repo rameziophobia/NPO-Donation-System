@@ -2,7 +2,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using System.IO;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System
 {
@@ -16,20 +16,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private void btn_edit_MouseClick(object sender, MouseEventArgs e)
         {
-            if (pnl_changePhoto.Visible)
-            {
-                pnl_changePhoto.Visible = false;
-            }
-            else
-            {
-                pnl_changePhoto.Visible = true;
-            }
-
+            pnl_changePhoto.Visible = !pnl_changePhoto.Visible;
         }
         private void btn_uploadPhoto_Click(object sender, EventArgs e)
         {
             if (file_chooseImage.ShowDialog() == DialogResult.OK)
             {
+                string extension = Path.GetExtension(file_chooseImage.FileName);
+                string newPath = @"..\..\Resources/Images/OrganizationLogos/" + organization.Name + extension;
+                pic_orgLogo.Image = new Bitmap(Properties.Resources.defaultImage);
+                File.Copy(file_chooseImage.FileName,newPath,true);
                 pic_orgLogo.Image = new Bitmap(file_chooseImage.FileName);
                 organization.LogoFilePath = file_chooseImage.FileName;
             }
@@ -90,9 +86,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-
             setDonationGoal();
             setDescription();
+            organization.saveToDatabase();
         }
     }
 }

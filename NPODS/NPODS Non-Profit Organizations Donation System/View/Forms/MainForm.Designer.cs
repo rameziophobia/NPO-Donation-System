@@ -110,7 +110,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.chooseDonationOption1.Location = new System.Drawing.Point(0, 65);
             this.chooseDonationOption1.Name = "chooseDonationOption1";
             this.chooseDonationOption1.OnBackPress = null;
-            this.chooseDonationOption1.OnMiscPress = null;
             this.chooseDonationOption1.Organization = null;
             this.chooseDonationOption1.Size = new System.Drawing.Size(1136, 565);
             this.chooseDonationOption1.TabIndex = 7;

@@ -58,16 +58,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                 "This is a dummy org") {
                 LogoFilePath = "Iceland.png",
                 Description = "ignore the name. there's no ice here",
-                MiscDonations = new List<MiscDonation> { new MiscDonation ("Ramesbasdahdsuihdy.com") },
-                SubscriptionDonation = new SubscriptionDonation (new DonationTier[] { new DonationTier ("plz", "send help", 54) }),
-                SingleDonation = new SingleDonation (new DonationTier[] { new DonationTier ("plz", "send help", 50) }),
-                DonationGoal = new DonationGoal (true, 500f, 8458f),
-                OrganizationStatistics = new OrganizationStatistics ()
+                DonationGoal = new DonationGoal(true, 500f, 8458f),
+                OrganizationStatistics = new OrganizationStatistics(),
+                DonationOptions = new DonationOptions(),
             };
-            organization.SingleDonation.customEnabled = true;
-            tempHome1.OnTempClick = () => {
-                switchControls (organizationInfo1);
-                organizationInfo1.updateOrganisation (organization);
+            organization.DonationOptions.appendSubscriptionDonation(new DonationTier("ss", "ss", 3));
+            organization.DonationOptions.appendMiscDonation("www.google.com");
+            tempHome1.OnTempClick = () =>
+            {
+                switchControls(organizationInfo1);
+                organizationInfo1.updateOrganisation(organization);
             };
             organizationInfo1.OnDonatePress += () => {
                 switchControls (chooseDonationOption1);
