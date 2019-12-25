@@ -23,10 +23,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
             loginManager = new LoginManager();
             InitializeComponent();
         }
-        private void btn_login_Click(object sender, EventArgs e)
-        {
-            login();
-        }
+
         private void login()
         {
             string email = txt_email.Text.Trim();
@@ -69,6 +66,19 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
             }
         }
 
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+
+        private void txt_password_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+            }
+        }
+
         private void showLoginStatus(string MSG)
         {
             lbl_loginStatus.Text = MSG;
@@ -93,12 +103,5 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
             hideLoginStatus();
         }
 
-        private void txt_password_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                login();
-            }
-        }
     }
 }
