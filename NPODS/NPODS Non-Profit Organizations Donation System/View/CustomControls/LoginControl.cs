@@ -23,18 +23,19 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
             loginManager = new LoginManager();
             InitializeComponent();
         }
-
         private void btn_login_Click(object sender, EventArgs e)
         {
+            login();
+        }
+        private void login()
+        {
             string email = txt_email.Text.Trim();
-
-
             string password = txt_password.Text;
             if (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password))
             {
                 try
                 {
-                   new MailAddress(email);
+                    new MailAddress(email);
                 }
                 catch (FormatException)
                 {
@@ -90,6 +91,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
             txt_password.Text = "";
             chk_rememberMe.Checked = false;
             hideLoginStatus();
+        }
+
+        private void txt_password_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                login();
+            }
         }
     }
 }
