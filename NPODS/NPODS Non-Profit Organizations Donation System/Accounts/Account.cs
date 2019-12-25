@@ -22,6 +22,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             saveToDatabase();
         }
 
-        protected abstract void saveToDatabase();
+        public abstract void saveToDatabase();
     }
 }
