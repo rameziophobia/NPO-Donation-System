@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Mohamed.Xyz\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Mohamed.Xyz\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_NPODS.151463217.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Mohamed.Xyz\Workspace\Uni\OOAD\NPO-Donation-System\NPODS" t="IncludeFlat">
+      <e p="NPODS Non-Profit Organizations Donation System" t="IncludeRecursive">
+        <e p="Accounts" t="Include">
+          <e p="Account.cs" t="Include" />
+          <e p="AccountType.cs" t="Include" />
+          <e p="Donations" t="Include">
+            <e p="Donation.cs" t="Include" />
+            <e p="DonationGoal.cs" t="Include" />
+            <e p="DonationTier.cs" t="Include" />
+            <e p="MiscDonation.cs" t="Include" />
+            <e p="NullDonation.cs" t="Include" />
+            <e p="NullDonationGoal.cs" t="Include" />
+            <e p="SingleDonation.cs" t="Include" />
+            <e p="SubscriptionDonation.cs" t="Include" />
+          </e>
+          <e p="Donor.cs" t="Include" />
+          <e p="Organization.cs" t="Include" />
+        </e>
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="controller" t="Include">
+          <e p="DatabaseAccess" t="Include">
+            <e p="DatabaseAccess.cs" t="Include" />
+            <e p="FileDatabaseAccess.cs" t="Include" />
+          </e>
+          <e p="Login" t="Include">
+            <e p="LoginInfo.cs" t="Include" />
+            <e p="LoginManager.cs" t="Include" />
+            <e p="UserNotRegisteredException.cs" t="Include" />
+            <e p="WrongPasswordException.cs" t="Include" />
+          </e>
+          <e p="Registration" t="Include">
+            <e p="EmailAlreadyExistsException.cs" t="Include" />
+            <e p="RegistrationUtil.cs" t="Include" />
+          </e>
+        </e>
+        <e p="data" t="Include">
+          <e p="logins.json" t="Include" />
+        </e>
+        <e p="NPODS Non-Profit Organizations Donation System.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrganizationUtil" t="Include">
+          <e p="NonMoneyDonation.cs" t="Include" />
+          <e p="OrganizationStatistics.cs" t="Include" />
+        </e>
+        <e p="packages.config" t="Include" />
+        <e p="Payment" t="Include">
+          <e p="Fawry.cs" t="Include" />
+          <e p="IPaymentMethod.cs" t="Include" />
+          <e p="Paypal.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="212.jpg" t="Include" />
+          <e p="fawry_logo.bmp" t="Include" />
+          <e p="Images" t="Include">
+            <e p="OrganizationDashboard" t="Include">
+              <e p="Banner.png" t="Include" />
+              <e p="coming-soon-placeholder-image-blackboard-background.jpg" t="Include" />
+              <e p="data_resized.png" t="Include" />
+              <e p="hamburger_button.jpg" t="Include" />
+              <e p="hamburger_button_resized.png" t="Include" />
+              <e p="Logo.png" t="Include" />
+              <e p="misc_donation.png" t="Include" />
+              <e p="misc_donation_resized_transparent.png" t="Include" />
+              <e p="money_donation_resized.png" t="Include" />
+              <e p="Stats_resized.png" t="Include" />
+            </e>
+            <e p="OrganizationInfo" t="Include">
+              <e p="Banner.png" t="Include" />
+              <e p="defaultImage.png" t="Include" />
+              <e p="Logo.png" t="Include" />
+            </e>
+            <e p="PaymentOptions" t="Include">
+              <e p="fawry-pay-english-logo-small4.png" t="Include" />
+              <e p="fawry-pay-english-logo.png" t="Include" />
+              <e p="PayPal_logo_logotype_smallpng.png" t="Include" />
+            </e>
+          </e>
+          <e p="images.jpg" t="Include" />
+          <e p="images1.jpg" t="Include" />
+          <e p="images2.jpg" t="Include" />
+          <e p="placeholder.com-logo4.png" t="Include" />
+        </e>
+        <e p="Transactions" t="Include">
+          <e p="SingleTransaction.cs" t="Include" />
+          <e p="Subscription.cs" t="Include" />
+          <e p="SubscriptionTransaction.cs" t="Include" />
+          <e p="Transaction.cs" t="Include" />
+        </e>
+        <e p="View" t="Include">
+          <e p="CustomControls" t="Include">
+            <e p="Components" t="Include">
+              <e p="Browser" t="Include">
+                <e p="circularPicBox.cs" t="Include" />
+                <e p="CircularPictureBox.cs" t="Include" />
+              </e>
+              <e p="DonationOption" t="Include">
+                <e p="DonationComboBox.cs" t="Include" />
+                <e p="DonationFlowPanel.cs" t="Include" />
+                <e p="DonationTextBox.cs" t="Include" />
+                <e p="RemoveLabel.cs" t="Include" />
+              </e>
+              <e p="OrganizationDashboard" t="Include">
+                <e p="DashboardRegion.cs" t="Include" />
+                <e p="DashboardRegion.Designer.cs" t="Include" />
+                <e p="DashboardRegion.resx" t="Include" />
+              </e>
+            </e>
+            <e p="LoginControl.cs" t="Include" />
+            <e p="LoginControl.Designer.cs" t="Include" />
+            <e p="LoginControl.resx" t="Include" />
+            <e p="RegisterControl.cs" t="Include" />
+            <e p="RegisterControl.Designer.cs" t="Include" />
+            <e p="RegisterControl.resx" t="Include" />
+            <e p="tempHome.cs" t="Include" />
+            <e p="tempHome.Designer.cs" t="Include" />
+            <e p="tempHome.resx" t="Include" />
+            <e p="UserControls" t="Include">
+              <e p="Browser" t="Include">
+                <e p="org card.cs" t="Include" />
+                <e p="org card.Designer.cs" t="Include" />
+                <e p="org card.resx" t="Include" />
+                <e p="OrganizationCard.cs" t="Include" />
+                <e p="OrganizationCard.Designer.cs" t="Include" />
+                <e p="OrganizationCard.resx" t="Include" />
+              </e>
+              <e p="DonationOption" t="Include">
+                <e p="chooseDonationOption.cs" t="Include" />
+                <e p="chooseDonationOption.Designer.cs" t="Include" />
+                <e p="chooseDonationOption.resx" t="Include" />
+                <e p="DonationButton.cs" t="Include" />
+                <e p="DonationType.cs" t="Include" />
+                <e p="editDonationOptions.cs" t="Include" />
+                <e p="editDonationOptions.Designer.cs" t="Include" />
+                <e p="editDonationOptions.resx" t="Include" />
+                <e p="optionFlowPanel.cs" t="Include" />
+                <e p="optionFlowPanel.Designer.cs" t="Include" />
+                <e p="optionFlowPanel.resx" t="Include" />
+                <e p="PaymentOptions" t="Include">
+                  <e p="PaymentOption.cs" t="Include" />
+                  <e p="PaymentOption.Designer.cs" t="Include" />
+                  <e p="PaymentOption.resx" t="Include" />
+                </e>
+              </e>
+              <e p="Header" t="Include">
+                <e p="AccountPopup.cs" t="Include" />
+                <e p="AccountPopup.Designer.cs" t="Include" />
+                <e p="AccountPopup.resx" t="Include" />
+                <e p="HeaderControl.cs" t="Include" />
+                <e p="HeaderControl.Designer.cs" t="Include" />
+                <e p="HeaderControl.resx" t="Include" />
+              </e>
+              <e p="OrganizationDashboard" t="Include">
+                <e p="OrganizationDashboard.cs" t="Include" />
+                <e p="OrganizationDashboard.Designer.cs" t="Include" />
+                <e p="OrganizationDashboard.resx" t="Include" />
+              </e>
+              <e p="OrganizationInfo" t="Include">
+                <e p="editOrganizationInfo.cs" t="Include" />
+                <e p="editOrganizationInfo.Designer.cs" t="Include" />
+                <e p="editOrganizationInfo.resx" t="Include" />
+                <e p="organizationInfo.cs" t="Include" />
+                <e p="organizationInfo.Designer.cs" t="Include" />
+                <e p="organizationInfo.resx" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Forms" t="Include">
+            <e p="MainForm.cs" t="Include" />
+            <e p="MainForm.Designer.cs" t="Include" />
+            <e p="MainForm.resx" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="NPODS.sln" t="IncludeFlat" />
+      <e p="NPODS.Test" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="LoginVerificationTests.cs" t="Include" />
+        <e p="NPODS.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive">
+        <e p="MSTest.TestAdapter.1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+        <e p="MSTest.TestAdapter.1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
+        <e p="MSTest.TestAdapter.1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

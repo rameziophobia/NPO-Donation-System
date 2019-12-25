@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,24 +67,15 @@
     <Compile Include="Accounts\Donations\SubscriptionDonation.cs" />
     <Compile Include="Accounts\Donor.cs" />
     <Compile Include="Accounts\Organization.cs" />
-    <Compile Include="View\CustomControls\Components\DonationOption\DonationComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="View\CustomControls\Components\DonationOption\DonationFlowPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="View\CustomControls\Components\DonationOption\DonationTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="View\CustomControls\Components\DonationOption\RemoveLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controller\DatabaseAccess\DatabaseAccess.cs" />
-    <Compile Include="Controller\DatabaseAccess\FileDatabaseAccess.cs" />
-    <Compile Include="Controller\Login\LoginVerification.cs" />
-    <Compile Include="Controller\Login\UserNotRegisteredException.cs" />
-    <Compile Include="Controller\Registration\EmailAlreadyExistsException.cs" />
-    <Compile Include="Controller\Registration\RegistrationUtil.cs" />
+    <Compile Include="controller\DatabaseAccess\DatabaseAccess.cs" />
+    <Compile Include="controller\DatabaseAccess\FileDatabaseAccess.cs" />
+    <Compile Include="Accounts\AccountType.cs" />
+    <Compile Include="controller\Login\LoginInfo.cs" />
+    <Compile Include="controller\Login\LoginManager.cs" />
+    <Compile Include="controller\Login\UserNotRegisteredException.cs" />
+    <Compile Include="controller\Login\WrongPasswordException.cs" />
+    <Compile Include="controller\Registration\EmailAlreadyExistsException.cs" />
+    <Compile Include="controller\Registration\RegistrationUtil.cs" />
     <Compile Include="OrganizationUtil\OrganizationStatistics.cs" />
     <Compile Include="View\CustomControls\tempHome.cs">
       <SubType>UserControl</SubType>
@@ -101,6 +93,18 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\DonationOption\DonationType.cs" />
+    <Compile Include="View\CustomControls\Components\DonationOption\RemoveLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\Components\DonationOption\DonationFlowPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\Components\DonationOption\DonationTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\Components\DonationOption\DonationComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\CustomControls\UserControls\DonationOption\editDonationOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +120,12 @@
     <Compile Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="View\CustomControls\UserControls\Header\AccountPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\UserControls\Header\AccountPopup.Designer.cs">
+      <DependentUpon>AccountPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.Designer.cs">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
     </Compile>
@@ -127,6 +137,12 @@
     </Compile>
     <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\Components\OrganizationDashboard\DashboardRegion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\Components\OrganizationDashboard\DashboardRegion.Designer.cs">
+      <DependentUpon>DashboardRegion.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomControls\Components\Browser\circularPicBox.cs">
       <SubType>Component</SubType>
@@ -143,10 +159,10 @@
     <Compile Include="View\CustomControls\UserControls\Browser\org card.Designer.cs">
       <DependentUpon>org card.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrganizationDashboard.cs">
-      <SubType>Form</SubType>
+    <Compile Include="View\CustomControls\UserControls\OrganizationDashboard\OrganizationDashboard.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="OrganizationDashboard.Designer.cs">
+    <Compile Include="View\CustomControls\UserControls\OrganizationDashboard\OrganizationDashboard.Designer.cs">
       <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\Browser\OrganizationCard.cs">
@@ -177,10 +193,10 @@
     <Compile Include="View\CustomControls\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CustomControls\HeaderControl.cs">
+    <Compile Include="View\CustomControls\UserControls\Header\HeaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\CustomControls\HeaderControl.Designer.cs">
+    <Compile Include="View\CustomControls\UserControls\Header\HeaderControl.Designer.cs">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\CustomControls\Components\DonationOption\DonationComboBox.resx">
@@ -195,8 +211,14 @@
     <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\editDonationOptions.resx">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\PaymentOptions\PaymentOption.resx">
+      <DependentUpon>PaymentOption.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationInfo\editOrganizationInfo.resx">
       <DependentUpon>editOrganizationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomControls\UserControls\Header\AccountPopup.resx">
+      <DependentUpon>AccountPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationInfo\organizationInfo.resx">
       <DependentUpon>organizationInfo.cs</DependentUpon>
@@ -207,7 +229,10 @@
     <EmbeddedResource Include="View\CustomControls\UserControls\Browser\org card.resx">
       <DependentUpon>org card.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrganizationDashboard.resx">
+    <EmbeddedResource Include="View\CustomControls\Components\OrganizationDashboard\DashboardRegion.resx">
+      <DependentUpon>DashboardRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationDashboard\OrganizationDashboard.resx">
       <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\Browser\OrganizationCard.resx">
@@ -226,12 +251,13 @@
     <EmbeddedResource Include="View\CustomControls\LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomControls\HeaderControl.resx">
+    <EmbeddedResource Include="View\CustomControls\UserControls\Header\HeaderControl.resx">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\RegisterControl.resx">
       <DependentUpon>RegisterControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="data\logins.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -246,7 +272,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Images\PaymentOptions\fawry-pay-english-logo.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\OrganizationInfo\Banner.png" />
   </ItemGroup>
@@ -259,7 +287,9 @@
   <ItemGroup>
     <None Include="Resources\placeholder.com-logo4.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\fawry_logo.bmp" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\OrganizationDashboard\Banner.png" />
   </ItemGroup>
@@ -295,6 +325,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\212.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\PaymentOptions\fawry-pay-english-logo-small4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\PaymentOptions\PayPal_logo_logotype_smallpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\coming-soon-placeholder-image-blackboard-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\hamburger_button_resized.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

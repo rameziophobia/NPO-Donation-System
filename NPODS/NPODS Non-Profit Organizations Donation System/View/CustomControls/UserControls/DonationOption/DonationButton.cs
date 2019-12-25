@@ -10,19 +10,28 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
         public Label Lbl_tierName { get; set; }
         public Label Lbl_donationValue { get; set; }
         public Label Lbl_monthly { get; set; }
+        public delegate void OnButtonClick(int value, bool isMonthly);
         public Label Lbl_description { get; set; }
+        public LinkLabel Link_description { get; set; }
+
+        private int value;
+        internal bool isMonthly;
         private Boolean enterFlag;
         private readonly Color baseColor = Color.FromArgb(126, 214, 223);
         private readonly Color mouseEnterColor = Color.FromArgb(179, 194, 214);
         private readonly Color mouseDownColor = Color.FromArgb(204, 212, 222);
 
-        public DonationButton() : base()
+        public DonationButton(OnButtonClick onButtonClick, int value=0, bool isMonthly=false) : base()
         {
             Lbl_tierName = new Label();
             Lbl_donationValue = new Label();
             Lbl_monthly = new Label();
             Lbl_description = new Label();
-            initialize_panel();
+            Link_description = new LinkLabel();
+
+            this.value = value;
+
+            initialize_panel(onButtonClick);
             initialize_labels();
 
             base.BackColor = Color.Red;
@@ -33,7 +42,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             base.Size = new Size(168, 144);
             base.TabIndex = 6;
             this.Controls.Add(pnl_optionPnl);
-            this.MouseClick += new MouseEventHandler(this.pnl_displayOptions_MouseClick);
+            this.MouseClick += (s, e) => onButtonClick(value, isMonthly);
             this.MouseDown += new MouseEventHandler(this.pnl_displayOptions_MouseDown);
             this.MouseUp += new MouseEventHandler(this.pnl_displayOptions_MouseEnter);
             this.MouseEnter += new EventHandler(this.pnl_displayOptions_MouseEnter);
@@ -42,22 +51,23 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             {
                 foreach (Control child in childs.Controls)
                 {
-                    setEvents(child);
+                    setEvents(child,onButtonClick);
                 }
-                setEvents(childs);
+                setEvents(childs,onButtonClick);
             }
         }
 
-        private void setEvents(Control child)
+
+        private void setEvents(Control child,OnButtonClick onButtonClick)
         {
-            child.MouseEnter += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
+            child.MouseEnter += this.pnl_displayOptions_MouseEnter;
             child.MouseLeave += (s, e) => this.OnMouseLeave(e);
-            child.MouseUp += (s, e) => this.pnl_displayOptions_MouseEnter(s, e);
-            child.MouseClick += (s, e) => this.pnl_displayOptions_MouseClick(s, e);
-            child.MouseDown += (s, e) => this.pnl_displayOptions_MouseDown(s, e);
+            child.MouseUp += this.pnl_displayOptions_MouseEnter;
+            child.MouseClick += (s,e) => onButtonClick(value, isMonthly);
+            child.MouseDown += this.pnl_displayOptions_MouseDown;
         }
 
-        private void initialize_panel()
+        private void initialize_panel(OnButtonClick onButtonClick)
         {
             this.pnl_optionPnl.BackColor = this.baseColor;
             this.pnl_optionPnl.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
@@ -67,6 +77,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             this.pnl_optionPnl.Size = new Size(166, 142);
             this.pnl_optionPnl.TabIndex = 6;
             this.pnl_optionPnl.Dock = DockStyle.Fill;
+            this.MouseClick += (s,e) => onButtonClick(value, isMonthly);
         }
         private void initialize_labels()
         {
@@ -74,6 +85,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             initialize_donationValue();
             initialize_monthly();
             initialize_description();
+            initialize_link();
         }
         private void initialize_tierName()
         {
@@ -121,6 +133,19 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             Lbl_description.TabIndex = 0;
             Lbl_description.Text = "Blalalalal";
             this.pnl_optionPnl.Controls.Add(Lbl_description);
+
+        }
+        private void initialize_link()
+        {
+            Link_description.Dock = DockStyle.Top;
+            Link_description.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            Link_description.Location = new Point(0, 72);
+            Link_description.Name = "Lbl_description";
+            Link_description.Size = new Size(166, 70);
+            Link_description.TabIndex = 0;
+            Link_description.Text = "Blalalalal";
+            Link_description.Visible = false;
+            this.pnl_optionPnl.Controls.Add(Link_description);
         }
         private void pnl_displayOptions_MouseEnter(object sender, EventArgs e)
         {
@@ -129,7 +154,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
         }
         protected override void OnMouseLeave(EventArgs e)
         {
-            if (this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
+            if (this.ClientRectangle.Contains(this.PointToClient(MousePosition)))
                 return; //suppress mouse leave event handling
 
             if (enterFlag)
@@ -152,9 +177,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
         private void pnl_displayOptions_MouseDown(object sender, MouseEventArgs e)
         {
             this.pnl_optionPnl.BackColor = this.mouseDownColor;
-        }
-        private void pnl_displayOptions_MouseClick(object sender, MouseEventArgs e)
-        {
         }
     }
 }

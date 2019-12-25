@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.controller.Login;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -12,23 +14,56 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
         private const string PATH_FILE_DONOR = PATH_FOLDER_DATA + "Donors.json";
         private const string PATH_FILE_LOGINS = PATH_FOLDER_DATA + "logins.json";
 
-        public override Dictionary<string, string> GetLoginInfos()
+        private readonly Dictionary<CacheKeys, object> cache;
+
+        enum CacheKeys
         {
-            return readJson<Dictionary<string, string>>(PATH_FILE_LOGINS);
+            LOGINS,
+            ORGANIZATIONS,
+            DONORS
+        }
+
+        private static readonly DatabaseAccess instance = new FileDatabaseAccess();
+
+        public static DatabaseAccess getInstance()
+        {
+            return instance;
+        }
+
+        protected FileDatabaseAccess()
+        {
+            cache = new Dictionary<CacheKeys, object>();
+        }
+
+        public override List<LoginInfo> LoadLoginInfos()
+        {
+            if (!cache.ContainsKey(CacheKeys.LOGINS))
+            {
+                cache[CacheKeys.LOGINS] = readJson<List<LoginInfo>>(PATH_FILE_LOGINS);
+            }
+
+            return (List<LoginInfo>) cache[CacheKeys.LOGINS];
         }
 
         public override List<Organization> loadOrganizations()
         {
-            return readJson<List<Organization>>(PATH_FILE_ORG);
+            if (!cache.ContainsKey(CacheKeys.ORGANIZATIONS))
+            {
+                cache[CacheKeys.ORGANIZATIONS] = readJson<List<Organization>>(PATH_FILE_ORG);
+            }
+
+            return (List<Organization>) cache[CacheKeys.ORGANIZATIONS];
         }
 
         public override void SaveOrganizations(List<Organization> organizations)
         {
+            cache[CacheKeys.ORGANIZATIONS] = organizations;
             writeJson(PATH_FILE_ORG, organizations);
         }
 
         internal override void SaveDonors(List<Donor> donors)
         {
+            cache[CacheKeys.DONORS] = donors;
             writeJson(PATH_FILE_DONOR, donors);
         }
 
@@ -39,6 +74,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
                 streamWriter.Write(JsonConvert.SerializeObject(obj));
             }
         }
+
         private T readJson<T>(string filePath) where T : class, new()
         {
             try
@@ -53,6 +89,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
                 using (StreamWriter streamWriter = File.CreateText(filePath))
                 {
                 }
+
                 return new T();
             }
             catch (JsonReaderException)
@@ -64,21 +101,55 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             catch (DirectoryNotFoundException)
             {
                 string temp = filePath.Substring(0, filePath.Length - filePath.LastIndexOf('/') - 1);
-                Directory.CreateDirectory(temp);
+                try
+                {
+                    Directory.CreateDirectory(temp);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    return null;
+                }
+
                 return readJson<T>(filePath);
             }
         }
 
         internal override List<Donor> loadDonors()
         {
-            return readJson<List<Donor>>(PATH_FILE_DONOR);
+            if (!cache.ContainsKey(CacheKeys.DONORS))
+            {
+                cache[CacheKeys.DONORS] = readJson<List<Donor>>(PATH_FILE_DONOR);
+            }
+
+            return (List<Donor>) cache[CacheKeys.DONORS];
         }
 
-        internal override void addLogin(string email, string password)
+        internal override void addLogin(string email, string password, AccountType accountType)
         {
-            var logins = GetLoginInfos();
-            logins[email] = password;
+            List<LoginInfo> logins = LoadLoginInfos();
+            logins.Add(new LoginInfo(email, password, accountType));
+            cache[CacheKeys.LOGINS] = logins;
             writeJson(PATH_FILE_LOGINS, logins);
+        }
+
+        internal override void saveOrganisation(Organization organization)
+        {
+            var orgs = loadOrganizations();
+            if (!orgs.Contains(organization))
+            {
+                orgs.Add(organization);
+            }
+            SaveOrganizations(orgs);
+        }
+        
+        internal override void saveDonor(Donor donor)
+        {
+            var donors = loadDonors();
+            if (!donors.Contains(donor))
+            {
+                donors.Add(donor);
+            }
+            SaveDonors(donors);
         }
     }
 }

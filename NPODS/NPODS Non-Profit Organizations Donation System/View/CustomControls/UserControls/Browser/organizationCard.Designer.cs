@@ -1,4 +1,6 @@
-﻿namespace NPODS_Non_Profit_Organizations_Donation_System
+﻿using NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Components.Browser;
+
+namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     partial class OrganizationCard
     {
@@ -32,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.circularPictureBox1 = new NPODS_Non_Profit_Organizations_Donation_System.CircularPictureBox();
+            this.circularPictureBox1 = new CircularPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 

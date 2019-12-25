@@ -4,10 +4,14 @@ using System;
 using System.Net.Mail;
 using System.Windows.Forms;
 
-namespace NPODS_Non_Profit_Organizations_Donation_System
+namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
 {
     public partial class RegisterControl : UserControl
     {
+        public delegate void OnEvent(Organization organization);
+
+        public OnEvent OnOrganizationRegister { get; set; }
+
         public RegisterControl()
         {
             InitializeComponent();
@@ -41,6 +45,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 return;
             }
+
             if (!(txt_password.Text.Equals(txt_confirmPassword.Text)))
             {
                 lbl_errorMessage.Text = "error: the two passwords do not match";
@@ -83,6 +88,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 try
                 {
                     registrationUtil.registerOrganization(organization, txt_password.Text);
+                    OnOrganizationRegister(organization);
                 }
                 catch (EmailAlreadyExistsException)
                 {
@@ -90,6 +96,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                     return;
                 }
             }
+
             lbl_errorMessage.Text = "Success";
         }
 
@@ -121,18 +128,31 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 return true;
             }
             else if (txt_name.Text.Equals("") ||
-               txt_password.Text.Equals("") ||
-               txt_confirmPassword.Text.Equals(""))
+                     txt_password.Text.Equals("") ||
+                     txt_confirmPassword.Text.Equals(""))
             {
                 lbl_errorMessage.Text = "error: please fill the required fields";
                 return true;
             }
+
             return false;
         }
 
         private void RegisterControl_Load(object sender, EventArgs e)
         {
             cbo_accountType.SelectedIndex = 0;
+        }
+
+        private void RegisterControl_VisibleChanged(object sender, EventArgs e)
+        {
+            txt_email.Text = "";
+            txt_name.Text = "";
+            txt_password.Text = "";
+            txt_confirmPassword.Text = "";
+            txt_organizationUrl.Text = "";
+            cbo_accountType.SelectedIndex = 0;
+            cbo_gender.SelectedIndex = -1;
+            dtp_birthday.Value = DateTime.Now;
         }
     }
 }

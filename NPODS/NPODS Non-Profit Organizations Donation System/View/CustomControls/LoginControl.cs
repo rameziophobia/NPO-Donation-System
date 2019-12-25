@@ -1,21 +1,26 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.controller.Login;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.controller.Login;
 using System;
 using System.Net.Mail;
 using System.Windows.Forms;
 
-namespace NPODS_Non_Profit_Organizations_Donation_System
+namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
 {
     public partial class LoginControl : UserControl
     {
+        public delegate void OnAction(Account account, bool isOrganization);
+
+        public OnAction OnLogin { get; set; }
+
         private const string LOGIN_STATUS_MSG_INVALID_PASSWORD = "Invalid Password";
         private const string LOGIN_STATUS_MSG_NOT_REGISTERED = "User Not Registered";
         private const string LOGIN_STATUS_MSG_INVALID_EMAIL = "Invalid Email";
 
-        private readonly LoginVerification loginVerification;
+        private readonly LoginManager loginManager;
 
         public LoginControl()
         {
-            loginVerification = new LoginVerification();
+            loginManager = new LoginManager();
             InitializeComponent();
         }
 
@@ -23,33 +28,38 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             string email = txt_email.Text.Trim();
 
-            try
-            {
-                MailAddress m = new MailAddress(email);
-            }
-            catch (FormatException)
-            {
-                showLoginStatus(LOGIN_STATUS_MSG_INVALID_EMAIL);
-                return;
-            }
 
             string password = txt_password.Text;
             if (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password))
             {
                 try
                 {
-                    if (loginVerification.VerifyUser(email, password))
+                   new MailAddress(email);
+                }
+                catch (FormatException)
+                {
+                    showLoginStatus(LOGIN_STATUS_MSG_INVALID_EMAIL);
+                    return;
+                }
+                try
+                {
+                    LoginInfo loginInfo = loginManager.getUser(email, password);
+                    if (loginInfo.AccountType == AccountType.Donor) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
                     {
-                        showLoginStatus("(WIP) Succes");
+                        OnLogin(loginManager.findDonor(loginInfo.Email), false);
                     }
                     else
                     {
-                        showLoginStatus(LOGIN_STATUS_MSG_INVALID_PASSWORD);
+                        OnLogin(loginManager.findOrganization(loginInfo.Email), true);
                     }
                 }
                 catch (UserNotRegisteredException)
                 {
                     showLoginStatus(LOGIN_STATUS_MSG_NOT_REGISTERED);
+                }
+                catch (WrongPasswordException)
+                {
+                    showLoginStatus(LOGIN_STATUS_MSG_INVALID_PASSWORD);
                 }
             }
             else
@@ -72,6 +82,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private void btn_recoverPassword_Click(object sender, EventArgs e)
         {
             MessageBox.Show("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void LoginControl_VisibleChanged(object sender, EventArgs e)
+        {
+            txt_email.Text = "";
+            txt_password.Text = "";
+            chk_rememberMe.Checked = false;
+            hideLoginStatus();
         }
     }
 }
