@@ -2,6 +2,7 @@
 using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
 using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
 using System.Collections.Generic;
+using NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAccess;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
@@ -32,7 +33,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         public void recieve(Transaction transaction)
         {
             transactionHistory.Add(transaction);
+            saveToDatabase();
         }
 
+        protected override void saveToDatabase()
+        {
+            DatabaseAccess.getInstance().saveOrganisation(this);
+        }
     }
 }

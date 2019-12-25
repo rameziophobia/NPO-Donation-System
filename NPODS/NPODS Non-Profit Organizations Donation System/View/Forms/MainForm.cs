@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
+using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System {
     public partial class MainForm : Form {
@@ -22,6 +23,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             headerControl1.ShowAccount (account);
             isCurrentAccountOrganization = isOrganization;
             currentAccount = account;
+            if (!isOrganization)
+            {
+                ((Donor)account).PaymentMethod = new Payment.Paypal();
+            }
             switchControls (tempHome1);
         }
 
@@ -54,8 +59,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                 LogoFilePath = "Iceland.png",
                 Description = "ignore the name. there's no ice here",
                 MiscDonations = new List<MiscDonation> { new MiscDonation ("Ramesbasdahdsuihdy.com") },
-                SubscriptionDonation = new SubscriptionDonation (new DonationTier[] { new DonationTier ("plz", "send help", 54.2f) }),
-                SingleDonation = new SingleDonation (new DonationTier[] { new DonationTier ("plz", "send help", 50.2f) }),
+                SubscriptionDonation = new SubscriptionDonation (new DonationTier[] { new DonationTier ("plz", "send help", 54) }),
+                SingleDonation = new SingleDonation (new DonationTier[] { new DonationTier ("plz", "send help", 50) }),
                 DonationGoal = new DonationGoal (true, 500f, 8458f),
                 OrganizationStatistics = new OrganizationStatistics ()
             };
@@ -106,6 +111,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         private void initializeChooseDonation(Organization organization)
         {
             chooseDonationOption1.Organization = organization;
+            chooseDonationOption1.CurrentAccount = (Donor)currentAccount;
             chooseDonationOption1.setAvailableTypes();
         }
     }

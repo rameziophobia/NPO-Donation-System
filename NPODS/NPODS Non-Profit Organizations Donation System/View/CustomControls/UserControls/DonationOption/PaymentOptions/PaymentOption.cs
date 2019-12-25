@@ -1,4 +1,5 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
 using System;
 using System.Windows.Forms;
 
@@ -9,6 +10,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
         public Organization Organization { get; set; }
         public delegate void OnButtonClick();
         public OnButtonClick OnBackPress { get; set; }
+        public delegate void onPaymentValidated();
+        public onPaymentValidated OnPaymentValidated { get; set; }
         public PaymentOption()
         {
             InitializeComponent();
@@ -16,13 +19,13 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
 
         private void btn_fawry_Click(object sender, EventArgs e)
         {
-            comfirmDonation("Fawry");
+            confirmDonation("Fawry");
         }
         private void btn_paypal_Click(object sender, EventArgs e)
         {
-            comfirmDonation("Paypal");
+            confirmDonation("Paypal");
         }
-        private void comfirmDonation(string donationMethod)
+        private void confirmDonation(string donationMethod)
         {
             DialogResult dr;
             dr = MessageBox.Show("Confirm donating via " + donationMethod + " to '" + Organization.Name + "'.", "Conofirm Donation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -30,6 +33,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             {
                 MessageBox.Show("Transaction Completed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            OnPaymentValidated();
         }
         private void btn_back_Click(object sender, EventArgs e)
         {

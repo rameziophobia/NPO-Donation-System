@@ -41,7 +41,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             {
                 cache[CacheKeys.LOGINS] = readJson<List<LoginInfo>>(PATH_FILE_LOGINS);
             }
-            return (List<LoginInfo>)cache[CacheKeys.LOGINS];
+
+            return (List<LoginInfo>) cache[CacheKeys.LOGINS];
         }
 
         public override List<Organization> loadOrganizations()
@@ -50,7 +51,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             {
                 cache[CacheKeys.ORGANIZATIONS] = readJson<List<Organization>>(PATH_FILE_ORG);
             }
-            return (List<Organization>)cache[CacheKeys.ORGANIZATIONS];
+
+            return (List<Organization>) cache[CacheKeys.ORGANIZATIONS];
         }
 
         public override void SaveOrganizations(List<Organization> organizations)
@@ -72,6 +74,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
                 streamWriter.Write(JsonConvert.SerializeObject(obj));
             }
         }
+
         private T readJson<T>(string filePath) where T : class, new()
         {
             try
@@ -86,6 +89,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
                 using (StreamWriter streamWriter = File.CreateText(filePath))
                 {
                 }
+
                 return new T();
             }
             catch (JsonReaderException)
@@ -105,6 +109,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
                 {
                     return null;
                 }
+
                 return readJson<T>(filePath);
             }
         }
@@ -115,7 +120,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             {
                 cache[CacheKeys.DONORS] = readJson<List<Donor>>(PATH_FILE_DONOR);
             }
-            return (List<Donor>)cache[CacheKeys.DONORS];
+
+            return (List<Donor>) cache[CacheKeys.DONORS];
         }
 
         internal override void addLogin(string email, string password, AccountType accountType)
@@ -124,6 +130,26 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAcce
             logins.Add(new LoginInfo(email, password, accountType));
             cache[CacheKeys.LOGINS] = logins;
             writeJson(PATH_FILE_LOGINS, logins);
+        }
+
+        internal override void saveOrganisation(Organization organization)
+        {
+            var orgs = loadOrganizations();
+            if (!orgs.Contains(organization))
+            {
+                orgs.Add(organization);
+            }
+            SaveOrganizations(orgs);
+        }
+        
+        internal override void saveDonor(Donor donor)
+        {
+            var donors = loadDonors();
+            if (!donors.Contains(donor))
+            {
+                donors.Add(donor);
+            }
+            SaveDonors(donors);
         }
     }
 }
