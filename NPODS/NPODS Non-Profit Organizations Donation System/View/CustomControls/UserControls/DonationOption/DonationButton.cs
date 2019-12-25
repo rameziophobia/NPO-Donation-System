@@ -10,21 +10,26 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
         public Label Lbl_tierName { get; set; }
         public Label Lbl_donationValue { get; set; }
         public Label Lbl_monthly { get; set; }
-        public delegate void OnButtonClick();
+        public delegate void OnButtonClick(int value, bool isMonthly);
         public Label Lbl_description { get; set; }
         public LinkLabel Link_description { get; set; }
+
+        private int value;
+        internal bool isMonthly;
         private Boolean enterFlag;
         private readonly Color baseColor = Color.FromArgb(126, 214, 223);
         private readonly Color mouseEnterColor = Color.FromArgb(179, 194, 214);
         private readonly Color mouseDownColor = Color.FromArgb(204, 212, 222);
 
-        public DonationButton(OnButtonClick onButtonClick) : base()
+        public DonationButton(OnButtonClick onButtonClick, int value=0, bool isMonthly=false) : base()
         {
             Lbl_tierName = new Label();
             Lbl_donationValue = new Label();
             Lbl_monthly = new Label();
             Lbl_description = new Label();
             Link_description = new LinkLabel();
+
+            this.value = value;
 
             initialize_panel(onButtonClick);
             initialize_labels();
@@ -37,7 +42,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             base.Size = new Size(168, 144);
             base.TabIndex = 6;
             this.Controls.Add(pnl_optionPnl);
-            this.MouseClick += (s, e) => onButtonClick();
+            this.MouseClick += (s, e) => onButtonClick(value, isMonthly);
             this.MouseDown += new MouseEventHandler(this.pnl_displayOptions_MouseDown);
             this.MouseUp += new MouseEventHandler(this.pnl_displayOptions_MouseEnter);
             this.MouseEnter += new EventHandler(this.pnl_displayOptions_MouseEnter);
@@ -58,7 +63,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             child.MouseEnter += this.pnl_displayOptions_MouseEnter;
             child.MouseLeave += (s, e) => this.OnMouseLeave(e);
             child.MouseUp += this.pnl_displayOptions_MouseEnter;
-            child.MouseClick += (s,e) => onButtonClick();
+            child.MouseClick += (s,e) => onButtonClick(value, isMonthly);
             child.MouseDown += this.pnl_displayOptions_MouseDown;
         }
 
@@ -72,7 +77,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
             this.pnl_optionPnl.Size = new Size(166, 142);
             this.pnl_optionPnl.TabIndex = 6;
             this.pnl_optionPnl.Dock = DockStyle.Fill;
-            this.MouseClick += (s,e) => onButtonClick();
+            this.MouseClick += (s,e) => onButtonClick(value, isMonthly);
         }
         private void initialize_labels()
         {

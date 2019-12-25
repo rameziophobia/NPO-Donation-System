@@ -21,6 +21,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DonationButton.OnButtonClick OnDonatePress { get; set; }
         public DonationButton.OnButtonClick OnMiscPress { get; set; }
+        public Donor CurrentAccount { get; internal set; }
 
         private readonly System.Drawing.Color COLOR_SELECTED = System.Drawing.Color.FromArgb(199, 236, 238);
         private readonly System.Drawing.Color COLOR_NOT_SELECTED = System.Drawing.Color.FromArgb(199, 216, 238);
@@ -31,16 +32,27 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         public chooseDonationOption()
         {
             InitializeComponent();
-            OnDonatePress += () =>
+            OnDonatePress += (value, isMonthly) =>
             {
                 paymentOption2.Organization = this.Organization;
                 paymentOption2.Visible = true;
                 pnl_chooseDisplayOption.Visible = false;
                 paymentOption2.Dock = DockStyle.Fill;
+                paymentOption2.OnPaymentValidated += () =>
+                {
+                    if (isMonthly)
+                    {
+                        new Subscription(Organization, CurrentAccount, value);
+                    }
+                    else
+                    {
+                        new SingleTransaction(Organization, CurrentAccount, value);
+                    }
+                };
             };
-            OnMiscPress += () =>
-            {
-            };
+            //OnMiscPress += () =>
+            //{
+            //};
             paymentOption2.OnBackPress += () =>
             {
                 paymentOption2.Visible = false;
@@ -89,10 +101,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             List<DonationButton> btns_donation = new List<DonationButton>();
             for (int i = 0; i < donationTiers.Length; i++)
             {
-                DonationButton btn = new DonationButton(OnDonatePress);
+                DonationButton btn = new DonationButton(OnDonatePress, donationTiers[i].Value);
                 btn.Lbl_tierName.Text = donationTiers[i].Name;
                 btn.Lbl_donationValue.Text = donationTiers[i].Value.ToString() + "$";
                 btn.Lbl_monthly.Visible = isMonthly;
+                btn.isMonthly = isMonthly;
                 btn.Lbl_description.Text = donationTiers[i].Description;
                 btns_donation.Add(btn);
             }
@@ -202,7 +215,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             }
             if (donationValue > 0)
             {
-                OnDonatePress();
+                OnDonatePress(donationValue, perMonth); // todo ana 7atet random var xD
             }
             else
             {
@@ -211,3 +224,4 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         }
     }
 }
+

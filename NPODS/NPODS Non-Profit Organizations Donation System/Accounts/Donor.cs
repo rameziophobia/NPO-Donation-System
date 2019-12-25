@@ -8,7 +8,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
     {
         public string Gender { set; get; }
         public System.DateTime Birthday { set; get; }
-        private IPaymentMethod PaymentMethod { get; set; }
+        [System.NonSerialized] public IPaymentMethod PaymentMethod;
         public Donor(string email, string name) : base(email, name)
         {
         }
