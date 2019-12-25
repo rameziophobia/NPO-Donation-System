@@ -34,6 +34,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             InitializeComponent();
             OnDonatePress += (value, isMonthly) =>
             {
+                if(CurrentAccount is null)
+                {
+                    MessageBox.Show("Please login first to donate", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 paymentOption2.Organization = this.Organization;
                 paymentOption2.Visible = true;
                 pnl_chooseDisplayOption.Visible = false;
@@ -50,9 +55,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                     }
                 };
             };
-            //OnMiscPress += () =>
-            //{
-            //};
+            OnMiscPress += (value, isMonthly) =>
+            {
+            };
             paymentOption2.OnBackPress += () =>
             {
                 paymentOption2.Visible = false;
@@ -96,10 +101,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
 
         }
-        public List<DonationButton> getOptions(DonationTier[] donationTiers, bool isMonthly)
+        public List<DonationButton> getOptions(List<DonationTier> donationTiers, bool isMonthly)
         {
             List<DonationButton> btns_donation = new List<DonationButton>();
-            for (int i = 0; i < donationTiers.Length; i++)
+            for (int i = 0; i < donationTiers.Count; i++)
             {
                 DonationButton btn = new DonationButton(OnDonatePress, donationTiers[i].Value);
                 btn.Lbl_tierName.Text = donationTiers[i].Name;
@@ -141,7 +146,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             pnl_displayOptions.Controls.Clear();
             if (!(Organization.DonationOptions.SingleDonation.isNull()))
             {
-                donationOption = Organization.SingleDonation;
+                donationOption = Organization.DonationOptions.SingleDonation;
                 selectColor(btn_singlePayment);
                 perMonth = false;
                 btn_singlePayment.Visible = true;
@@ -151,7 +156,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 if (!defaultOptionDone)
                 {
-                    donationOption = Organization.SubscriptionDonation;
+                    donationOption = Organization.DonationOptions.SubscriptionDonation;
                     selectColor(btn_subscription);
                     perMonth = true;
                 }
@@ -164,21 +169,33 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             }
 
         }
-        public void setDefaultOption()
+        public void displayDonationOptions()
         {
-            if (defaultOptionFlag % 2 == 1)
+            try
             {
-                donationOption = Organization.DonationOptions.SingleDonation;
-                selectColor(btn_singlePayment);
+                pnl_displayOptions.Controls.AddRange(getOptions(donationOption.DonationTiers, perMonth).ToArray());
+                pnl_customDonation.Visible = donationOption.customEnabled;
             }
-            else if ((defaultOptionFlag / 10) % 10 == 1)
+            catch (Exception ex)
             {
-                donationOption = Organization.DonationOptions.SubscriptionDonation;
-                selectColor(btn_subscription);
-            }
-            else if ((defaultOptionFlag / 100) % 10 == 1)
-            {
-                selectColor(btn_miscellaneous);
+                if (ex is NullReferenceException)
+                {
+                    if (Organization.DonationOptions.MiscDonations.Count > 0)
+                    {
+                        selectColor(btn_miscellaneous);
+                        pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.DonationOptions.MiscDonations).ToArray());
+                        pnl_customDonation.Visible = false;
+                    }
+                    else
+                    {
+                        pnl_displayOptions.Controls.Add(lbl_noOptions);
+                        lbl_noOptions.Visible = true;
+                    }
+                }
+                else
+                {
+                    throw;
+                }
             }
         }
         public void updateDefault()
@@ -192,10 +209,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 if (ex is NullReferenceException)
                 {
-                    if (Organization.MiscDonations.Count > 0)
+                    if (Organization.DonationOptions.MiscDonations.Count > 0)
                     {
                         selectColor(btn_miscellaneous);
-                        pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.MiscDonations).ToArray());
+                        pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.DonationOptions.MiscDonations).ToArray());
                         pnl_customDonation.Visible = false;
                     }
                     else
@@ -232,7 +249,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             }
             if (donationValue > 0)
             {
-                OnDonatePress(donationValue, perMonth); // todo ana 7atet random var xD
+                OnDonatePress(donationValue, perMonth); // todo ana 7atet random variable xD
             }
             else
             {

@@ -59,10 +59,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                 LogoFilePath = "Iceland.png",
                 Description = "ignore the name. there's no ice here",
                 DonationGoal = new DonationGoal(true, 500f, 8458f),
-                OrganizationStatistics = new OrganizationStatistics()
+                OrganizationStatistics = new OrganizationStatistics(),
                 DonationOptions = new DonationOptions(),
             };
             organization.DonationOptions.appendSubscriptionDonation(new DonationTier("ss", "ss", 3));
+            organization.DonationOptions.appendMiscDonation("www.google.com");
             tempHome1.OnTempClick = () =>
             {
                 switchControls(organizationInfo1);
