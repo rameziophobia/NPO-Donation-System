@@ -17,15 +17,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         private void btn_edit_MouseClick(object sender, MouseEventArgs e)
         {
-            if (pnl_changePhoto.Visible)
-            {
-                pnl_changePhoto.Visible = false;
-            }
-            else
-            {
-                pnl_changePhoto.Visible = true;
-            }
-
+            pnl_changePhoto.Visible = !pnl_changePhoto.Visible;
         }
         private void btn_uploadPhoto_Click(object sender, EventArgs e)
         {
