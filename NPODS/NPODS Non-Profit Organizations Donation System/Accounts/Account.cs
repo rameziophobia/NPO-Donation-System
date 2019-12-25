@@ -7,7 +7,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
     {
         public string Email { get; set; }
         public string Name { get; set; }
-        public List<Transaction> transactionHistory;
+        [System.NonSerialized] public List<Transaction> transactionHistory;
         public List<Subscription> currentSubscriptions;
         public Account(string email, string name)
         {
