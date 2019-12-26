@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace NPODS_Non_Profit_Organizations_Donation_System.controller.Login
 {
     [Serializable]
-    internal class WrongPasswordException : Exception
+    public class WrongPasswordException : Exception
     {
         public WrongPasswordException()
         {
