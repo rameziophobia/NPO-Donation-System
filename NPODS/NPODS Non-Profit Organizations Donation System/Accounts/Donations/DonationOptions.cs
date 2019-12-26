@@ -59,11 +59,19 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
         }
         public void disableCustomSubscription()
         {
+            if(SubscriptionDonation.DonationTiers.Count == 0)
+            {
+                SubscriptionDonation = NullDonation.getInstance();
+            }
             SubscriptionDonation.customEnabled = false;
         }
 
         public void disableCustomSingleDonation()
         {
+            if(SingleDonation.DonationTiers.Count == 0)
+            {
+                SingleDonation = NullDonation.getInstance();
+            }
             SingleDonation.customEnabled = false;
         }
     }
