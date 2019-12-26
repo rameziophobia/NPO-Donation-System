@@ -34,7 +34,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 }
             }
             pic_orgBanner.Image = new Bitmap(Properties.Resources.Banner);
-            
+        }
+        public Button getBtnMoreInfo()
+        {
+            return btn_moreInfo;
         }
     }
 }
