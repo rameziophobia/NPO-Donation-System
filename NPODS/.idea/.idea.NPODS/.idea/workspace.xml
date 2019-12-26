@@ -4,11 +4,7 @@
     <list default="true" id="9d44a682-499b-4d2e-a4fd-be4087ed23ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Login/WrongPasswordException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Login/WrongPasswordException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Registration/EmailAlreadyExistsException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Registration/EmailAlreadyExistsException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Registration/RegistrationUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Registration/RegistrationUtil.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS.Test/LoginVerificationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS.Test/LoginVerificationTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS.Test/NPODS.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS.Test/NPODS.Test.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.Designer.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +88,7 @@
         <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/DatabaseAccess.cs" />
         <option value="$PROJECT_DIR$/NPODS.Test/EditOrganizationTests.cs" />
         <option value="$PROJECT_DIR$/NPODS.Test/LoginVerificationTests.cs" />
+        <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.Designer.cs" />
       </list>
     </option>
   </component>
@@ -122,7 +119,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Project.Default">
+  <component name="RunManager">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/bin/Debug/NPODS Non-Profit Organizations Donation System.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -154,6 +151,7 @@
       <updated>1577119615834</updated>
       <workItem from="1577119623271" duration="4745000" />
       <workItem from="1577199625701" duration="1055000" />
+      <workItem from="1577384171912" duration="924000" />
     </task>
     <servers />
   </component>
@@ -185,6 +183,21 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/DonationButton.cs</url>
+          <line>65</line>
+          <properties documentPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/DonationButton.cs" initialLine="65">
+            <startOffsets>
+              <option value="2793" />
+              <option value="2822" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2854" />
+              <option value="2853" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

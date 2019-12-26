@@ -20,6 +20,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         [EditorBrowsable(EditorBrowsableState.Never)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DonationButton.OnButtonClick OnDonatePress { get; set; }
+        [Browsable(false)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DonationButton.OnButtonClick OnMiscPress { get; set; }
         public Donor CurrentAccount { get; internal set; }
 
