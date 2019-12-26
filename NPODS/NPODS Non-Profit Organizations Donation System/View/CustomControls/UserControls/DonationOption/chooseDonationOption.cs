@@ -36,7 +36,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 if(CurrentAccount is null)
                 {
-                    MessageBox.Show("Please login first to donate", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please login as a donor first to donate", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 paymentOption2.Organization = this.Organization;
@@ -144,6 +144,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         public void setAvailableTypes()
         {
             pnl_displayOptions.Controls.Clear();
+            donationOption = NullDonation.getInstance();
             if (!(Organization.DonationOptions.SingleDonation.isNull()))
             {
                 donationOption = Organization.DonationOptions.SingleDonation;
@@ -171,12 +172,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         }
         public void displayDonationOptions()
         {
-            try
+            if(!donationOption.isNull())
             {
                 pnl_displayOptions.Controls.AddRange(getOptions(donationOption.DonationTiers, perMonth).ToArray());
                 pnl_customDonation.Visible = donationOption.customEnabled;
             }
-            catch (NullReferenceException)
+            else
             {
                 if (Organization.DonationOptions.MiscDonations.Count > 0)
                 {
@@ -193,30 +194,23 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         }
         public void updateDefault()
         {
-            try
+            if(!donationOption.isNull())
             {
                 pnl_displayOptions.Controls.AddRange(getOptions(donationOption.DonationTiers, perMonth).ToArray());
                 pnl_customDonation.Visible = donationOption.customEnabled;
             }
-            catch (Exception ex)
+            else
             {
-                if (ex is NullReferenceException)
+                if (Organization.DonationOptions.MiscDonations.Count > 0)
                 {
-                    if (Organization.DonationOptions.MiscDonations.Count > 0)
-                    {
-                        selectColor(btn_miscellaneous);
-                        pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.DonationOptions.MiscDonations).ToArray());
-                        pnl_customDonation.Visible = false;
-                    }
-                    else
-                    {
-                        pnl_displayOptions.Controls.Add(lbl_noOptions);
-                        lbl_noOptions.Visible = true;
-                    }
+                    selectColor(btn_miscellaneous);
+                    pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.DonationOptions.MiscDonations).ToArray());
+                    pnl_customDonation.Visible = false;
                 }
                 else
                 {
-                    throw;
+                    pnl_displayOptions.Controls.Add(lbl_noOptions);
+                    lbl_noOptions.Visible = true;
                 }
             }
         }
