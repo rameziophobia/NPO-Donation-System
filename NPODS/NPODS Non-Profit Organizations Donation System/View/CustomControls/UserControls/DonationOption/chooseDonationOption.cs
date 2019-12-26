@@ -176,25 +176,18 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 pnl_displayOptions.Controls.AddRange(getOptions(donationOption.DonationTiers, perMonth).ToArray());
                 pnl_customDonation.Visible = donationOption.customEnabled;
             }
-            catch (Exception ex)
+            catch (NullReferenceException)
             {
-                if (ex is NullReferenceException)
+                if (Organization.DonationOptions.MiscDonations.Count > 0)
                 {
-                    if (Organization.DonationOptions.MiscDonations.Count > 0)
-                    {
-                        selectColor(btn_miscellaneous);
-                        pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.DonationOptions.MiscDonations).ToArray());
-                        pnl_customDonation.Visible = false;
-                    }
-                    else
-                    {
-                        pnl_displayOptions.Controls.Add(lbl_noOptions);
-                        lbl_noOptions.Visible = true;
-                    }
+                    selectColor(btn_miscellaneous);
+                    pnl_displayOptions.Controls.AddRange(getMiscOptionsButtons(Organization.DonationOptions.MiscDonations).ToArray());
+                    pnl_customDonation.Visible = false;
                 }
                 else
                 {
-                    throw;
+                    pnl_displayOptions.Controls.Add(lbl_noOptions);
+                    lbl_noOptions.Visible = true;
                 }
             }
         }

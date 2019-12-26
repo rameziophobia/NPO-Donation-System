@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
 using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
+using NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAccess;
 using NPODS_Non_Profit_Organizations_Donation_System.OrganizationUtil;
 using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
+using static NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.Browser.BrowseOrganizations;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System {
     public partial class MainForm : Form {
@@ -14,6 +16,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         private UserControl lastActiveUserControl;
         private Account currentAccount;
         private bool isCurrentAccountOrganization;
+
 
         public MainForm () {
             InitializeComponent ();
@@ -27,7 +30,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             {
                 ((Donor)account).PaymentMethod = new Payment.Paypal();
             }
-            switchControls (tempHome1);
+            switchControls (browseOrganizations1);
         }
 
         private void logout () {
@@ -46,11 +49,18 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         }
 
         private void MainForm_Load (object sender, EventArgs e) {
-            lastActiveUserControl = tempHome1;
+            lastActiveUserControl = browseOrganizations1;
+            browseOrganizations1.OnOrgClick += (Organization org) =>
+            {
+                switchControls(organizationInfo1);
+                organizationInfo1.updateOrganisation(org);
+            };
+            browseOrganizations1.dispalyOrgs(browseOrganizations1.OnOrgClick);
+
             headerControl1.OnAboutUsClick += () => MessageBox.Show ("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
             headerControl1.OnLoginClick += () => switchControls (loginControl1);
             headerControl1.OnRegisterClick += () => switchControls (registerControl1);
-            headerControl1.OnHomeClick += () => switchControls (tempHome1);
+            headerControl1.OnHomeClick += () => switchControls (browseOrganizations1);
             headerControl1.AccountPopup = accountPopup1;
 
             Organization organization = new Organization (
@@ -64,11 +74,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             };
             organization.DonationOptions.appendSubscriptionDonation(new DonationTier("ss", "ss", 3));
             organization.DonationOptions.appendMiscDonation("www.google.com");
-            tempHome1.OnTempClick = () =>
-            {
-                switchControls(organizationInfo1);
-                organizationInfo1.updateOrganisation(organization);
-            };
             organizationInfo1.OnDonatePress += () => {
                 switchControls (chooseDonationOption1);
                 initializeChooseDonation (organization);
@@ -97,7 +102,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                 } else {
                     MessageBox.Show ("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            };;
+            };
+            
             accountPopup1.OnLogOutClick += logout;
 
             loginControl1.OnLogin += login;
@@ -108,6 +114,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                 switchControls(editOrganizationInfo1);
             };
         }
+
         private void initializeChooseDonation(Organization organization)
         {
             chooseDonationOption1.Organization = organization;

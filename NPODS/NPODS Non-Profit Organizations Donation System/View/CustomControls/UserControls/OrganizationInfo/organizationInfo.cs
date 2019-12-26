@@ -60,8 +60,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             {
                 pbr_goal.Visible = false;
             }
-            pbr_goal.Value = (int)organization.DonationGoal.CurrentProgress;
+            else
+            {
+                pbr_goal.Visible = true;
+            }
             pbr_goal.Maximum = (int)organization.DonationGoal.Target;
+            pbr_goal.Value = (int)organization.DonationGoal.CurrentProgress;
         }
         private void btn_donate_Click(object sender, EventArgs e)
         {
