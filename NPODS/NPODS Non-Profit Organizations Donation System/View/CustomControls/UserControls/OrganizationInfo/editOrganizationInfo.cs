@@ -30,7 +30,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 pic_orgLogo.Image = new Bitmap(Properties.Resources.defaultImage);
                 File.Copy(file_chooseImage.FileName,newPath,true);
                 pic_orgLogo.Image = new Bitmap(file_chooseImage.FileName);
-                organization.LogoFilePath = file_chooseImage.FileName;
+                organization.LogoFilePath = newPath;
             }
         }
         private void btn_rmvPhoto_Click(object sender, EventArgs e)
