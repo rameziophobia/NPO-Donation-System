@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.View.UserControls.Header
 {
@@ -13,20 +14,23 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.UserControls.Heade
         public AccountPopup()
         {
             InitializeComponent();
-            btn_viewDashboard.Click += new System.EventHandler((sender, e) => OnViewDashboardClick());
-            btn_editAccount.Click += new System.EventHandler((sender, e) => OnEditAccountClick());
-            btn_logOut.Click += new System.EventHandler((sender, e) => OnLogOutClick());
+            btn_viewDashboard.Click += new EventHandler((sender, e) => OnViewDashboardClick());
+            btn_viewDashboard.Click += hidePopup;
+            btn_editAccount.Click += new EventHandler((sender, e) => OnEditAccountClick());
+            btn_editAccount.Click += hidePopup;
+            btn_logOut.Click += new EventHandler((sender, e) => OnLogOutClick());
+            btn_logOut.Click += hidePopup;
+        }
+
+        private void hidePopup(object sender, EventArgs e)
+        {
+            Visible = false;
         }
 
         private void flowLayoutPanel1_MouseLeave(object sender, System.EventArgs e)
         {
             if (ClientRectangle.Contains(PointToClient(MousePosition)))
                 return;
-            Visible = false;
-        }
-
-        private void btn_logOut_Click(object sender, System.EventArgs e)
-        {
             Visible = false;
         }
     }

@@ -14,11 +14,24 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             "Subscription",
             "Single Payment",
             "Miscellaneous"});
+            base.SelectedIndex = 0;
             base.Location = new System.Drawing.Point(33, 9);
             base.Margin = new System.Windows.Forms.Padding(5);
             base.Name = "cbo_donationOption0";
             base.Size = new System.Drawing.Size(210, 32);
             base.TabIndex = 0;
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // DonationComboBox
+            // 
+            this.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ResumeLayout(false);
+
         }
     }
 }

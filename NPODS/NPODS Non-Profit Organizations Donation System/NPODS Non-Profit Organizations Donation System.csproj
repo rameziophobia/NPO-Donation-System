@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,7 +58,9 @@
     <Compile Include="Accounts\Account.cs" />
     <Compile Include="Accounts\Donations\Donation.cs" />
     <Compile Include="Accounts\Donations\DonationGoal.cs" />
+    <Compile Include="Accounts\Donations\DonationOptions.cs" />
     <Compile Include="Accounts\Donations\DonationTier.cs" />
+    <Compile Include="Accounts\Donations\IDonationOptions.cs" />
     <Compile Include="Accounts\Donations\MiscDonation.cs" />
     <Compile Include="Accounts\Donations\NullDonation.cs" />
     <Compile Include="Accounts\Donations\NullDonationGoal.cs" />
@@ -80,6 +83,12 @@
     </Compile>
     <Compile Include="View\CustomControls\tempHome.Designer.cs">
       <DependentUpon>tempHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomControls\UserControls\Browser\BrowseOrganizations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\UserControls\Browser\BrowseOrganizations.Designer.cs">
+      <DependentUpon>BrowseOrganizations.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\DonationOption\chooseDonationOption.cs">
       <SubType>UserControl</SubType>
@@ -109,12 +118,6 @@
     <Compile Include="View\CustomControls\UserControls\DonationOption\editDonationOptions.Designer.cs">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.Designer.cs">
-      <DependentUpon>optionFlowPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\CustomControls\UserControls\DonationOption\PaymentOptions\PaymentOption.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +145,12 @@
     <Compile Include="View\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\CustomControls\Components\OrganizationDashboard\DashboardRegion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CustomControls\Components\OrganizationDashboard\DashboardRegion.Designer.cs">
+      <DependentUpon>DashboardRegion.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomControls\Components\Browser\circularPicBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -151,16 +160,10 @@
     <Compile Include="View\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CustomControls\UserControls\Browser\org card.cs">
+    <Compile Include="View\CustomControls\UserControls\OrganizationDashboard\OrganizationDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\CustomControls\UserControls\Browser\org card.Designer.cs">
-      <DependentUpon>org card.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OrganizationDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrganizationDashboard.Designer.cs">
+    <Compile Include="View\CustomControls\UserControls\OrganizationDashboard\OrganizationDashboard.Designer.cs">
       <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomControls\UserControls\Browser\OrganizationCard.cs">
@@ -197,17 +200,20 @@
     <Compile Include="View\CustomControls\UserControls\Header\HeaderControl.Designer.cs">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CustomControls\Components\DonationOption\DonationComboBox.resx">
+      <DependentUpon>DonationComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\tempHome.resx">
       <DependentUpon>tempHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomControls\UserControls\Browser\BrowseOrganizations.resx">
+      <DependentUpon>BrowseOrganizations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\chooseDonationOption.resx">
       <DependentUpon>chooseDonationOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\editDonationOptions.resx">
       <DependentUpon>editDonationOptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\optionFlowPanel.resx">
-      <DependentUpon>optionFlowPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\DonationOption\PaymentOptions\PaymentOption.resx">
       <DependentUpon>PaymentOption.cs</DependentUpon>
@@ -224,10 +230,10 @@
     <EmbeddedResource Include="View\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomControls\UserControls\Browser\org card.resx">
-      <DependentUpon>org card.cs</DependentUpon>
+    <EmbeddedResource Include="View\CustomControls\Components\OrganizationDashboard\DashboardRegion.resx">
+      <DependentUpon>DashboardRegion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrganizationDashboard.resx">
+    <EmbeddedResource Include="View\CustomControls\UserControls\OrganizationDashboard\OrganizationDashboard.resx">
       <DependentUpon>OrganizationDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomControls\UserControls\Browser\OrganizationCard.resx">
@@ -326,6 +332,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\PaymentOptions\PayPal_logo_logotype_smallpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\coming-soon-placeholder-image-blackboard-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\OrganizationDashboard\hamburger_button_resized.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

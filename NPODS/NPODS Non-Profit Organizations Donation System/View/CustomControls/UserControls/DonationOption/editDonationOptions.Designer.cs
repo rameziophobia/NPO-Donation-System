@@ -32,8 +32,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         {
             this.pnl_options = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_confirm = new System.Windows.Forms.Button();
-            this.chk_undefinedSinglePayment = new System.Windows.Forms.CheckBox();
-            this.chk_undefinedSubcription = new System.Windows.Forms.CheckBox();
+            this.chk_customSinglePayment = new System.Windows.Forms.CheckBox();
+            this.chk_customSubcription = new System.Windows.Forms.CheckBox();
             this.btn_addOption = new System.Windows.Forms.Button();
             this.pnl_buttons = new System.Windows.Forms.Panel();
             this.pnl_buttons.SuspendLayout();
@@ -67,30 +67,31 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.btn_confirm.TabIndex = 8;
             this.btn_confirm.Text = "Confirm Changes";
             this.btn_confirm.UseVisualStyleBackColor = false;
+            this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
             // 
-            // chk_undefinedSinglePayment
+            // chk_customSinglePayment
             // 
-            this.chk_undefinedSinglePayment.AutoSize = true;
-            this.chk_undefinedSinglePayment.Location = new System.Drawing.Point(228, 19);
-            this.chk_undefinedSinglePayment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.chk_undefinedSinglePayment.Name = "chk_undefinedSinglePayment";
-            this.chk_undefinedSinglePayment.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.chk_undefinedSinglePayment.Size = new System.Drawing.Size(252, 40);
-            this.chk_undefinedSinglePayment.TabIndex = 2;
-            this.chk_undefinedSinglePayment.Text = "Allow undefined single payment amounts.";
-            this.chk_undefinedSinglePayment.UseVisualStyleBackColor = true;
+            this.chk_customSinglePayment.AutoSize = true;
+            this.chk_customSinglePayment.Location = new System.Drawing.Point(228, 19);
+            this.chk_customSinglePayment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chk_customSinglePayment.Name = "chk_customSinglePayment";
+            this.chk_customSinglePayment.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.chk_customSinglePayment.Size = new System.Drawing.Size(235, 40);
+            this.chk_customSinglePayment.TabIndex = 2;
+            this.chk_customSinglePayment.Text = "Allow custom single payment amounts.";
+            this.chk_customSinglePayment.UseVisualStyleBackColor = true;
             // 
-            // chk_undefinedSubcription
+            // chk_customSubcription
             // 
-            this.chk_undefinedSubcription.AutoSize = true;
-            this.chk_undefinedSubcription.Location = new System.Drawing.Point(507, 19);
-            this.chk_undefinedSubcription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.chk_undefinedSubcription.Name = "chk_undefinedSubcription";
-            this.chk_undefinedSubcription.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.chk_undefinedSubcription.Size = new System.Drawing.Size(233, 40);
-            this.chk_undefinedSubcription.TabIndex = 3;
-            this.chk_undefinedSubcription.Text = "Allow undefined subscription amounts.";
-            this.chk_undefinedSubcription.UseVisualStyleBackColor = true;
+            this.chk_customSubcription.AutoSize = true;
+            this.chk_customSubcription.Location = new System.Drawing.Point(507, 19);
+            this.chk_customSubcription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chk_customSubcription.Name = "chk_customSubcription";
+            this.chk_customSubcription.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.chk_customSubcription.Size = new System.Drawing.Size(216, 40);
+            this.chk_customSubcription.TabIndex = 3;
+            this.chk_customSubcription.Text = "Allow custom subscription amounts.";
+            this.chk_customSubcription.UseVisualStyleBackColor = true;
             // 
             // btn_addOption
             // 
@@ -110,8 +111,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             // pnl_buttons
             // 
             this.pnl_buttons.Controls.Add(this.btn_addOption);
-            this.pnl_buttons.Controls.Add(this.chk_undefinedSinglePayment);
-            this.pnl_buttons.Controls.Add(this.chk_undefinedSubcription);
+            this.pnl_buttons.Controls.Add(this.chk_customSinglePayment);
+            this.pnl_buttons.Controls.Add(this.chk_customSubcription);
             this.pnl_buttons.Controls.Add(this.btn_confirm);
             this.pnl_buttons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_buttons.Location = new System.Drawing.Point(0, 537);
@@ -138,10 +139,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel pnl_options;
-        private List<DonationFlowPanel> donationGroupBoxes = new List<DonationFlowPanel>();
+        internal List<DonationFlowPanel> donationGroupBoxes = new List<DonationFlowPanel>();
         private System.Windows.Forms.Button btn_confirm;
-        private System.Windows.Forms.CheckBox chk_undefinedSinglePayment;
-        private System.Windows.Forms.CheckBox chk_undefinedSubcription;
+        private System.Windows.Forms.CheckBox chk_customSinglePayment;
+        private System.Windows.Forms.CheckBox chk_customSubcription;
         private System.Windows.Forms.Button btn_addOption;
         private System.Windows.Forms.Panel pnl_buttons;
     }

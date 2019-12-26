@@ -153,7 +153,7 @@
             this.pic_orgLogo.Location = new System.Drawing.Point(52, 22);
             this.pic_orgLogo.Name = "pic_orgLogo";
             this.pic_orgLogo.Size = new System.Drawing.Size(225, 230);
-            this.pic_orgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pic_orgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_orgLogo.TabIndex = 1;
             this.pic_orgLogo.TabStop = false;
             // 
@@ -168,7 +168,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_orgLogo)).EndInit();
             this.ResumeLayout(false);
 

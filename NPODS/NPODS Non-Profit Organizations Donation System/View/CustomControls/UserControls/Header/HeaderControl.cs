@@ -19,7 +19,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         public HeaderControl()
         {
             InitializeComponent();
-
+            this.BringToFront();
             btn_home.Click += new EventHandler((sender, e) => OnHomeClick());
             btn_aboutUs.Click += new EventHandler((sender, e) => OnAboutUsClick());
             btn_login.Click += new EventHandler((sender, e) => OnLoginClick());
@@ -44,6 +44,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private void lbl_username_MouseEnter(object sender, EventArgs e)
         {
             AccountPopup.Visible = true;
+            AccountPopup.BringToFront();
         }
     }
 }

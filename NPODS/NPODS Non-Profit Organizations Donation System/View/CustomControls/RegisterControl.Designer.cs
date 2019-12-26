@@ -250,6 +250,7 @@
             this.txt_organizationUrl.Size = new System.Drawing.Size(338, 27);
             this.txt_organizationUrl.TabIndex = 25;
             this.txt_organizationUrl.Visible = false;
+            this.txt_organizationUrl.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txt_organizationUrl_PreviewKeyDown);
             // 
             // lbl_errorMessage
             // 

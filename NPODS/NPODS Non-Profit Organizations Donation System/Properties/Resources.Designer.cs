@@ -83,6 +83,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coming_soon_placeholder_image_blackboard_background {
+            get {
+                object obj = ResourceManager.GetObject("coming_soon_placeholder_image_blackboard_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap data_resized {
             get {
                 object obj = ResourceManager.GetObject("data_resized", resourceCulture);
@@ -186,6 +196,15 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Properties {
         internal static System.Drawing.Bitmap images5 {
             get {
                 object obj = ResourceManager.GetObject("images5", resourceCulture);
+                        return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hamburger_button_resized {
+            get {
+                object obj = ResourceManager.GetObject("hamburger_button_resized", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

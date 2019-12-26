@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
-    public class Account
+    public abstract class Account
     {
         public string Email { get; set; }
         public string Name { get; set; }
-        protected List<Transaction> transactionHistory;
-        protected List<Subscription> currentSubscriptions;
+        [System.NonSerialized] public List<Transaction> transactionHistory;
+        public List<Subscription> currentSubscriptions;
         public Account(string email, string name)
         {
             this.Email = email;
@@ -19,6 +19,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         public void addSubscription(Subscription subscription)
         {
             currentSubscriptions.Add(subscription);
+            saveToDatabase();
         }
+
+        public abstract void saveToDatabase();
     }
 }

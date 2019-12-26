@@ -4,9 +4,9 @@
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public float Value { get; set; }
+        public int Value { get; set; }
 
-        public DonationTier(string name, string description, float value)
+        public DonationTier(string name, string description, int value)
         {
             Name = name;
             Description = description;

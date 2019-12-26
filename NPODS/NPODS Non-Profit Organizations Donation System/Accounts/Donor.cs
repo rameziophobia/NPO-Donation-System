@@ -1,4 +1,5 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.Payment;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAccess;
+using NPODS_Non_Profit_Organizations_Donation_System.Payment;
 using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
@@ -7,7 +8,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
     {
         public string Gender { set; get; }
         public System.DateTime Birthday { set; get; }
-        private IPaymentMethod PaymentMethod { get; set; }
+        [System.NonSerialized] public IPaymentMethod PaymentMethod;
         public Donor(string email, string name) : base(email, name)
         {
         }
@@ -24,7 +25,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
             }
             PaymentMethod.pay(transaction);
             transactionHistory.Add(transaction);
+            saveToDatabase();
         }
 
+        public override void saveToDatabase()
+        {
+            DatabaseAccess.getInstance().saveDonor(this);
+        }
     }
 }

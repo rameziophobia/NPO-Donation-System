@@ -234,6 +234,7 @@
             this.btn_changeDonateOpt.TabIndex = 2;
             this.btn_changeDonateOpt.Text = "Edit donate Options";
             this.btn_changeDonateOpt.UseVisualStyleBackColor = false;
+            this.btn_changeDonateOpt.Click += new System.EventHandler(this.btn_changeDonateOpt_Click);
             // 
             // pic_orgLogo
             // 
