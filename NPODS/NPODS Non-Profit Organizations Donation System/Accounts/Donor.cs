@@ -1,17 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.controller.DatabaseAccess;
+using NPODS_Non_Profit_Organizations_Donation_System.Payment;
+using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
-    class Donor : Account
+    public class Donor : Account
     {
-        public Donor(string email, string password) : base(email, password)
+        public string Gender { set; get; }
+        public System.DateTime Birthday { set; get; }
+        [System.NonSerialized] public IPaymentMethod PaymentMethod;
+        public Donor(string email, string name) : base(email, name)
         {
-            //todo gender
-            //todo day of birth
+        }
+
+        public void pay(Transaction transaction)
+        {
+            try
+            {
+                PaymentMethod.verifyPayment(transaction);
+            }
+            catch
+            {
+                return;
+            }
+            PaymentMethod.pay(transaction);
+            transactionHistory.Add(transaction);
+            saveToDatabase();
+        }
+
+        public override void saveToDatabase()
+        {
+            DatabaseAccess.getInstance().saveDonor(this);
         }
     }
 }

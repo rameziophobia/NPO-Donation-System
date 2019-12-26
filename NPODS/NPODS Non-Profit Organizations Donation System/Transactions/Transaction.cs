@@ -1,27 +1,22 @@
 ﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
-using NPODS_Non_Profit_Organizations_Donation_System.Payment;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NPODS_Non_Profit_Organizations_Donation_System.Transaction
+namespace NPODS_Non_Profit_Organizations_Donation_System.Transactions
 {
-    class Transaction
+    public abstract class Transaction
     {
-        private Organization organization;
-        private Donor donor;
-        //todo date
-        private int value;
-        private IPaymentMethod paymentMethod;
+        private readonly Organization organization;
+        private readonly Donor donor;
+        private readonly System.DateTime date;
+        private readonly int value;
 
         public Transaction(Organization organization, Donor donor, int value)
         {
             this.organization = organization;
             this.donor = donor;
             this.value = value;
+            this.date = System.DateTime.Now;
+            donor.pay(this);
+            organization.recieve(this);
         }
-        //todo private paymentMethod
     }
 }

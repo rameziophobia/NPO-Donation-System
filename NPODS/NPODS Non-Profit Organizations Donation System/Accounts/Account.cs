@@ -1,31 +1,27 @@
-﻿using System;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Transactions;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
 {
-    public class Account
+    public abstract class Account
     {
-        private string email;
-        // todo https://stackoverflow.com/questions/12657792/how-to-securely-save-username-password-local
-        private string password;
-        //todo transactionHistory
-        //todo currentSubscriptions
-        //todo account dataBase ? a3mellaha interface IAccountDB
-        public Account(string email, string password)
+        public string Email { get; set; }
+        public string Name { get; set; }
+        [System.NonSerialized] public List<Transaction> transactionHistory;
+        public List<Subscription> currentSubscriptions;
+        public Account(string email, string name)
         {
-            this.email = email;
-            this.password = password;
+            this.Email = email;
+            this.Name = name;
+            transactionHistory = new List<Transaction>();
+            currentSubscriptions = new List<Subscription>();
+        }
+        public void addSubscription(Subscription subscription)
+        {
+            currentSubscriptions.Add(subscription);
+            saveToDatabase();
         }
 
-        public void changePassword(string oldPassword, string newPassword)
-        {
-            if (oldPassword.Equals(password)){
-                password = newPassword;
-            }
-        }
+        public abstract void saveToDatabase();
     }
-
 }
