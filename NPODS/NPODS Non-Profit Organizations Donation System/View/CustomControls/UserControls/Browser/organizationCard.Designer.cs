@@ -34,9 +34,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.txt_orgDescription = new System.Windows.Forms.Label();
             this.txt_orgName = new System.Windows.Forms.Label();
             this.pic_orgBanner = new System.Windows.Forms.PictureBox();
-            this.pic_logo = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Components.Browser.CircularPictureBox();
+            this.pic_orgLogo = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Components.Browser.CircularPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_orgBanner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_orgLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_orgDescription
@@ -73,17 +73,17 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.pic_orgBanner.TabIndex = 4;
             this.pic_orgBanner.TabStop = false;
             // 
-            // pic_logo
+            // pic_orgLogo
             // 
-            this.pic_logo.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.pic_logo.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources._212;
-            this.pic_logo.Location = new System.Drawing.Point(24, 51);
-            this.pic_logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(88, 85);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_logo.TabIndex = 3;
-            this.pic_logo.TabStop = false;
+            this.pic_orgLogo.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pic_orgLogo.Image = global::NPODS_Non_Profit_Organizations_Donation_System.Properties.Resources._212;
+            this.pic_orgLogo.Location = new System.Drawing.Point(24, 51);
+            this.pic_orgLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pic_orgLogo.Name = "pic_orgLogo";
+            this.pic_orgLogo.Size = new System.Drawing.Size(88, 85);
+            this.pic_orgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_orgLogo.TabIndex = 3;
+            this.pic_orgLogo.TabStop = false;
             // 
             // OrganizationCard
             // 
@@ -91,7 +91,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.pic_logo);
+            this.Controls.Add(this.pic_orgLogo);
             this.Controls.Add(this.pic_orgBanner);
             this.Controls.Add(this.txt_orgName);
             this.Controls.Add(this.txt_orgDescription);
@@ -99,7 +99,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.Name = "OrganizationCard";
             this.Size = new System.Drawing.Size(957, 219);
             ((System.ComponentModel.ISupportInitialize)(this.pic_orgBanner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_orgLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,7 +108,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         #endregion
         private System.Windows.Forms.Label txt_orgDescription;
         private System.Windows.Forms.Label txt_orgName;
-        private CircularPictureBox pic_logo;
+        private CircularPictureBox pic_orgLogo;
         private System.Windows.Forms.PictureBox pic_orgBanner;
     }
 }
