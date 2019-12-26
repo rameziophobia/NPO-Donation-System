@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d44a682-499b-4d2e-a4fd-be4087ed23ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NPODS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Account.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Donor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Donor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Organization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Organization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/PaymentOptions/PaymentOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/PaymentOptions/PaymentOption.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/DatabaseAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/DatabaseAccess.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/FileDatabaseAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/FileDatabaseAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Login/LoginManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Login/LoginManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Registration/RegistrationUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Registration/RegistrationUtil.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +33,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/optionFlowPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/DonationButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/Registration/RegistrationUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2E8D4299-BFA6-4998-B1C3-A8500640BE45/d7/afc05353/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/DatabaseAccess.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/FileDatabaseAccess.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/PaymentOptions/PaymentOption.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,12 +54,18 @@
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Account.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.resx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Donor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Donations/Donation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/RegisterControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Donations/SingleDonation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/LoginControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Donations/NullDonation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Browser/BrowseOrganizations.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/tempHome.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/AccountPopup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Browser/org card.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Header/HeaderControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Browser/organizationCard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/Browser/organizationCard.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS.Test/LoginVerificationTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -74,13 +79,13 @@
         <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/RegisterControl.cs" />
         <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/OrganizationInfo/editOrganizationInfo.cs" />
         <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/Forms/MainForm.cs" />
-        <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/DatabaseAccess.cs" />
-        <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/FileDatabaseAccess.cs" />
         <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Account.cs" />
         <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Organization.cs" />
         <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/Accounts/Donor.cs" />
         <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/chooseDonationOption.cs" />
         <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/View/CustomControls/UserControls/DonationOption/PaymentOptions/PaymentOption.cs" />
+        <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/FileDatabaseAccess.cs" />
+        <option value="$PROJECT_DIR$/NPODS Non-Profit Organizations Donation System/controller/DatabaseAccess/DatabaseAccess.cs" />
       </list>
     </option>
   </component>

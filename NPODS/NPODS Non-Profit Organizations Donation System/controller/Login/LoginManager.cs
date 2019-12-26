@@ -10,7 +10,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.controller.Login
     {
         public LoginInfo getUser(string email, string password)
         {
-            List<LoginInfo> loginInfos = DatabaseAccess.DatabaseAccess.getInstance().LoadLoginInfos();
+            List<LoginInfo> loginInfos = DatabaseAccess.DatabaseAccess.getInstance().loadLoginInfos();
             email = email.ToLower();
             LoginInfo loginInfo = loginInfos.Find((match) => match.Email == email);
             if (!(loginInfo is null))

@@ -38,7 +38,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration
             else
             {
                 organizations.Add(organization);
-                databaseAccess.SaveOrganizations(organizations);
+                databaseAccess.saveOrganizations(organizations);
                 databaseAccess.addLogin(organization.Email, password, AccountType.Organization);
             }
         }
@@ -54,7 +54,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration
             else
             {
                 donors.Add(donor);
-                databaseAccess.SaveDonors(donors);
+                databaseAccess.saveDonors(donors);
                 databaseAccess.addLogin(donor.Email, password, AccountType.Donor);
             }
         }

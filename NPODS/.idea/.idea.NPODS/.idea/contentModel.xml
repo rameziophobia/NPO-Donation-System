@@ -11,6 +11,7 @@
           <e p="Donations" t="Include">
             <e p="Donation.cs" t="Include" />
             <e p="DonationGoal.cs" t="Include" />
+            <e p="DonationOptions.cs" t="Include" />
             <e p="DonationTier.cs" t="Include" />
             <e p="MiscDonation.cs" t="Include" />
             <e p="NullDonation.cs" t="Include" />
@@ -109,6 +110,7 @@
               </e>
               <e p="DonationOption" t="Include">
                 <e p="DonationComboBox.cs" t="Include" />
+                <e p="DonationComboBox.resx" t="Include" />
                 <e p="DonationFlowPanel.cs" t="Include" />
                 <e p="DonationTextBox.cs" t="Include" />
                 <e p="RemoveLabel.cs" t="Include" />
@@ -130,9 +132,9 @@
             <e p="tempHome.resx" t="Include" />
             <e p="UserControls" t="Include">
               <e p="Browser" t="Include">
-                <e p="org card.cs" t="Include" />
-                <e p="org card.Designer.cs" t="Include" />
-                <e p="org card.resx" t="Include" />
+                <e p="BrowseOrganizations.cs" t="Include" />
+                <e p="BrowseOrganizations.Designer.cs" t="Include" />
+                <e p="BrowseOrganizations.resx" t="Include" />
                 <e p="OrganizationCard.cs" t="Include" />
                 <e p="OrganizationCard.Designer.cs" t="Include" />
                 <e p="OrganizationCard.resx" t="Include" />
@@ -146,9 +148,6 @@
                 <e p="editDonationOptions.cs" t="Include" />
                 <e p="editDonationOptions.Designer.cs" t="Include" />
                 <e p="editDonationOptions.resx" t="Include" />
-                <e p="optionFlowPanel.cs" t="Include" />
-                <e p="optionFlowPanel.Designer.cs" t="Include" />
-                <e p="optionFlowPanel.resx" t="Include" />
                 <e p="PaymentOptions" t="Include">
                   <e p="PaymentOption.cs" t="Include" />
                   <e p="PaymentOption.Designer.cs" t="Include" />
