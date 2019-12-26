@@ -8,6 +8,9 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
 {
     public partial class editOrganizationInfo : UserControl
     {
+        public delegate void OnButtonClick();
+        public OnButtonClick OnEditDonatePress { get; set; }
+
         private Organization organization;
         public editOrganizationInfo()
         {
@@ -89,6 +92,11 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             setDonationGoal();
             setDescription();
             organization.saveToDatabase();
+        }
+
+        private void btn_changeDonateOpt_Click(object sender, EventArgs e)
+        {
+            OnEditDonatePress();
         }
     }
 }

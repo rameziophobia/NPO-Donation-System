@@ -23,6 +23,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
         public void dispalyOrgs(OnPanelClick onOrgClick)
         {
             List<Organization> orgs = DatabaseAccess.getInstance().loadOrganizations();
+            flowLayoutPanel1.Controls.Clear();
             for (int i = 0;i < orgs.Count ; i++)
             {
                 OrganizationCard org = new OrganizationCard();

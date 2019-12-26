@@ -1,4 +1,5 @@
-﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
+﻿using NPODS_Non_Profit_Organizations_Donation_System.Accounts;
+using NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations;
 using System;
 using System.Windows.Forms;
 
@@ -8,7 +9,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
     public partial class editDonationOptions : UserControl
     {
         private DonationOptions donationOptions;
-
+        public Organization CurrentOrg { get; set; }
         public editDonationOptions()
         {
             InitializeComponent();
@@ -57,9 +58,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             }
             checkCustomSubscription();
             checkCustomSinglePayment();
-            Console.WriteLine("hi");
-            // todo display el7aga elli kanet mawgooda already ??
-            // todo set current_org.DonationOptions = donationOptions;
+            CurrentOrg.DonationOptions = donationOptions;
+            donationOptions = new DonationOptions();
         }
 
         private bool checkValidInput(DonationFlowPanel donationGroupBox)

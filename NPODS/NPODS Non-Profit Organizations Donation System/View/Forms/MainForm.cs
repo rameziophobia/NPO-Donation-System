@@ -30,7 +30,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             {
                 ((Donor)account).PaymentMethod = new Payment.Paypal();
             }
-            switchControls (browseOrganizations1);
+            showOrganizations();    
         }
 
         private void logout () {
@@ -49,20 +49,6 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
         }
 
         private void MainForm_Load (object sender, EventArgs e) {
-            lastActiveUserControl = browseOrganizations1;
-            browseOrganizations1.OnOrgClick += (Organization org) =>
-            {
-                switchControls(organizationInfo1);
-                organizationInfo1.updateOrganisation(org);
-            };
-            browseOrganizations1.dispalyOrgs(browseOrganizations1.OnOrgClick);
-
-            headerControl1.OnAboutUsClick += () => MessageBox.Show ("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            headerControl1.OnLoginClick += () => switchControls (loginControl1);
-            headerControl1.OnRegisterClick += () => switchControls (registerControl1);
-            headerControl1.OnHomeClick += () => switchControls (browseOrganizations1);
-            headerControl1.AccountPopup = accountPopup1;
-
             Organization organization = new Organization (
                 "Instagram@hydra.com",
                 "This is a dummy org") {
@@ -72,8 +58,24 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                 OrganizationStatistics = new OrganizationStatistics(),
                 DonationOptions = new DonationOptions(),
             };
-            organization.DonationOptions.appendSubscriptionDonation(new DonationTier("ss", "ss", 3));
-            organization.DonationOptions.appendMiscDonation("www.google.com");
+            lastActiveUserControl = browseOrganizations1;
+            browseOrganizations1.OnOrgClick += (Organization org) =>
+            {
+                switchControls(organizationInfo1);
+                organizationInfo1.updateOrganisation(org);
+                organization = org;
+            };
+            browseOrganizations1.dispalyOrgs(browseOrganizations1.OnOrgClick);
+
+            headerControl1.OnAboutUsClick += () => MessageBox.Show ("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            headerControl1.OnLoginClick += () => switchControls (loginControl1);
+            headerControl1.OnRegisterClick += () => switchControls (registerControl1);
+            headerControl1.OnHomeClick += () =>
+            {
+                showOrganizations();
+            };
+            headerControl1.AccountPopup = accountPopup1;
+
             organizationInfo1.OnDonatePress += () => {
                 switchControls (chooseDonationOption1);
                 initializeChooseDonation (organization);
@@ -91,6 +93,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             accountPopup1.OnViewDashboardClick += () => {
                 if (isCurrentAccountOrganization) {
                     switchControls(organizationDashboard1);
+                    organizationDashboard1.setOrganization((Organization)currentAccount);
                 } else {
                     MessageBox.Show ("WIP (Donor)", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -98,10 +101,15 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
             accountPopup1.OnEditAccountClick += () => {
                 if (isCurrentAccountOrganization) {
                     switchControls(editOrganizationInfo1);
-                    editOrganizationInfo1.updateOrgDetails(organization);
+                    editOrganizationInfo1.updateOrgDetails((Organization)currentAccount);
                 } else {
                     MessageBox.Show ("WIP", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            };
+            editOrganizationInfo1.OnEditDonatePress += () =>
+            {
+                switchControls(editDonationOptions1);
+                editDonationOptions1.CurrentOrg = organization;
             };
             
             accountPopup1.OnLogOutClick += logout;
@@ -114,11 +122,19 @@ namespace NPODS_Non_Profit_Organizations_Donation_System {
                 switchControls(editOrganizationInfo1);
             };
         }
-
+        private void showOrganizations()
+        {
+            switchControls(browseOrganizations1);
+            browseOrganizations1.dispalyOrgs(browseOrganizations1.OnOrgClick);
+        }
         private void initializeChooseDonation(Organization organization)
         {
             chooseDonationOption1.Organization = organization;
-            chooseDonationOption1.CurrentAccount = (Donor)currentAccount;
+            try
+            {
+                chooseDonationOption1.CurrentAccount = (Donor)currentAccount;
+            }catch(Exception e) { 
+            }
             chooseDonationOption1.setAvailableTypes();
         }
     }

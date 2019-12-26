@@ -38,8 +38,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
                 dtp_birthday.Hide();
             }
         }
-
-        private void register_btn_Click(object sender, EventArgs e)
+        private void register()
         {
             if (requiredInfoMissing())
             {
@@ -99,6 +98,10 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
 
             lbl_errorMessage.Text = "Success";
         }
+        private void register_btn_Click(object sender, EventArgs e)
+        {
+            register();
+        }
 
         private Organization getOrganizationAccount(string email, string name)
         {
@@ -153,6 +156,14 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls
             cbo_accountType.SelectedIndex = 0;
             cbo_gender.SelectedIndex = -1;
             dtp_birthday.Value = DateTime.Now;
+        }
+
+        private void txt_organizationUrl_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                register();
+            }
         }
     }
 }

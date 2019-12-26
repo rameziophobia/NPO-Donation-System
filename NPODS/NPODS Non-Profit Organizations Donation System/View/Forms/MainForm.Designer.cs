@@ -32,6 +32,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.editDonationOptions1 = new NPODS_Non_Profit_Organizations_Donation_System.editDonationOptions();
+            this.browseOrganizations1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.Browser.BrowseOrganizations();
             this.organizationDashboard1 = new NPODS_Non_Profit_Organizations_Donation_System.OrganizationDashboard();
             this.accountPopup1 = new NPODS_Non_Profit_Organizations_Donation_System.View.UserControls.Header.AccountPopup();
             this.headerControl1 = new NPODS_Non_Profit_Organizations_Donation_System.HeaderControl();
@@ -41,14 +43,32 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.organizationInfo1 = new NPODS_Non_Profit_Organizations_Donation_System.organizationInfo();
             this.editOrganizationInfo1 = new NPODS_Non_Profit_Organizations_Donation_System.editOrganizationInfo();
             this.paymentOption1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.DonationOption.PaymentOptions.PaymentOption();
-            this.browseOrganizations1 = new NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.UserControls.Browser.BrowseOrganizations();
             this.SuspendLayout();
+            // 
+            // editDonationOptions1
+            // 
+            this.editDonationOptions1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editDonationOptions1.Location = new System.Drawing.Point(0, 65);
+            this.editDonationOptions1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.editDonationOptions1.Name = "editDonationOptions1";
+            this.editDonationOptions1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.editDonationOptions1.Size = new System.Drawing.Size(1136, 570);
+            this.editDonationOptions1.TabIndex = 14;
+            this.editDonationOptions1.Visible = false;
+            // 
+            // browseOrganizations1
+            // 
+            this.browseOrganizations1.Location = new System.Drawing.Point(0, 66);
+            this.browseOrganizations1.Name = "browseOrganizations1";
+            this.browseOrganizations1.OnOrgClick = null;
+            this.browseOrganizations1.Size = new System.Drawing.Size(1123, 563);
+            this.browseOrganizations1.TabIndex = 13;
             // 
             // organizationDashboard1
             // 
             this.organizationDashboard1.Location = new System.Drawing.Point(0, 65);
             this.organizationDashboard1.Name = "organizationDashboard1";
-            this.organizationDashboard1.Size = new System.Drawing.Size(1136, 565);
+            this.organizationDashboard1.Size = new System.Drawing.Size(1123, 565);
             this.organizationDashboard1.TabIndex = 12;
             this.organizationDashboard1.Visible = false;
             // 
@@ -105,7 +125,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.chooseDonationOption1.OnBackPress = null;
             this.chooseDonationOption1.OnMiscPress = null;
             this.chooseDonationOption1.Organization = null;
-            this.chooseDonationOption1.Size = new System.Drawing.Size(1136, 565);
+            this.chooseDonationOption1.Size = new System.Drawing.Size(1123, 565);
             this.chooseDonationOption1.TabIndex = 7;
             this.chooseDonationOption1.Visible = false;
             // 
@@ -113,7 +133,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             // 
             this.organizationInfo1.Location = new System.Drawing.Point(0, 65);
             this.organizationInfo1.Name = "organizationInfo1";
-            this.organizationInfo1.Size = new System.Drawing.Size(1136, 584);
+            this.organizationInfo1.Size = new System.Drawing.Size(1123, 584);
             this.organizationInfo1.TabIndex = 4;
             this.organizationInfo1.Visible = false;
             // 
@@ -121,7 +141,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             // 
             this.editOrganizationInfo1.Location = new System.Drawing.Point(0, 65);
             this.editOrganizationInfo1.Name = "editOrganizationInfo1";
-            this.editOrganizationInfo1.Size = new System.Drawing.Size(1166, 565);
+            this.editOrganizationInfo1.OnEditDonatePress = null;
+            this.editOrganizationInfo1.Size = new System.Drawing.Size(1153, 565);
             this.editOrganizationInfo1.TabIndex = 11;
             this.editOrganizationInfo1.Visible = false;
             // 
@@ -136,18 +157,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.paymentOption1.TabIndex = 7;
             this.paymentOption1.Visible = false;
             // 
-            // browseOrganizations1
-            // 
-            this.browseOrganizations1.Location = new System.Drawing.Point(0, 66);
-            this.browseOrganizations1.Name = "browseOrganizations1";
-            this.browseOrganizations1.Size = new System.Drawing.Size(1136, 563);
-            this.browseOrganizations1.TabIndex = 13;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1136, 624);
+            this.Controls.Add(this.editDonationOptions1);
             this.Controls.Add(this.browseOrganizations1);
             this.Controls.Add(this.organizationDashboard1);
             this.Controls.Add(this.accountPopup1);
@@ -178,6 +193,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         private editOrganizationInfo editOrganizationInfo1;
         private OrganizationDashboard organizationDashboard1;
         private View.CustomControls.UserControls.Browser.BrowseOrganizations browseOrganizations1;
+        private editDonationOptions editDonationOptions1;
     }
 }
 

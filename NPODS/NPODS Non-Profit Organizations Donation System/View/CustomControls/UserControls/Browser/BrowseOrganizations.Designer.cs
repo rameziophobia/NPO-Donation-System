@@ -33,6 +33,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
@@ -54,6 +55,6 @@
 
         #endregion
 
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1 { get; set; }
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
