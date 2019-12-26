@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace NPODS_Non_Profit_Organizations_Donation_System.Controller.Registration
 {
     [Serializable]
-    internal class EmailAlreadyExistsException : Exception
+    public class EmailAlreadyExistsException : Exception
     {
         public EmailAlreadyExistsException()
         {

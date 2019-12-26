@@ -13,6 +13,7 @@
             <e p="DonationGoal.cs" t="Include" />
             <e p="DonationOptions.cs" t="Include" />
             <e p="DonationTier.cs" t="Include" />
+            <e p="IDonationOptions.cs" t="Include" />
             <e p="MiscDonation.cs" t="Include" />
             <e p="NullDonation.cs" t="Include" />
             <e p="NullDonationGoal.cs" t="Include" />
@@ -187,6 +188,7 @@
       <e p="NPODS.sln" t="IncludeFlat" />
       <e p="NPODS.Test" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="EditOrganizationTests.cs" t="Include" />
         <e p="LoginVerificationTests.cs" t="Include" />
         <e p="NPODS.Test.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
