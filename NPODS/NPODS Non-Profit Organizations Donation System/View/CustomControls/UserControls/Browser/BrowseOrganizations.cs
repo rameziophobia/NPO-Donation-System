@@ -28,7 +28,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.View.CustomControls.Use
                 OrganizationCard org = new OrganizationCard();
                 org.display(orgs[i]);
                 Organization currentOrg = orgs[i]; 
-                org.Click += (s, e) => onOrgClick(currentOrg);
+                org.getBtnMoreInfo().Click += (s, e) => onOrgClick(currentOrg);
                 flowLayoutPanel1.Controls.Add(org);
             }
         }
