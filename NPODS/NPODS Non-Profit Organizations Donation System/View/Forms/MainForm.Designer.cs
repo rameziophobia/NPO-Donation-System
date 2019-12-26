@@ -125,7 +125,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             this.chooseDonationOption1.OnBackPress = null;
             this.chooseDonationOption1.OnMiscPress = null;
             this.chooseDonationOption1.Organization = null;
-            this.chooseDonationOption1.Size = new System.Drawing.Size(1123, 565);
+            this.chooseDonationOption1.Size = new System.Drawing.Size(1150, 565);
             this.chooseDonationOption1.TabIndex = 7;
             this.chooseDonationOption1.Visible = false;
             // 
@@ -133,7 +133,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
             // 
             this.organizationInfo1.Location = new System.Drawing.Point(0, 65);
             this.organizationInfo1.Name = "organizationInfo1";
-            this.organizationInfo1.Size = new System.Drawing.Size(1123, 584);
+            this.organizationInfo1.Size = new System.Drawing.Size(1150, 584);
             this.organizationInfo1.TabIndex = 4;
             this.organizationInfo1.Visible = false;
             // 
