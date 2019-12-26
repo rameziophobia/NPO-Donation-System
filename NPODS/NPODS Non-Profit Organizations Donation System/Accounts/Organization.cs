@@ -11,7 +11,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts
         public string Description { get; set; }
         public string LogoFilePath { get; set; }
         public bool Certified { get; private set; }
-        public DonationOptions DonationOptions { get; set; }
+        public IDonationOptions DonationOptions { get; set; }
         public DonationGoal DonationGoal { get; set; }
         public OrganizationStatistics OrganizationStatistics { get; set; }
         public string OrganizationUrl { get; set; }

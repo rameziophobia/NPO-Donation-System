@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
 {
-    public class DonationOptions
+    public class DonationOptions : IDonationOptions
     {
         public List<MiscDonation> MiscDonations { get; set; }
         public Donation SubscriptionDonation { get; set; }
@@ -40,7 +40,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
             MiscDonations.Add(new MiscDonation(link));
         }
 
-        internal void enableCustomSubscription()
+        public void enableCustomSubscription()
         {
             if (SubscriptionDonation.isNull())
             {
@@ -49,7 +49,7 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
             SubscriptionDonation.customEnabled = true;
         }
 
-        internal void enableCustomSingleDonation()
+        public void enableCustomSingleDonation()
         {
             if (SingleDonation.isNull())
             {
@@ -57,12 +57,12 @@ namespace NPODS_Non_Profit_Organizations_Donation_System.Accounts.Donations
             }
             SingleDonation.customEnabled = true;
         }
-        internal void disableCustomSubscription()
+        public void disableCustomSubscription()
         {
             SubscriptionDonation.customEnabled = false;
         }
 
-        internal void disableCustomSingleDonation()
+        public void disableCustomSingleDonation()
         {
             SingleDonation.customEnabled = false;
         }
