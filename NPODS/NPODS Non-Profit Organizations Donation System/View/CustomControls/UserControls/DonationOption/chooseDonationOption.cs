@@ -144,6 +144,8 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
         public void setAvailableTypes()
         {
             pnl_displayOptions.Controls.Clear();
+            disableButtons();
+            disableCustom();
             donationOption = NullDonation.getInstance();
             if (!(Organization.DonationOptions.SingleDonation.isNull()))
             {
@@ -169,6 +171,16 @@ namespace NPODS_Non_Profit_Organizations_Donation_System
                 btn_miscellaneous.Visible = true;
             }
 
+        }
+        private void disableButtons()
+        {
+                btn_subscription.Visible = false;
+                btn_miscellaneous.Visible = false;
+                btn_singlePayment.Visible = false;
+        }
+        private void disableCustom()
+        {
+            pnl_customDonation.Visible = false;
         }
         public void displayDonationOptions()
         {
